@@ -13,16 +13,16 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Tensura.MOD_ID);
 
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
 
     public static final RegistryObject<Item> SILVER_NUGGET = ITEMS.register("silver_nugget",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
 
-    public static final RegistryObject<Item> DEMON_STEEL_INGOT = ITEMS.register("demon_steel_ingot",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> MAGISTEEL_INGOT = ITEMS.register("magisteel_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
 
-    public static final RegistryObject<Item> MAGIC_STEEL_INGOT = ITEMS.register("magic_steel_ingot",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

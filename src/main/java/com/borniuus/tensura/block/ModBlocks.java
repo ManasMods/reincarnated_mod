@@ -1,6 +1,7 @@
-package com.borniuus.block;
+package com.borniuus.tensura.block;
 
 import com.borniuus.Tensura;
+import com.borniuus.tensura.item.ModCreativeModeTab;
 import com.borniuus.tensura.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,8 +21,25 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Tensura.MOD_ID);
 
     public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).strength(8f)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(2f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
 
+    public static final RegistryObject<Block> MAGISTEEL_BLOCK = registerBlock("magisteel_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(3f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+
+    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.7f).strength(1f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+
+
+    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().tab(tab)));
+    }
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -30,7 +48,7 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+                new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB2)));
     }
 
     public static void register(IEventBus eventBus) {
