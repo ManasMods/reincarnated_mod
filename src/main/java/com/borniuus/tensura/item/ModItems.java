@@ -15,6 +15,15 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    public static final RegistryObject<Item> SILVER_NUGGET = ITEMS.register("silver_nugget",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> DEMON_STEEL_INGOT = ITEMS.register("demon_steel_ingot",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> MAGIC_STEEL_INGOT = ITEMS.register("magic_steel_ingot",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
 

@@ -1,3 +1,8 @@
 {
-  "item.tensura.silver_ingot": "Silver Ingot"
+  "item.tensura.silver_ingot": "Silver Ingot",
+  "item.tensura.silver_nugget": "Silver Nugget",
+  "item.tensura.magic_steel_ingot": "Magic Steel Ingot",
+  "item.tensura.demon_steel_ingot": "Demon Steel Ingot",
+
+  "block.tensura.silver_block": "Magic Steel Ingot"
 }

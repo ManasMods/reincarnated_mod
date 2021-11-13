@@ -1,5 +1,9 @@
 package com.borniuus;
 
+import com.borniuus.block.ModBlocks;
+import com.borniuus.tensura.item.ModItems;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +32,9 @@ public class Tensura {
 
     public Tensura() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
 

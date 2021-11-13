@@ -34,7 +34,7 @@ credits="Big thanks to Minh, our helper team and everyone else who supported us<
 authors="Born1uus" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This is the second iteration of the Tensura mod or TTIGRAAS as it was previously known as. We decided to remake the mod as the previous iteration was made with an application which caused many issues and limited us severely. In unison with the original creator (MinhEragon), I (Born1uus) along with Nieadni, Viciel, Herrscherr and Jerremy18 decided to plan Tensura:Reincarnated !
+This is the third iteration of the Tensura mod or TTIGRAAS as it was previously known as. We decided to remake the mod as the previous iteration was made with an application which caused many issues and limited us severely. In unison with the original creator (MinhEragon), I (Born1uus) along with Nieadni, Viciel, Herrscherr and Jerremy18 decided to plan Tensura:Reincarnated !
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.tensura]] #optional
