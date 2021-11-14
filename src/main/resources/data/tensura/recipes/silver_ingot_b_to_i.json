@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tensura:silver_block"
+    }
+  ],
+  "result": {
+    "item": "tensura:silver_ingot",
+    "count": 9
+  }
+}

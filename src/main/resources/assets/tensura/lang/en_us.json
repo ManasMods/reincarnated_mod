@@ -4,10 +4,17 @@
   "item.tensura.magisteel_ingot": "Magisteel Ingot",
   "item.tensura.raw_silver": "Raw Silver",
 
+  "item.tensura.raw_ant_leg": "Raw Ant Leg",
+  "item.tensura.cooked_ant_leg": "Cooked Ant Leg",
+  "item.tensura.raw_knight_spider_meat": "Raw Knight Spider Meat",
+  "item.tensura.cooked_knight_spider_meat": "Cooked Knight Spider Meat",
+
+
   "block.tensura.silver_block": "Silver Block",
   "block.tensura.magisteel_block": "Magisteel Block",
   "block.tensura.silver_ore": "Silver Ore",
 
   "itemGroup.tensuraTab": "Tensura Miscellaneous",
-  "itemGroup.tensuraTab2": "Tensura Blocks"
+  "itemGroup.tensuraTab2": "Tensura Blocks",
+  "itemGroup.tensuraTab3": "Tensura Food"
 }

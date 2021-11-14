@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tensura:magisteel_block"
+    }
+  ],
+  "result": {
+    "item": "tensura:magisteel_ingot",
+    "count": 9
+  }
+}

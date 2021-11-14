@@ -1,5 +1,6 @@
 package com.borniuus.tensura.item;
 
+import com.borniuus.tensura.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
@@ -17,8 +18,16 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab TENSURA_TAB2 = new CreativeModeTab("tensuraTab2") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.SILVER_INGOT.get());
+            return new ItemStack(ModBlocks.MAGISTEEL_BLOCK.get());
         }
 
     };
+
+
+    public static final CreativeModeTab TENSURA_TAB3 = new CreativeModeTab("tensuraTab3") {
+        @Override
+        public ItemStack makeIcon() {return new ItemStack(ModItems.RAW_ANT_LEG.get());}
+
+    };
 }
+
