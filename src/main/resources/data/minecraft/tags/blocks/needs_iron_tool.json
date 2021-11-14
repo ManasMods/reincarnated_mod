@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tensura:silver_ore",
+    "tensura:silver_block",
+    "tensura:magisteel_block"
+  ]
+}

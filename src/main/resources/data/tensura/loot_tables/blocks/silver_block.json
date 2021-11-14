@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:silver_block"
+          "name": "tensura:silver_block"
         }
       ]
     }
