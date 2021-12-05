@@ -21,13 +21,19 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Tensura.MOD_ID);
 
     public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+
+    public static final RegistryObject<Block> THATCH_BLOCK = registerBlock("thatch_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(1.2f)),ModCreativeModeTab.TENSURA_TAB2);
 
     public static final RegistryObject<Block> MAGISTEEL_BLOCK = registerBlock("magisteel_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(8f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
 
-    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).strength(3f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+    public static final RegistryObject<Block> SILVER_ORE_STONE = registerBlock("silver_ore_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
+
+    public static final RegistryObject<Block> SILVER_ORE_DEEPSLATE = registerBlock("silver_ore_deepslate",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),ModCreativeModeTab.TENSURA_TAB2);
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

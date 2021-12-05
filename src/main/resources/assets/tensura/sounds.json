@@ -1,0 +1,10 @@
+{
+  "like_flames": {
+    "sounds": [
+      {
+        "name": "tensura:like_flames",
+        "stream": true
+      }
+    ]
+  }
+}

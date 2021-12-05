@@ -3,6 +3,9 @@
   "item.tensura.silver_nugget": "Silver Nugget",
   "item.tensura.magisteel_ingot": "Magisteel Ingot",
   "item.tensura.raw_silver": "Raw Silver",
+  "item.tensura.thatch": "Thatch",
+  "item.tensura.like_flames_music_disc.desc": "by Mindaryn",
+  "item.tensura.like_flames_music_disc": "Like Flames",
 
   "item.tensura.raw_ant_leg": "Raw Ant Leg",
   "item.tensura.cooked_ant_leg": "Cooked Ant Leg",
@@ -12,9 +15,23 @@
 
   "block.tensura.silver_block": "Silver Block",
   "block.tensura.magisteel_block": "Magisteel Block",
-  "block.tensura.silver_ore": "Silver Ore",
+  "block.tensura.silver_ore_stone": "Silver Ore Stone",
+  "block.tensura.silver_ore_deepslate": "Silver Ore Deepslate",
+  "block.tensura.thatch_block": "Thatch Block",
+
+  "item.tensura.magisteel_sword": "Magisteel Sword",
+  "item.tensura.magisteel_pickaxe": "Magisteel Pickaxe",
+  "item.tensura.magisteel_axe": "Magisteel Axe",
+  "item.tensura.magisteel_shovel": "Magisteel Shovel",
+  "item.tensura.magisteel_hoe": "Magisteel Hoe",
+  "item.tensura.diamond_sickle": "Diamond Sickle",
+  "item.tensura.stone_sickle": "Stone Sickle",
+  "item.tensura.iron_sickle": "Iron Sickle",
 
   "itemGroup.tensuraTab": "Tensura Miscellaneous",
   "itemGroup.tensuraTab2": "Tensura Blocks",
-  "itemGroup.tensuraTab3": "Tensura Food"
+  "itemGroup.tensuraTab3": "Tensura Consumables",
+  "itemGroup.tensuraTab4": "Tools",
+  "itemGroup.tensuraTab5": "Weapons",
+  "itemGroup.tensuraTab6": "Wearables"
 }

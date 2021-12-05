@@ -2,7 +2,7 @@
   "type": "minecraft:smelting",
   "group": "silver_ingot",
   "ingredient": {
-    "item": "tensura:silver_ore_stone"
+    "item": "tensura:silver_ore_deepslate"
   },
   "result": "tensura:silver_ingot",
   "experience": 0.7,

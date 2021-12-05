@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "tensura:silver_ore",
+    "tensura:silver_ore_stone",
+    "tensura:silver_ore_deepslate",
     "tensura:silver_block"
       ]
 }
