@@ -1,4 +1,4 @@
-package com.borniuus.tensura.item.custom;
+package com.borniuus.tensura.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

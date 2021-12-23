@@ -1,5 +1,6 @@
 package com.borniuus.tensura.registry;
 
+import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
@@ -7,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.SmithingTableBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -66,14 +68,14 @@ class BlockRegistry {
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops()));
 
-        registry.register("smithing_bench", () -> new SimpleBlock(Material.STONE, properties -> properties
-            .strength(3.5F)
+        registry.register("smithing_bench", () -> new SmithingTableBlock(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(3.5f)
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops()
             .noOcclusion()));
 
-        registry.register("loom", () -> new SimpleBlock(Material.WOOD, properties -> properties
-            .strength(1.2F)
+        registry.register("loom", () -> new LoomBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(2.5F)
             .sound(SoundType.WOOD)
             .noOcclusion()));
 
