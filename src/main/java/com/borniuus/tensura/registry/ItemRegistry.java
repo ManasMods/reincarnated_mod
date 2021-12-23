@@ -12,7 +12,7 @@ import com.borniuus.tensura.item.templates.SimpleHoeItem;
 import com.borniuus.tensura.item.templates.SimplePickaxeItem;
 import com.borniuus.tensura.item.templates.SimpleShovelItem;
 import com.borniuus.tensura.item.templates.SimpleSwordItem;
-import com.borniuus.tensura.util.ModSoundEvents;
+import com.borniuus.tensura.sound.TensuraSounds;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,7 +30,7 @@ class ItemRegistry {
         registry.register("magisteel_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
         registry.register("thatch", () -> new ThatchItem(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
         registry.register("scroll_of_slimes", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("like_flames_music_disc", () -> new MusicDiscItem(ModSoundEvents.LIKE_FLAMES));
+        registry.register("like_flames_music_disc", () -> new MusicDiscItem(() -> TensuraSounds.LIKE_FLAMES));
 
         //food
         registry.register("raw_ant_leg", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(1F).meat()));
