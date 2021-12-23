@@ -36,6 +36,15 @@ public class Tensura {
 
     private void setup(final FMLCommonSetupEvent event) {
     }
+
+    /**
+     * Public Getter for the Logger instance of this mod.
+     *
+     * @return the current Logger instance
+     */
+    public static Logger getLogger() {
+        return LOGGER;
+    }
 }
 
 
