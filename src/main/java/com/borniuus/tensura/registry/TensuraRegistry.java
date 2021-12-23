@@ -19,8 +19,8 @@ public class TensuraRegistry {
      * @param modEventBus needs to be the modEventbus!
      */
     public static void register(IEventBus modEventBus) {
+        BlockRegistry.register(ITEMS, BLOCKS); //Register Blocks with their BlockItems
         ItemRegistry.register(ITEMS); // Register Items to our Registry
-        BlockRegistry.register(ITEMS, BLOCKS);
 
         // Add our Registries to Forge
         ITEMS.register(modEventBus);
