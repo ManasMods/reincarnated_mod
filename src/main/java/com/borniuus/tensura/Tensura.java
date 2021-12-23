@@ -1,20 +1,9 @@
-package com.borniuus;
+package com.borniuus.tensura;
 
-import com.borniuus.tensura.block.ModBlocks;
-import com.borniuus.tensura.item.ModItems;
-import com.borniuus.tensura.util.ModSoundEvents;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
+import com.borniuus.tensura.registry.TensuraRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,11 +15,7 @@ public class Tensura {
 
     public Tensura() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
-        ModSoundEvents.register(modEventBus);
-
+        TensuraRegistry.register(modEventBus);
         modEventBus.addListener(this::setup);
     }
 

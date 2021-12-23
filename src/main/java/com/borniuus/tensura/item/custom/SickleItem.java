@@ -1,36 +1,31 @@
 package com.borniuus.tensura.item.custom;
 
-import com.borniuus.tensura.block.ModBlocks;
-import com.borniuus.tensura.item.ModItems;
-import com.google.common.collect.ImmutableMap;
-import net.minecraft.Util;
+import com.borniuus.tensura.Tensura;
+import com.borniuus.tensura.item.TensuraCreativeTab;
+import com.borniuus.tensura.item.TensuraItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-
-import java.util.Map;
+import net.minecraft.world.level.block.state.BlockState;
 
 
 public class SickleItem extends Item {
-    private static final Map<Block, Item> SICKLE_ITEM_CRAFT =
-        new ImmutableMap.Builder<Block, Item>()
-            .put(Blocks.GRASS, ModItems.THATCH.get())
-            .put(Blocks.TALL_GRASS, ModItems.THATCH.get())
-            .build();
-
+    private static final Tag<Block> SICKLE_BLOCK = BlockTags.createOptional(new ResourceLocation(Tensura.MOD_ID, "sickle_blocks"));
 
     public SickleItem(Properties pProperties) {
         super(pProperties);
+    }
+
+    public SickleItem(int durability) {
+        this(new Properties().tab(TensuraCreativeTab.TENSURA_TAB4).durability(durability));
     }
 
     @Override
@@ -38,12 +33,12 @@ public class SickleItem extends Item {
         if (!pContext.getLevel().isClientSide()) {
             Level level = pContext.getLevel();
             BlockPos positionClicked = pContext.getClickedPos();
-            Block blockClicked = level.getBlockState(positionClicked).getBlock();
+            BlockState blockClicked = level.getBlockState(positionClicked);
 
-            if (canHarvest(blockClicked)) {
+            if (blockClicked.is(SICKLE_BLOCK)) {
                 ItemEntity entityItem = new ItemEntity(level,
                     positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
-                    new ItemStack(SICKLE_ITEM_CRAFT.get(blockClicked), 1));
+                    new ItemStack(TensuraItems.THATCH, 1));
 
                 level.destroyBlock(positionClicked, false);
                 level.addFreshEntity(entityItem);
@@ -55,10 +50,5 @@ public class SickleItem extends Item {
 
         }
         return InteractionResult.SUCCESS;
-    }
-
-    private boolean canHarvest(Block block) {
-        return SICKLE_ITEM_CRAFT.containsKey(block);
-
     }
 }
