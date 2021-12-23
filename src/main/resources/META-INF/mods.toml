@@ -3,7 +3,7 @@ loaderVersion="[37,)"
 license="All rights reserved"
 [[mods]]    
 modId="tensura"
-version="${file.jarVersion}"    
+version="${modVersion}"
 displayName="Tensura:Reincarnated"
 logoFile="logo.png"
 

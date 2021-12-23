@@ -22,6 +22,7 @@ public class LoomBlock extends net.minecraft.world.level.block.LoomBlock {
     public LoomBlock(Properties p_54777_) {
         super(p_54777_);
     }
+
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;
@@ -31,6 +32,7 @@ public class LoomBlock extends net.minecraft.world.level.block.LoomBlock {
             return InteractionResult.CONSUME;
         }
     }
+
     public MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos) {
         return new SimpleMenuProvider((p_54783_, p_54784_, p_54785_) -> {
             return new LoomMenu(p_54783_, p_54784_, ContainerLevelAccess.create(pLevel, pPos));

@@ -19,32 +19,31 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Tensura.MOD_ID)
 public class Tensura {
     public static final String MOD_ID = "tensura";
-
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Tensura() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(eventBus);
-        ModBlocks.register(eventBus);
-        ModSoundEvents.register(eventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModSoundEvents.register(modEventBus);
 
-        eventBus.addListener(this::setup);
-
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::setup);
     }
 
-    // add a comment
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
+
+    /**
+     * Public Getter for the Logger instance of this mod.
+     *
+     * @return the current Logger instance
+     */
+    public static Logger getLogger() {
+        return LOGGER;
     }
 }
 

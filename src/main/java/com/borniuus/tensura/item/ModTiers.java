@@ -6,16 +6,16 @@ import net.minecraftforge.common.Tags;
 
 public class ModTiers {
     public static final ForgeTier SILVER = new ForgeTier(2, 2266, 6f,
-            1f, 17, Tags.Blocks.NEEDS_GOLD_TOOL,
-            () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
+        1f, 17, Tags.Blocks.NEEDS_GOLD_TOOL,
+        () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
 
     public static final ForgeTier MAGISTEEL = new ForgeTier(4, 2266, 10f,
-            1.8f, 17, Tags.Blocks.NEEDS_NETHERITE_TOOL,
-            () -> Ingredient.of(ModItems.MAGISTEEL_INGOT.get()));
+        1.8f, 17, Tags.Blocks.NEEDS_NETHERITE_TOOL,
+        () -> Ingredient.of(ModItems.MAGISTEEL_INGOT.get()));
 
     public static final ForgeTier UNIQUE = new ForgeTier(4, 2400, 10.2f,
-            3f, 17, Tags.Blocks.NEEDS_NETHERITE_TOOL,
-            () -> Ingredient.of(ModItems.MAGISTEEL_INGOT.get()));
+        3f, 17, Tags.Blocks.NEEDS_NETHERITE_TOOL,
+        () -> Ingredient.of(ModItems.MAGISTEEL_INGOT.get()));
 
 
 }
