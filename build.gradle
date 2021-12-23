@@ -153,3 +153,7 @@ processResources {
 classes.configure {
     dependsOn(replaceResources)
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
