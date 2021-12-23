@@ -25,13 +25,13 @@ public class Tensura {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Tensura() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(eventBus);
-        ModBlocks.register(eventBus);
-        ModSoundEvents.register(eventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModSoundEvents.register(modEventBus);
 
-        eventBus.addListener(this::setup);
+        modEventBus.addListener(this::setup);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
