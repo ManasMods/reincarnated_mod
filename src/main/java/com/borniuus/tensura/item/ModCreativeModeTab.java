@@ -57,7 +57,4 @@ public class ModCreativeModeTab {
 }
 
 
-
-
-
 //Wearables, Weapons, Consumables, Blocks, Miscellaneous
