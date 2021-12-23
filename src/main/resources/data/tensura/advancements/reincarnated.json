@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "tensura:scroll_of_slimes"
+    },
+    "title": "Reincarnate",
+    "description": "Reincarnation... Successful.",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_killed_player",
+      "trigger2": "minecraft:player_killed_entity",
+      "trigger3": "minecraft:killed_by_crossbow",
+
+      "conditions": {
+        "player": []
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

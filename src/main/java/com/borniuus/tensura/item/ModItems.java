@@ -1,6 +1,7 @@
 package com.borniuus.tensura.item;
 
 import com.borniuus.Tensura;
+import com.borniuus.tensura.item.custom.IceBladeItem;
 import com.borniuus.tensura.item.custom.SickleItem;
 import com.borniuus.tensura.item.custom.ThatchItem;
 import com.borniuus.tensura.util.ModSoundEvents;
@@ -8,6 +9,7 @@ import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fmllegacy.RegistryObject;
@@ -36,16 +38,16 @@ public class ModItems {
     public static final RegistryObject<Item> THATCH = ITEMS.register("thatch",
             () -> new ThatchItem(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
 
+    public static final RegistryObject<Item> SCROLL_OF_SLIMES = ITEMS.register("scroll_of_slimes",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB)));
+
     public static final RegistryObject<Item> LIKE_FLAMES_MUSIC_DISC = ITEMS.register("like_flames_music_disc",
             () -> new RecordItem(1, ModSoundEvents.LIKE_FLAMES,
                     (new Item.Properties()).stacksTo(1).tab((ModCreativeModeTab.TENSURA_TAB))));
 
+
     //food
     public static final RegistryObject<Item> RAW_ANT_LEG = ITEMS.register("raw_ant_leg",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB3)
-                    .food(new FoodProperties.Builder().nutrition(3).saturationMod(1f).build())));
-
-    public static final RegistryObject<Item> RAW_KNIGHT_SPIDER_MEAT = ITEMS.register("raw_knight_spider_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB3)
                     .food(new FoodProperties.Builder().nutrition(3).saturationMod(1f).build())));
 
@@ -53,14 +55,23 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB3)
                     .food(new FoodProperties.Builder().nutrition(6).saturationMod(4f).build())));
 
+    public static final RegistryObject<Item> RAW_KNIGHT_SPIDER_MEAT = ITEMS.register("raw_knight_spider_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB3)
+                    .food(new FoodProperties.Builder().nutrition(3).saturationMod(1f).build())));
+
     public static final RegistryObject<Item> COOKED_KNIGHT_SPIDER_MEAT = ITEMS.register("cooked_knight_spider_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB3)
                     .food(new FoodProperties.Builder().nutrition(7).saturationMod(4f).build())));
 
     //swords by tiers
     public static final RegistryObject<Item> MAGISTEEL_SWORD = ITEMS.register("magisteel_sword",
-            () -> new SwordItem(ModTiers.MAGISTEEL, 9, 1.6f,
+            () -> new SwordItem(ModTiers.MAGISTEEL, 8, 1f,
                     new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB5)));
+
+    public static final RegistryObject<Item> ICE_BLADE = ITEMS.register("ice_blade",
+            () -> new IceBladeItem(ModTiers.UNIQUE, 9, 1f,
+                    new Item.Properties().tab(ModCreativeModeTab.TENSURA_TAB5)));
+
 
     //tools by tiers
     public static final RegistryObject<Item> MAGISTEEL_PICKAXE = ITEMS.register("magisteel_pickaxe",

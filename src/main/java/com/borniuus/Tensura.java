@@ -2,6 +2,7 @@ package com.borniuus;
 
 import com.borniuus.tensura.block.ModBlocks;
 import com.borniuus.tensura.item.ModItems;
+import com.borniuus.tensura.util.ModSoundEvents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +32,7 @@ public class Tensura {
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModSoundEvents.register(eventBus);
 
         eventBus.addListener(this::setup);
 
