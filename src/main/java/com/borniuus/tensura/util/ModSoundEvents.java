@@ -1,6 +1,6 @@
 package com.borniuus.tensura.util;
 
-import com.borniuus.Tensura;
+import com.borniuus.tensura.Tensura;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;

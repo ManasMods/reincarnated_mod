@@ -1,14 +1,14 @@
 package com.borniuus.tensura.world;
 
-import com.borniuus.tensura.block.ModBlocks;
+import com.borniuus.tensura.block.TensuraBlocks;
 import lombok.Getter;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.util.Lazy;
 
 public enum OreType {
 
-    SILVER(Lazy.of(ModBlocks.SILVER_ORE_STONE), 8, 10, 40),
-    SILVER1(Lazy.of(ModBlocks.SILVER_ORE_DEEPSLATE), 8, 10, 40);
+    SILVER(Lazy.of(() -> TensuraBlocks.SILVER_ORE_STONE), 8, 10, 40),
+    SILVER1(Lazy.of(() -> TensuraBlocks.SILVER_ORE_DEEPSLATE), 8, 10, 40);
 
     @Getter
     private final Lazy<Block> block;
