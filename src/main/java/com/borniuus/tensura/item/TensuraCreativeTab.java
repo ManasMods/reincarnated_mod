@@ -5,7 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class TensuraCreativeTab {
-    public static final CreativeModeTab TENSURA_TAB = new CreativeModeTab("tensuraTab") {
+    public static final CreativeModeTab MISCELLANEOUS = new CreativeModeTab("tensuraTab") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraItems.MAGISTEEL_INGOT);
@@ -13,7 +13,7 @@ public class TensuraCreativeTab {
     };
 
 
-    public static final CreativeModeTab TENSURA_TAB2 = new CreativeModeTab("tensuraTab2") {
+    public static final CreativeModeTab BLOCKS = new CreativeModeTab("tensuraTab2") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraBlocks.MAGISTEEL_BLOCK);
@@ -21,14 +21,14 @@ public class TensuraCreativeTab {
     };
 
 
-    public static final CreativeModeTab TENSURA_TAB3 = new CreativeModeTab("tensuraTab3") {
+    public static final CreativeModeTab CONSUMABLES = new CreativeModeTab("tensuraTab3") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraItems.RAW_ANT_LEG);
         }
     };
 
-    public static final CreativeModeTab TENSURA_TAB4 = new CreativeModeTab("tensuraTab4") {
+    public static final CreativeModeTab TOOLS = new CreativeModeTab("tensuraTab4") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraItems.MAGISTEEL_PICKAXE);
@@ -36,20 +36,17 @@ public class TensuraCreativeTab {
     };
 
 
-    public static final CreativeModeTab TENSURA_TAB5 = new CreativeModeTab("tensuraTab5") {
+    public static final CreativeModeTab WEAPONS = new CreativeModeTab("tensuraTab5") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraItems.MAGISTEEL_SWORD);
         }
     };
 
-    public static final CreativeModeTab TENSURA_TAB6 = new CreativeModeTab("tensuraTab6") {
+    public static final CreativeModeTab WEARABLES = new CreativeModeTab("tensuraTab6") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TensuraItems.RAW_ANT_LEG);
         }
     };
 }
-
-
-//Wearables, Weapons, Consumables, Blocks, Miscellaneous
