@@ -35,5 +35,8 @@ public class TensuraBlocks {
     @ObjectHolder("thatch_upper_steep_roof")
     public static final Block THATCH_UPPER_STEEP_ROOF = null;
 
+    //Window
+    @ObjectHolder("example_window")
+    public static final WindowBlock EXAMPLE_WINDOW = null;
 }
 
