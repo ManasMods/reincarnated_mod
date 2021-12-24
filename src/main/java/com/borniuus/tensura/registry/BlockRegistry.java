@@ -5,6 +5,7 @@ import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -25,19 +26,26 @@ class BlockRegistry {
      * It is called though the {@link TensuraRegistry#register(IEventBus)} Method.
      */
     static void register(DeferredRegister<Item> itemRegistry, DeferredRegister<Block> blockRegistry) {
-        registerBlocks(blockRegistry);
-        registerItems(itemRegistry);
+        registerBlocks(blockRegistry); // Registers all Blocks
+        registerItems(itemRegistry); // Registers our custom BlockItems
 
-        Collection<ResourceLocation> registeredItems = itemRegistry.getEntries().stream().map(RegistryObject::getId).toList();
-        blockRegistry.getEntries()
+        //Loads a list of all BlockItems which already exist
+        Collection<ResourceLocation> registeredItems = itemRegistry.getEntries()
             .stream()
-            .forEach(registryObject -> {
-                if (!registeredItems.contains(registryObject.getId())) {
-                    itemRegistry.register(registryObject.getId().getPath(), () -> new SimpleBlockItem(registryObject.get()));
-                }
-            });
+            .map(RegistryObject::getId)
+            .toList();
+        //Creates a SimpleBlockItems for all Block which didn't get a BlockItem yet
+        blockRegistry.getEntries().forEach(registryObject -> {
+            if (!registeredItems.contains(registryObject.getId())) {
+                itemRegistry.register(registryObject.getId().getPath(), () -> new SimpleBlockItem(registryObject.get()));
+            }
+        });
     }
 
+    /**
+     * This Method will register all custom {@link Block} object to Forge.
+     * This is also the place to add new Blocks.
+     */
     private static void registerBlocks(DeferredRegister<Block> registry) {
         registry.register("silver_block", () -> new SimpleBlock(Material.METAL, properties -> properties
             .strength(4F)
@@ -106,6 +114,10 @@ class BlockRegistry {
             .noOcclusion()));
     }
 
+    /**
+     * This Method allows to create {@link BlockItem} objects with non-default settings.
+     * They will be loaded before the defaulted {@link BlockItem} object will be initialized.
+     */
     private static void registerItems(DeferredRegister<Item> registry) {
         //Custom BlockItems here
     }

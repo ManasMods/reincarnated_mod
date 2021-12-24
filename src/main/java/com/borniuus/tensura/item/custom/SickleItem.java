@@ -25,7 +25,7 @@ public class SickleItem extends Item {
     }
 
     public SickleItem(int durability) {
-        this(new Properties().tab(TensuraCreativeTab.TENSURA_TAB4).durability(durability));
+        this(new Properties().tab(TensuraCreativeTab.TOOLS).durability(durability));
     }
 
     @Override

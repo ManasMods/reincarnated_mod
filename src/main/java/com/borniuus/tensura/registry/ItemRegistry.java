@@ -24,12 +24,12 @@ class ItemRegistry {
      */
     static void register(DeferredRegister<Item> registry) {
         //misc
-        registry.register("silver_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("raw_silver", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("silver_nugget", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("magisteel_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("thatch", () -> new ThatchItem(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
-        registry.register("scroll_of_slimes", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.TENSURA_TAB)));
+        registry.register("silver_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("raw_silver", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("silver_nugget", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("magisteel_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("thatch", () -> new ThatchItem(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("scroll_of_slimes", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("like_flames_music_disc", () -> new MusicDiscItem(() -> TensuraSounds.LIKE_FLAMES));
 
         //food
