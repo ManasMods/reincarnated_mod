@@ -2,6 +2,7 @@ package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
+import com.borniuus.tensura.block.WindowBlock;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.resources.ResourceLocation;
@@ -112,6 +113,8 @@ class BlockRegistry {
             .strength(2.4F)
             .sound(SoundType.WOOD)
             .noOcclusion()));
+
+        registry.register("example_window", WindowBlock::new);
     }
 
     /**
