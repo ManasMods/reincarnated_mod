@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "loom",
 	"textures": {
 		"0": "tensura:block/birch_planks",
 		"1": "tensura:block/white_wool",

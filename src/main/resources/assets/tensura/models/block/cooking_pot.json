@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "cooking_pot",
 	"textures": {
 		"0": "tensura:block/campfire_log",
 		"2": "tensura:block/cauldron_side",

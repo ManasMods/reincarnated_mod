@@ -1,7 +1,6 @@
 package com.borniuus.tensura;
 
 import com.borniuus.tensura.data.TensuraBlockStateProvider;
-import com.borniuus.tensura.registry.TensuraRegistry;
 import lombok.Getter;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,7 +23,7 @@ public class Tensura {
     public Tensura() {
         proxy = DistExecutor.safeRunForDist(() -> TensuraClient::new, () -> TensuraCommon::new);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        TensuraRegistry.register(modEventBus);
+        proxy.preInit(modEventBus);
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::generateData);

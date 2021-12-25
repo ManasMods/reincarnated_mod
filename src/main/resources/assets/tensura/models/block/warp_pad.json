@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "warp_pad",
 	"textures": {
 		"1": "tensura:block/polished_deepslate"
 	},
