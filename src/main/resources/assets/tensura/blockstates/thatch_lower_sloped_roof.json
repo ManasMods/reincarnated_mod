@@ -1,7 +1,7 @@
 {
   "variants": {
     "facing=east,half=bottom,shape=inner_left": {
-      "model": "tensura:block/_inner",
+      "model": "tensura:block/thatch_lower_sloped_roof_inner",
       "y": 270,
       "uvlock": true
     },
