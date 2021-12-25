@@ -35,8 +35,12 @@ public class TensuraBlocks {
     @ObjectHolder("thatch_upper_steep_roof")
     public static final Block THATCH_UPPER_STEEP_ROOF = null;
 
-    //Window
+    //Windows
     @ObjectHolder("example_window")
     public static final WindowBlock EXAMPLE_WINDOW = null;
+
+    //Beds
+    @ObjectHolder("primitive_bed")
+    public static final PrimitiveBedBlock PRIMITIVE_BED_BLOCK = null;
 }
 
