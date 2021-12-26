@@ -454,7 +454,7 @@ public class UpperSlopedRoofBlock extends AbstractRoofBlock {
     }
 
     @Override
-    protected VoxelShape getShape(Direction direction, BlockPos pos) {
+    protected VoxelShape getShape(Direction direction, BlockPos pos, BlockState state) {
         VoxelShape shape;
 
         switch (direction) {

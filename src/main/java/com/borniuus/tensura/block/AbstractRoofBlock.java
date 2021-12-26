@@ -45,10 +45,10 @@ public abstract class AbstractRoofBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return getShape(pState.getValue(FACING), pPos);
+        return getShape(pState.getValue(FACING), pPos, pState);
     }
 
-    protected abstract VoxelShape getShape(Direction direction, BlockPos pos);
+    protected abstract VoxelShape getShape(Direction direction, BlockPos pos, BlockState state);
 
     @Override
     public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, Random pRandom) {
