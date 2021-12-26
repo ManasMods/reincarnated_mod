@@ -1,5 +1,19 @@
 {
   "variants": {
-    "": { "model": "tensura:block/thatch_upper_sloped_roof" }
+    "facing=south": {
+      "model": "tensura:block/thatch_upper_sloped_roof"
+    },
+    "facing=north": {
+      "model": "tensura:block/thatch_upper_sloped_roof",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tensura:block/thatch_upper_sloped_roof",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "tensura:block/thatch_upper_sloped_roof",
+      "y": 270
+    }
   }
 }
