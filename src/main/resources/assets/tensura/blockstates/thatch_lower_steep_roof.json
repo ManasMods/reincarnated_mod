@@ -1,5 +1,83 @@
 {
   "variants": {
-    "": { "model": "tensura:block/thatch_lower_steep_roof" }
+    "facing=south,shape=straight": {
+      "model": "tensura:block/thatch_lower_steep_roof"
+    },
+    "facing=north,shape=straight": {
+      "model": "tensura:block/thatch_lower_steep_roof",
+      "y": 180
+    },
+    "facing=west,shape=straight": {
+      "model": "tensura:block/thatch_lower_steep_roof",
+      "y": 90
+    },
+    "facing=east,shape=straight": {
+      "model": "tensura:block/thatch_lower_steep_roof",
+      "y": 270
+    },
+    "facing=south,shape=outer_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 270
+    },
+    "facing=north,shape=outer_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 90
+    },
+    "facing=west,shape=outer_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 0
+    },
+    "facing=east,shape=outer_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 180
+    },
+    "facing=south,shape=inner_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 0
+    },
+    "facing=north,shape=inner_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 180
+    },
+    "facing=west,shape=inner_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 90
+    },
+    "facing=east,shape=inner_left": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 270
+    },
+    "facing=south,shape=outer_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 0
+    },
+    "facing=north,shape=outer_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 180
+    },
+    "facing=west,shape=outer_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 90
+    },
+    "facing=east,shape=outer_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_inner_corner",
+      "y": 270
+    },
+    "facing=south,shape=inner_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 90
+    },
+    "facing=north,shape=inner_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 270
+    },
+    "facing=west,shape=inner_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 180
+    },
+    "facing=east,shape=inner_right": {
+      "model": "tensura:block/thatch_lower_steep_roof_outer_corner",
+      "y": 0
+    }
   }
 }
