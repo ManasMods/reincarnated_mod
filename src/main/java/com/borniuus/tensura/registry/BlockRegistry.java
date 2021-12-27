@@ -2,6 +2,7 @@ package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.LowerSlopedRoofBlock;
+import com.borniuus.tensura.block.LowerSteepRoofBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.block.UpperSlopedRoofBlock;
 import com.borniuus.tensura.block.WindowBlock;
@@ -100,10 +101,7 @@ class BlockRegistry {
         registry.register("thatch_lower_sloped_roof", () -> new LowerSlopedRoofBlock(Blocks.STRIPPED_OAK_WOOD));
         registry.register("thatch_upper_sloped_roof", () -> new UpperSlopedRoofBlock(Blocks.STRIPPED_OAK_WOOD));
 
-        registry.register("thatch_lower_steep_roof", () -> new StairBlock(() -> TensuraBlocks.THATCH_BLOCK.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD)
-            .strength(2.4F)
-            .sound(SoundType.WOOD)
-            .noOcclusion()));
+        registry.register("thatch_lower_steep_roof", () -> new LowerSteepRoofBlock(Blocks.STRIPPED_OAK_WOOD));
 
         registry.register("thatch_upper_steep_roof", () -> new StairBlock(() -> TensuraBlocks.THATCH_BLOCK.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2.4F)
