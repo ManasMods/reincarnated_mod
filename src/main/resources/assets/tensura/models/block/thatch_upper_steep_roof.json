@@ -1,10 +1,9 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "thatch_upper_steep_roof",
 	"textures": {
 		"0": "tensura:block/wood",
 		"1": "tensura:block/thatch_block",
-		"particle": "wood"
+		"particle": "tensura:block/wood"
 	},
 	"elements": [
 		{
@@ -151,6 +150,14 @@
 		"firstperson_lefthand": {
 			"translation": [0, 1, 0],
 			"scale": [0.25, 0.25, 0.25]
+		},
+		"ground": {
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [0, 125, 0],
+			"translation": [-2, 0, 0],
+			"scale": [0.6, 0.6, 0.6]
 		}
 	}
 }
