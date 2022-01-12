@@ -1,5 +1,6 @@
 package com.borniuus.tensura.registry;
 
+import com.borniuus.tensura.block.CookingPotBlock;
 import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.LowerSlopedRoofBlock;
 import com.borniuus.tensura.block.LowerSteepRoofBlock;
@@ -13,14 +14,13 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.SmithingTableBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collection;
 
@@ -78,7 +78,8 @@ class BlockRegistry {
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(8F)
             .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()));
+            .requiresCorrectToolForDrops()
+            .noOcclusion()));
 
         registry.register("smithing_bench", () -> new SmithingTableBlock(BlockBehaviour.Properties.of(Material.STONE)
             .strength(3.5f)
@@ -91,7 +92,7 @@ class BlockRegistry {
             .sound(SoundType.WOOD)
             .noOcclusion()));
 
-        registry.register("cooking_pot", () -> new CampfireBlock(true, 1, BlockBehaviour.Properties.of(Material.WOOD)
+        registry.register("cooking_pot", () -> new CookingPotBlock(false, 0, BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
             .sound(SoundType.WOOD)
             .noOcclusion()));
@@ -103,7 +104,7 @@ class BlockRegistry {
         registry.register("thatch_lower_steep_roof", () -> new LowerSteepRoofBlock(Blocks.STRIPPED_OAK_WOOD));
         registry.register("thatch_upper_steep_roof", () -> new UpperSteepRoofBlock(Blocks.STRIPPED_OAK_WOOD));
 
-        registry.register("example_window", WindowBlock::new);
+        registry.register("primitive_window", WindowBlock::new);
     }
 
     /**

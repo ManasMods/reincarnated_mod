@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"part=foot,facing=south": {
+			"model": "tensura:block/primitive_window"
+		},
+		"part=foot,facing=north": {
+			"model": "tensura:block/primitive_window",
+			"y": 180
+		},
+		"part=foot,facing=west": {
+			"model": "tensura:block/primitive_window",
+			"y": 90
+		},
+		"part=foot,facing=east": {
+			"model": "tensura:block/primitive_window",
+			"y": 270
+		},
+		"part=head": {
+			"model": "tensura:block/primitive_window"
+		}
+	}
+}
