@@ -1,5 +1,5 @@
 modLoader="javafml"    
-loaderVersion="[37,)"
+loaderVersion="[39,)"
 license="All rights reserved"
 [[mods]]    
 modId="tensura"
@@ -9,7 +9,7 @@ logoFile="logo.png"
 
 credits="Big thanks to Minh, our helper team and everyone else who supported us<3" #optional
 
-authors="Born1uus"
+authors="Borniuus"
 
 description='''
 This is the third iteration of the Tensura mod or TTIGRAAS as it was previously known as. We decided to remake the mod as the previous iteration was made with an application which caused many issues and limited us severely. In unison with the original creator (MinhEragon), I (Born1uus) along with Nieadni, Viciel, Herrscherr and Jerremy18 decided to plan Tensura:Reincarnated !
@@ -18,12 +18,12 @@ This is the third iteration of the Tensura mod or TTIGRAAS as it was previously 
 [[dependencies.tensura]]
     modId="forge"    
     mandatory=true 
-    versionRange="[37,)" 
+    versionRange="[39,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.tensura]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1,1.18)"
+    versionRange="[1.18.1,1.19)"
     ordering="NONE"
     side="BOTH"

@@ -31,6 +31,9 @@
   "item.tensura.magisteel_sword": "Magisteel Sword",
   "item.tensura.ice_blade": "Ice Blade",
 
+"tooltip.tensura.iceblade.tooltip.shift": "Freeze thy enemy to become more resistant.",
+"tooltip.tensura.iceblade.tooltip": "Press §eShift§r for more Information!",
+
   "item.tensura.magisteel_pickaxe": "Magisteel Pickaxe",
   "item.tensura.magisteel_axe": "Magisteel Axe",
   "item.tensura.magisteel_shovel": "Magisteel Shovel",
