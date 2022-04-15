@@ -10,8 +10,8 @@ public class SimplePotionFoodItem extends SimpleFoodItem {
      * @param nutrition          Amount of 'hunger' you'll regenerate.
      * @param saturationModifier Saturation the Player gains.
      * @param potionEffect       {@link MobEffect} which will be applied
-     * @param potionDuration     Duration of the Potion Effect
-     * @param potionAmplifier    Amplifier of the Potion Effect (1 = Regeneration I, 2 = Regeneration II)
+     * @param potionDuration     Duration of the Potion Effect in Ticks
+     * @param potionAmplifier    Amplifier of the Potion Effect (0 = Regeneration I, 1 = Regeneration II)
      * @param potionChance       Chance of the Potion Effect to be applied to the eating Entity. MIN: 0.0F / MAX: 1.0F
      */
     public SimplePotionFoodItem(int nutrition, float saturationModifier, MobEffect potionEffect, int potionDuration, int potionAmplifier, float potionChance) {
