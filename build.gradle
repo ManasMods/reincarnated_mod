@@ -14,7 +14,8 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-version = '0.0.1-1.18.1'
+//As described in https://mcforge.readthedocs.io/en/1.18.x/gettingstarted/versioning/#examples
+version = "${minecraftVersion}-${modVersion}"
 group = 'com.borniuus.tensura' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'tensura'
 
@@ -22,7 +23,7 @@ archivesBaseName = 'tensura'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: '2021.12.19-1.18.1'
+    mappings channel: 'parchment', version: "${parchmentVersion}-${minecraftVersion}"
 
 
     runs {
@@ -91,7 +92,7 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.20'
+    minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
@@ -135,8 +136,10 @@ def replaceResources = tasks.register("replaceResources", Copy) {
     it.outputs.upToDateWhen { false }
     //Copy it into the build dir
     it.from(sourceSets.main.resources) {
+        def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
+
         include "META-INF/mods.toml"
-        expand 'modVersion': "${project.version}"
+        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}"
     }
     it.into "$buildDir/resources/main/"
 }
