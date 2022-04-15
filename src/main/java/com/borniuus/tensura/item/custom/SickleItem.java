@@ -6,7 +6,7 @@ import com.borniuus.tensura.item.TensuraItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 
 public class SickleItem extends Item {
-    private static final Tag<Block> SICKLE_BLOCK = BlockTags.createOptional(new ResourceLocation(Tensura.MOD_ID, "sickle_blocks"));
+    private static final TagKey<Block> SICKLE_BLOCK = BlockTags.create(new ResourceLocation(Tensura.MOD_ID, "sickle_blocks"));
 
     public SickleItem(Properties pProperties) {
         super(pProperties);
