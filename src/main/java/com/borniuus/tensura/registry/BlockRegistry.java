@@ -76,10 +76,9 @@ class BlockRegistry {
                 .strength(1F)
                 .sound(SoundType.STONE)
                 .requiresCorrectToolForDrops()));
-        registry.register("deepslate_silver_ore", () -> new SimpleBlock(Material.STONE, properties -> properties
-                .strength(1F)
-                .sound(SoundType.STONE)
-                .requiresCorrectToolForDrops()));
+        registry.register("deepslate_silver_ore", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
+                .strength(2)
+                .sound(SoundType.STONE)));
         registry.register("loom", () -> new SimpleBlock(Material.WOOD, properties -> properties
                 .strength(1F)
                 .sound(SoundType.WOOD)
@@ -103,10 +102,9 @@ class BlockRegistry {
                 .strength(1F)
                 .sound(SoundType.AZALEA_LEAVES)
                 .requiresCorrectToolForDrops()));
-        registry.register("sakura_log", () -> new SimpleBlock(Material.WOOD, properties -> properties
-                .strength(1F)
-                .sound(SoundType.WOOD)
-                .requiresCorrectToolForDrops()));
+        registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+                .strength(2)
+                .sound(SoundType.WOOD)));
         registry.register("sakura_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
                 .strength(1F)
                 .sound(SoundType.WOOD)
@@ -123,10 +121,9 @@ class BlockRegistry {
                 .strength(1F)
                 .sound(SoundType.ANVIL)
                 .requiresCorrectToolForDrops()));
-        registry.register("thatch_block", () -> new SimpleBlock(Material.PLANT, properties -> properties
-                .strength(1F)
-                .sound(SoundType.WOOL)
-                .requiresCorrectToolForDrops()));
+        registry.register("thatch_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+                .strength(2)
+                .sound(SoundType.GRASS)));
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
                 .strength(1F)
                 .sound(SoundType.STONE)

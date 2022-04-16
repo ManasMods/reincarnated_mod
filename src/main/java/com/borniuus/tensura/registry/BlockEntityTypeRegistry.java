@@ -1,15 +1,10 @@
 package com.borniuus.tensura.registry;
 
-import com.borniuus.tensura.blockentity.PrimitiveBedBlockEntity;
-import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-
-import static com.borniuus.tensura.registry.BlockRegistry.registerBlocks;
-import static com.borniuus.tensura.registry.BlockRegistry.registerItems;
 
 class BlockEntityTypeRegistry {
     /**
