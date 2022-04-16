@@ -139,14 +139,17 @@ public class TensuraItems {
     @ObjectHolder("large_sweet_potato")
     public static final Item LARGE_SWEET_POTATO = null;
 
+    @ObjectHolder("baked_sweet_potato")
+    public static final Item BAKED_SWEET_POTATO = null;
+
     @ObjectHolder("large_baked_sweet_potato")
-    public static final Item BAKED_LARGE_SWEET_POTATO = null;
+    public static final Item LARGE_BAKED_SWEET_POTATO = null;
 
     @ObjectHolder("large_potato")
     public static final Item LARGE_POTATO = null;
 
     @ObjectHolder("large_baked_potato")
-    public static final Item BAKED_LARGE_POTATO = null;
+    public static final Item LARGE_BAKED_POTATO = null;
 
     @ObjectHolder("onigiri")
     public static final Item ONIGIRI = null;
@@ -195,6 +198,8 @@ public class TensuraItems {
 
     @ObjectHolder("revival_elixer")
     public static final Item REVIVAL_ELIXER = null;
+
+
 
     //unique weapons
     @ObjectHolder("ice_blade")

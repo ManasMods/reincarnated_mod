@@ -43,7 +43,7 @@ class BlockRegistry {
      * This Method will register all custom {@link Block} object to Forge.
      * This is also the place to add new Blocks.
      */
-    private static void registerBlocks(DeferredRegister<Block> registry) {
+    static void registerBlocks(DeferredRegister<Block> registry) {
         registry.register("block_of_adamantite", () -> new SimpleBlock(Material.METAL, properties -> properties
                 .strength(1F)
                 .sound(SoundType.METAL)
@@ -161,7 +161,7 @@ class BlockRegistry {
      * This Method allows to create {@link BlockItem} objects with non-default settings.
      * They will be loaded before the defaulted {@link BlockItem} object will be initialized.
      */
-    private static void registerItems(DeferredRegister<Item> registry) {
+    static void registerItems(DeferredRegister<Item> registry) {
         //Custom BlockItems here
     }
 }

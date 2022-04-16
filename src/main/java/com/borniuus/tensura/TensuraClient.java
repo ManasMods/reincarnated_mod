@@ -1,5 +1,6 @@
 package com.borniuus.tensura;
 
+import com.borniuus.tensura.block.WindowBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.eventbus.api.IEventBus;
