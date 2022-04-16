@@ -130,6 +130,24 @@ public class TensuraItemModels extends ItemModelProvider {
 
         //misc
         singleTexture(TensuraItems.ADAMANTITE_INGOT);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+        singleTexture(TensuraItems.NAME);
+
 
     }
     private void singleTexture(Item item) {
