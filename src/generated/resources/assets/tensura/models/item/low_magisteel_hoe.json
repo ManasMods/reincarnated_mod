@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "tensura:item/low_magisteel_hoe"
+  }
+}

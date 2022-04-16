@@ -23,6 +23,7 @@ class BlockEntityTypeRegistry {
     }
 
     private static void registerBlockEntityType(DeferredRegister<BlockEntityType<?>> blockEntityTypeRegistry) {
-
     }
+    private static void registerItems(DeferredRegister<Item> registry) {}
+    private static void registerBlocks(DeferredRegister<Block> registry) {}
 }

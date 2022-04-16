@@ -19,7 +19,7 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         logBlock((RotatedPillarBlock) TensuraBlocks.PALM_LOG);
-        paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
+        //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
     }
 
     //full block - same texture all sides
