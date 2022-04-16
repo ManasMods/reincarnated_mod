@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "tensura:block/silver_ore_deepslate" }
+    "": { "model": "tensura:block/deepslate_silver_ore" }
   }
 }

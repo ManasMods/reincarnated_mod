@@ -1,7 +1,5 @@
 package com.borniuus.tensura.registry;
 
-import com.borniuus.tensura.block.PrimitiveBedBlock;
-import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.blockentity.PrimitiveBedBlockEntity;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.world.item.Item;

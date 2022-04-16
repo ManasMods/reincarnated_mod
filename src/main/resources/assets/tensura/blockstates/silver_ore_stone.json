@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "tensura:block/silver_ore_stone" }
+    "": { "model": "tensura:block/silver_ore" }
   }
 }

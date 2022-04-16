@@ -1,23 +1,16 @@
 package com.borniuus.tensura.registry;
 
-import com.borniuus.tensura.block.CookingPotBlock;
-import com.borniuus.tensura.block.LoomBlock;
-import com.borniuus.tensura.block.LowerSlopedRoofBlock;
-import com.borniuus.tensura.block.LowerSteepRoofBlock;
-import com.borniuus.tensura.block.UpperSlopedRoofBlock;
-import com.borniuus.tensura.block.UpperSteepRoofBlock;
-import com.borniuus.tensura.block.WindowBlock;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SmithingTableBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -51,60 +44,117 @@ class BlockRegistry {
      * This is also the place to add new Blocks.
      */
     private static void registerBlocks(DeferredRegister<Block> registry) {
-        registry.register("silver_block", () -> new SimpleBlock(Material.METAL, properties -> properties
-            .strength(4F)
-            .sound(SoundType.METAL)
-            .requiresCorrectToolForDrops()));
-
-        registry.register("thatch_block", () -> new SimpleBlock(Material.WOOL, properties -> properties
-            .strength(1.2F)
-            .sound(SoundType.WOOL)));
-
-        registry.register("magisteel_block", () -> new SimpleBlock(Material.METAL, properties -> properties
-            .strength(9F)
-            .sound(SoundType.METAL)
-            .requiresCorrectToolForDrops()));
-
-        registry.register("silver_ore_stone", () -> new SimpleBlock(Material.STONE, properties -> properties
-            .strength(6F)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()));
-
-        registry.register("silver_ore_deepslate", () -> new SimpleBlock(Material.STONE, properties -> properties
-            .strength(6F)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()));
-
+        registry.register("block_of_adamantite", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_hihiirokane", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_magisteel", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_mithril", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_orichalcum", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_raw_silver", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("block_of_silver", () -> new SimpleBlock(Material.METAL, properties -> properties
+                .strength(1F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops()));
+        registry.register("cooking_pot", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(1F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        registry.register("deepslate_silver_ore", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(1F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        registry.register("loom", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(1F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("magic_engine", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(1F)
+                .sound(SoundType.AMETHYST_CLUSTER)
+                .requiresCorrectToolForDrops()));
+        registry.register("palm_leaves", () -> new SimpleBlock(Material.LEAVES, properties -> properties
+                .strength(1F)
+                .sound(SoundType.AZALEA_LEAVES)
+                .requiresCorrectToolForDrops()));
+        registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+                .strength(2)
+                .sound(SoundType.WOOD)));
+        registry.register("palm_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(1F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_leaves", () -> new SimpleBlock(Material.LEAVES, properties -> properties
+                .strength(1F)
+                .sound(SoundType.AZALEA_LEAVES)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_log", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(1F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(1F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sarasa_sand", () -> new SimpleBlock(Material.SAND, properties -> properties
+                .strength(0.5F)
+                .sound(SoundType.SAND)
+                .requiresCorrectToolForDrops()));
+        registry.register("silver_ore", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(1F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        registry.register("smithing_bench", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(1F)
+                .sound(SoundType.ANVIL)
+                .requiresCorrectToolForDrops()));
+        registry.register("thatch_block", () -> new SimpleBlock(Material.PLANT, properties -> properties
+                .strength(1F)
+                .sound(SoundType.WOOL)
+                .requiresCorrectToolForDrops()));
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
-            .strength(8F)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()
-            .noOcclusion()));
-
-        registry.register("smithing_bench", () -> new SmithingTableBlock(BlockBehaviour.Properties.of(Material.STONE)
-            .strength(3.5f)
-            .sound(SoundType.STONE)
-            .requiresCorrectToolForDrops()
-            .noOcclusion()));
-
-        registry.register("loom", () -> new LoomBlock(BlockBehaviour.Properties.of(Material.WOOD)
-            .strength(2.5F)
-            .sound(SoundType.WOOD)
-            .noOcclusion()));
-
-        registry.register("cooking_pot", () -> new CookingPotBlock(false, 0, BlockBehaviour.Properties.of(Material.WOOD)
-            .strength(2F)
-            .sound(SoundType.WOOD)
-            .noOcclusion()));
-
-        //stairs
-        registry.register("thatch_lower_sloped_roof", () -> new LowerSlopedRoofBlock(Blocks.STRIPPED_OAK_WOOD));
-        registry.register("thatch_upper_sloped_roof", () -> new UpperSlopedRoofBlock(Blocks.STRIPPED_OAK_WOOD));
-
-        registry.register("thatch_lower_steep_roof", () -> new LowerSteepRoofBlock(Blocks.STRIPPED_OAK_WOOD));
-        registry.register("thatch_upper_steep_roof", () -> new UpperSteepRoofBlock(Blocks.STRIPPED_OAK_WOOD));
-
-        registry.register("primitive_window", WindowBlock::new);
+                .strength(1F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        registry.register("palm_stairs", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_stairs", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("palm_slab", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_slab", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("palm_door", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
+        registry.register("sakura_door", () -> new SimpleBlock(Material.WOOD, properties -> properties
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .requiresCorrectToolForDrops()));
     }
 
     /**

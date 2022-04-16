@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tensura:magisteel_block"
+      "item": "tensura:block_of_magisteel"
     }
   ],
   "result": {
