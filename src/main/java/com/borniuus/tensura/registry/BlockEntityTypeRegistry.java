@@ -1,9 +1,5 @@
 package com.borniuus.tensura.registry;
 
-import com.borniuus.tensura.block.PrimitiveBedBlock;
-import com.borniuus.tensura.block.TensuraBlocks;
-import com.borniuus.tensura.blockentity.PrimitiveBedBlockEntity;
-import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -21,15 +17,8 @@ class BlockEntityTypeRegistry {
         registerItems(itemRegistry);
     }
 
-    private static void registerItems(DeferredRegister<Item> registry) {
-        registry.register("primitive_bed", () -> new SimpleBlockItem(TensuraBlocks.PRIMITIVE_BED_BLOCK));
+    private static void registerBlockEntityType(DeferredRegister<BlockEntityType<?>> blockEntityTypeRegistry) {
     }
-
-    private static void registerBlocks(DeferredRegister<Block> registry) {
-        registry.register("primitive_bed", PrimitiveBedBlock::new);
-    }
-
-    private static void registerBlockEntityType(DeferredRegister<BlockEntityType<?>> registry) {
-        registry.register("primitive_bed", () -> BlockEntityType.Builder.of((pPos, pState) -> new PrimitiveBedBlockEntity(pPos, pState), TensuraBlocks.PRIMITIVE_BED_BLOCK).build(null));
-    }
+    private static void registerItems(DeferredRegister<Item> registry) {}
+    private static void registerBlocks(DeferredRegister<Block> registry) {}
 }

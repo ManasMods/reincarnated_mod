@@ -7,9 +7,9 @@ version="${modVersion}"
 displayName="Tensura:Reincarnated"
 logoFile="logo.png"
 
-credits="Big thanks to Minh, our helper team and everyone else who supported us<3" #optional
+credits="Big thanks to MinhEragon, our admin and helper team, and everyone else who supported us <3" #optional
 
-authors="Borniuus, MrProfessor"
+authors="Borniuus, MrProfessor, Nieadni"
 
 description='''
 This is the third iteration of the Tensura mod or TTIGRAAS as it was previously known as. We decided to remake the mod as the previous iteration was made with an application which caused many issues and limited us severely. In unison with the original creator (MinhEragon), I (Born1uus) along with Nieadni, Viciel, Herrscherr and Jerremy18 decided to plan Tensura:Reincarnated !

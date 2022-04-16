@@ -7,8 +7,8 @@ import net.minecraftforge.common.util.Lazy;
 
 public enum OreType {
 
-    SILVER(Lazy.of(() -> TensuraBlocks.SILVER_ORE_STONE), 8, 10, 40),
-    SILVER1(Lazy.of(() -> TensuraBlocks.SILVER_ORE_DEEPSLATE), 8, 10, 40);
+    SILVER(Lazy.of(() -> TensuraBlocks.SILVER_ORE), 8, 10, 40),
+    SILVER1(Lazy.of(() -> TensuraBlocks.DEEPSLATE_SILVER_ORE), 8, 10, 40);
 
     @Getter
     private final Lazy<Block> block;
