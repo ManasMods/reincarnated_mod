@@ -395,7 +395,7 @@ public class TensuraItems {
     public static final Item ADAMANTITE_INGOT = null;
 
     @ObjectHolder("bronze_coin")
-    public static final Item BRONZE_INGOT = null;
+    public static final Item BRONZE_COIN = null;
 
     @ObjectHolder("gold_coin")
     public static final Item GOLD_COIN = null;
