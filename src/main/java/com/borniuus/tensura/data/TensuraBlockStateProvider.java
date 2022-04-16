@@ -18,12 +18,17 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    //log blocks
     protected void registerStatesAndModels() {
+
+        //BLOCKS WITH DIFFERENT TOP + BOTTOM TO THE SIDES
+
         logBlock((RotatedPillarBlock) TensuraBlocks.PALM_LOG);
         logBlock((RotatedPillarBlock) TensuraBlocks.SAKURA_LOG);
         logBlock((RotatedPillarBlock) TensuraBlocks.THATCH_BLOCK);
         logBlock((RotatedPillarBlock) TensuraBlocks.DEEPSLATE_SILVER_ORE);
+
+        //BLOCKS WITH SAME TEXTURE ON ALL SIDES
+
         //simpleBlock(TensuraBlocks.BLOCK_OF_ADAMANTITE);
         //simpleBlock(TensuraBlocks.BLOCK_OF_HIHIIROKANE);
         simpleBlock(TensuraBlocks.BLOCK_OF_MAGISTEEL);
@@ -37,6 +42,17 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
         simpleBlock(TensuraBlocks.SAKURA_PLANKS);
         //simpleBlock(TensuraBlocks.SARASA_SAND);
         simpleBlock(TensuraBlocks.SILVER_ORE);
+
+        //STAIRS
+
+        //
+
+        //SLABS
+
+        //
+
+        //OTHER
+
         //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
 
     }
@@ -44,7 +60,7 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
     private void defaultBlock(Block block) {
         getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
         itemModels().getBuilder(block.getRegistryName().getPath())
-                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
+                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID,"block/" + block.getRegistryName().getPath())));
 
     }
 }
