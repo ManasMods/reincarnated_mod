@@ -3,8 +3,6 @@ package com.borniuus.tensura.registry;
 import com.borniuus.tensura.item.ModTiers;
 import com.borniuus.tensura.item.TensuraCreativeTab;
 import com.borniuus.tensura.item.custom.IceBladeItem;
-import com.borniuus.tensura.item.custom.SickleItem;
-import com.borniuus.tensura.item.custom.ThatchItem;
 import com.borniuus.tensura.item.templates.MusicDiscItem;
 import com.borniuus.tensura.item.templates.SimpleAxeItem;
 import com.borniuus.tensura.item.templates.SimpleFoodItem;
