@@ -26,7 +26,6 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
         log((RotatedPillarBlock) TensuraBlocks.PALM_LOG);
         log((RotatedPillarBlock) TensuraBlocks.SAKURA_LOG);
         log((RotatedPillarBlock) TensuraBlocks.THATCH_BLOCK);
-        log((RotatedPillarBlock) TensuraBlocks.DEEPSLATE_SILVER_ORE);
 
         //BLOCKS WITH SAME TEXTURE ON ALL SIDES
 
@@ -35,11 +34,12 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
         defaultBlock(TensuraBlocks.BLOCK_OF_ORICHALCUM);
         defaultBlock(TensuraBlocks.BLOCK_OF_MAGISTEEL);
         defaultBlock(TensuraBlocks.BLOCK_OF_MITHRIL);
+        defaultBlock(TensuraBlocks.DEEPSLATE_SILVER_ORE);
         //defaultBlock(TensuraBlocks.BLOCK_OF_RAW_SILVER);
         defaultBlock(TensuraBlocks.BLOCK_OF_SILVER);
         //defaultBlock(TensuraBlocks.MAGIC_ENGINE);
         defaultBlock(TensuraBlocks.PALM_LEAVES);
-        //defaultBlock(TensuraBlocks.PALM_PLANKS);
+        defaultBlock(TensuraBlocks.PALM_PLANKS);
         defaultBlock(TensuraBlocks.SAKURA_LEAVES);
         defaultBlock(TensuraBlocks.SAKURA_PLANKS);
         //defaultBlock(TensuraBlocks.SARASA_SAND);
@@ -47,13 +47,13 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
 
         //STAIRS
 
-        //stairsBlock((StairBlock) TensuraBlocks.PALM_STAIRS, TensuraBlocks.PALM_PLANKS);
+        stairsBlock((StairBlock) TensuraBlocks.PALM_STAIRS, TensuraBlocks.PALM_PLANKS);
         stairsBlock((StairBlock) TensuraBlocks.SAKURA_STAIRS, TensuraBlocks.SAKURA_PLANKS);
         stairsBlock((StairBlock) TensuraBlocks.THATCH_STAIRS, TensuraBlocks.THATCH_BLOCK);
 
         //SLABS
 
-        //slabBlock((SlabBlock) TensuraBlocks.PALM_SLAB, TensuraBlocks.PALM_PLANKS);
+        slabBlock((SlabBlock) TensuraBlocks.PALM_SLAB, TensuraBlocks.PALM_PLANKS);
         slabBlock((SlabBlock) TensuraBlocks.SAKURA_SLAB, TensuraBlocks.SAKURA_PLANKS);
         slabBlock((SlabBlock) TensuraBlocks.THATCH_SLAB, TensuraBlocks.THATCH_BLOCK);
 

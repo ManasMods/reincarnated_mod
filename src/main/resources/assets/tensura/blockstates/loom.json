@@ -1,5 +1,9 @@
 {
   "variants": {
+    "facing=north": { "model": "tensura:block/loom" },
+    "facing=east": { "model": "tensura:block/loom", "y": 90 },
+    "facing=south": { "model": "tensura:block/loom", "y": 180 },
+    "facing=west": { "model": "tensura:block/loom", "y": 270 },
     "": { "model": "tensura:block/loom" }
   }
 }

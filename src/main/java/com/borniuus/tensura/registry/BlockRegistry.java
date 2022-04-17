@@ -74,13 +74,16 @@ class BlockRegistry {
         registry.register("cooking_pot", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
             .sound(SoundType.STONE)
+                .noOcclusion()
             .requiresCorrectToolForDrops()));
-        registry.register("deepslate_silver_ore", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
-            .strength(2)
-            .sound(SoundType.STONE)));
+        registry.register("deepslate_silver_ore", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(1F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
         registry.register("loom", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
             .sound(SoundType.WOOD)
+                .noOcclusion()
             .requiresCorrectToolForDrops()));
         registry.register("magic_engine", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
@@ -88,6 +91,7 @@ class BlockRegistry {
             .requiresCorrectToolForDrops()));
         registry.register("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
+                .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
         registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
             .strength(2)
@@ -97,6 +101,7 @@ class BlockRegistry {
             .sound(SoundType.WOOD)));
         registry.register("sakura_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
+                .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
         registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
             .strength(2)
@@ -114,6 +119,7 @@ class BlockRegistry {
         registry.register("smithing_bench", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
             .sound(SoundType.ANVIL)
+                .noOcclusion()
             .requiresCorrectToolForDrops()));
         registry.register("thatch_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.PLANT)
             .strength(2)
@@ -121,6 +127,7 @@ class BlockRegistry {
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
             .sound(SoundType.STONE)
+                .noOcclusion()
             .requiresCorrectToolForDrops()));
         registry.register("palm_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
                 BlockBehaviour.Properties.of(Material.WOOD)

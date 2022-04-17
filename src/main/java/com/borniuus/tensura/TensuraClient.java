@@ -16,10 +16,5 @@ public class TensuraClient extends TensuraCommon {
     public void clientInit() {
         //Register all Window Blocks as cutout transparency blocks
         WindowBlock.getWindowBlocks().forEach(windowBlock -> ItemBlockRenderTypes.setRenderLayer(windowBlock, RenderType.cutout()));
-        ItemBlockRenderTypes.setRenderLayer(TensuraBlocks.PALM_LEAVES, RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(TensuraBlocks.SAKURA_LEAVES, RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(TensuraBlocks.SMITHING_BENCH, RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(TensuraBlocks.LOOM, RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(TensuraBlocks.COOKING_POT, RenderType.translucent());
     }
 }

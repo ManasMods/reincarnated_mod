@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "tensura:block/deepslate_silver_ore"
+    "all": "tensura:block/palm_planks"
   }
 }
