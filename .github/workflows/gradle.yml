@@ -37,6 +37,7 @@ jobs:
           arguments: build
 
   gameTest:
+    needs: [build]
     runs-on: ${{ matrix.os}}
     strategy:
       matrix:
