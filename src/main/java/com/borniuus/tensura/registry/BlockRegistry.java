@@ -1,13 +1,12 @@
 package com.borniuus.tensura.registry;
 
+import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -76,7 +75,6 @@ class BlockRegistry {
             .strength(1F)
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops()));
-        //TODO Why is this a RotatedPillarBlock?
         registry.register("deepslate_silver_ore", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
             .strength(2)
             .sound(SoundType.STONE)));
@@ -88,32 +86,27 @@ class BlockRegistry {
             .strength(1F)
             .sound(SoundType.AMETHYST_CLUSTER)
             .requiresCorrectToolForDrops()));
-        registry.register("palm_leaves", () -> new SimpleBlock(Material.LEAVES, properties -> properties
+        registry.register("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
-            .sound(SoundType.AZALEA_LEAVES)
-            .requiresCorrectToolForDrops()));
+            .sound(SoundType.AZALEA_LEAVES)));
         registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
             .strength(2)
             .sound(SoundType.WOOD)));
         registry.register("palm_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("sakura_leaves", () -> new SimpleBlock(Material.LEAVES, properties -> properties
+            .sound(SoundType.WOOD)));
+        registry.register("sakura_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
-            .sound(SoundType.AZALEA_LEAVES)
-            .requiresCorrectToolForDrops()));
+            .sound(SoundType.AZALEA_LEAVES)));
         registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
             .strength(2)
             .sound(SoundType.WOOD)));
         registry.register("sakura_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
+            .sound(SoundType.WOOD)));
         registry.register("sarasa_sand", () -> new SimpleBlock(Material.SAND, properties -> properties
             .strength(0.5F)
-            .sound(SoundType.SAND)
-            .requiresCorrectToolForDrops()));
+            .sound(SoundType.SAND)));
         registry.register("silver_ore", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
             .sound(SoundType.STONE)
@@ -129,30 +122,26 @@ class BlockRegistry {
             .strength(1F)
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops()));
-        registry.register("palm_stairs", () -> new SimpleBlock(Material.WOOD, properties -> properties
+        registry.register("palm_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
+                BlockBehaviour.Properties.of(Material.WOOD)
+                .strength(2F)
+                .sound(SoundType.WOOD)));
+        registry.register("sakura_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
+                BlockBehaviour.Properties.of(Material.WOOD)
+                .strength(2F)
+                .sound(SoundType.WOOD)));
+        registry.register("palm_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("sakura_stairs", () -> new SimpleBlock(Material.WOOD, properties -> properties
+            .sound(SoundType.WOOD)));
+        registry.register("sakura_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("palm_slab", () -> new SimpleBlock(Material.WOOD, properties -> properties
+            .sound(SoundType.WOOD)));
+        registry.register("palm_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("sakura_slab", () -> new SimpleBlock(Material.WOOD, properties -> properties
+            .sound(SoundType.WOOD)));
+        registry.register("sakura_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("palm_door", () -> new SimpleBlock(Material.WOOD, properties -> properties
-            .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
-        registry.register("sakura_door", () -> new SimpleBlock(Material.WOOD, properties -> properties
-            .strength(2F)
-            .sound(SoundType.WOOD)
-            .requiresCorrectToolForDrops()));
+            .sound(SoundType.WOOD)));
     }
 
     /**
