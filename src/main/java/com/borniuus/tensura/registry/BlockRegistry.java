@@ -115,7 +115,7 @@ class BlockRegistry {
             .strength(1F)
             .sound(SoundType.ANVIL)
             .requiresCorrectToolForDrops()));
-        registry.register("thatch_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+        registry.register("thatch_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.PLANT)
             .strength(2)
             .sound(SoundType.GRASS)));
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
@@ -130,12 +130,19 @@ class BlockRegistry {
                 BlockBehaviour.Properties.of(Material.WOOD)
                 .strength(2F)
                 .sound(SoundType.WOOD)));
+        registry.register("thatch_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
+                BlockBehaviour.Properties.of(Material.LEAVES)
+                        .strength(2F)
+                        .sound(SoundType.GRASS)));
         registry.register("palm_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
             .sound(SoundType.WOOD)));
         registry.register("sakura_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
             .sound(SoundType.WOOD)));
+        registry.register("thatch_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+                .strength(2F)
+                .sound(SoundType.GRASS)));
         registry.register("palm_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
             .sound(SoundType.WOOD)));

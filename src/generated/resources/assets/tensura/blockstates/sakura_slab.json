@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "tensura:block/sakura_slab_top"
+    },
+    "type=bottom": {
+      "model": "tensura:block/sakura_slab"
+    },
+    "type=double": {
+      "model": "tensura:block/sakura_planks"
+    }
+  }
+}
