@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tensura:cooked_knight_spider_meat"
+    ]
+  },
+  "criteria": {
+    "has_raw_knight_spider_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tensura:raw_knight_spider_meat"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tensura:cooked_knight_spider_meat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_knight_spider_meat",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -108,6 +108,8 @@
   "block.tensura.silver_ore": "Silver Ore",
   "block.tensura.smithing_bench": "Smithing Bench",
   "block.tensura.thatch_block": "Thatch Block",
+  "block.tensura.thatch_stairs": "Thatch Stairs",
+  "block.tensura.thatch_slab": "Thatch Slab",
   "block.tensura.warp_pad": "Warp Pad",
   "item.tensura.flint_sword": "Flint Sword",
   "item.tensura.silver_sword": "Silver Sword",
@@ -171,10 +173,10 @@
   "item.tensura.hihiirokane_shovel": "Hihi'Irokane Shovel",
   "item.tensura.hihiirokane_hoe": "Hihi'Irokane Hoe",
   "item.tensura.hihiirokane_sickle": "Hihi'Irokane Sickle",
-  "itemGroup.tensuraTab": "T:R Weapons",
-  "itemGroup.tensuraTab2": "T:R Tools",
-  "itemGroup.tensuraTab3": "T:R Gear",
-  "itemGroup.tensuraTab4": "T:R Blocks",
-  "itemGroup.tensuraTab5": "T:R Consumables",
-  "itemGroup.tensuraTab6": "T:R Misc"
+  "itemGroup.tensuratab": "T:R Weapons",
+  "itemGroup.tensuratab2": "T:R Tools",
+  "itemGroup.tensuratab3": "T:R Gear",
+  "itemGroup.tensuratab4": "T:R Blocks",
+  "itemGroup.tensuratab5": "T:R Consumables",
+  "itemGroup.tensuratab6": "T:R Misc"
 }

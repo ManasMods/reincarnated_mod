@@ -82,6 +82,9 @@ public class TensuraBlocks {
     @ObjectHolder("sakura_stairs")
     public static final Block SAKURA_STAIRS = null;
 
+    @ObjectHolder("thatch_stairs")
+    public static final Block THATCH_STAIRS = null;
+
 
 
     //slabs
@@ -90,6 +93,9 @@ public class TensuraBlocks {
 
     @ObjectHolder("sakura_slab")
     public static final Block SAKURA_SLAB = null;
+
+    @ObjectHolder("thatch_slab")
+    public static final Block THATCH_SLAB = null;
 
 
 

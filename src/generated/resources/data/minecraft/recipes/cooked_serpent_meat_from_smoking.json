@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "tensura:raw_serpent_meat"
+  },
+  "result": "tensura:cooked_serpent_meat",
+  "experience": 0.35,
+  "cookingtime": 100
+}
