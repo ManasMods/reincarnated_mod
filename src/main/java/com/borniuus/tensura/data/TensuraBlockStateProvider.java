@@ -17,27 +17,28 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    //log blocks
     protected void registerStatesAndModels() {
-        logBlock((RotatedPillarBlock) TensuraBlocks.PALM_LOG);
-        logBlock((RotatedPillarBlock) TensuraBlocks.SAKURA_LOG);
-        logBlock((RotatedPillarBlock) TensuraBlocks.THATCH_BLOCK);
-        logBlock((RotatedPillarBlock) TensuraBlocks.DEEPSLATE_SILVER_ORE);
-        //simpleBlock(TensuraBlocks.BLOCK_OF_ADAMANTITE);
-        //simpleBlock(TensuraBlocks.BLOCK_OF_HIHIIROKANE);
-        simpleBlock(TensuraBlocks.BLOCK_OF_MAGISTEEL);
-        //simpleBlock(TensuraBlocks.BLOCK_OF_MITHRIL);
-        //simpleBlock(TensuraBlocks.BLOCK_OF_RAW_SILVER);
-        simpleBlock(TensuraBlocks.BLOCK_OF_SILVER);
-        //simpleBlock(TensuraBlocks.MAGIC_ENGINE);
-        simpleBlock(TensuraBlocks.PALM_LEAVES);
-        //simpleBlock(TensuraBlocks.PALM_PLANKS);
-        simpleBlock(TensuraBlocks.SAKURA_LEAVES);
-        simpleBlock(TensuraBlocks.SAKURA_PLANKS);
-        //simpleBlock(TensuraBlocks.SARASA_SAND);
-        simpleBlock(TensuraBlocks.SILVER_ORE);
-        //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
+        // Log Blocks
+        log(TensuraBlocks.PALM_LOG);
+        log(TensuraBlocks.SAKURA_LOG);
+        log(TensuraBlocks.THATCH_BLOCK);
+        log(TensuraBlocks.DEEPSLATE_SILVER_ORE);
 
+        // Blocks
+        //defaultBlock(TensuraBlocks.BLOCK_OF_ADAMANTITE);
+        //defaultBlock(TensuraBlocks.BLOCK_OF_HIHIIROKANE);
+        defaultBlock(TensuraBlocks.BLOCK_OF_MAGISTEEL);
+        //defaultBlock(TensuraBlocks.BLOCK_OF_MITHRIL);
+        //defaultBlock(TensuraBlocks.BLOCK_OF_RAW_SILVER);
+        defaultBlock(TensuraBlocks.BLOCK_OF_SILVER);
+        //defaultBlock(TensuraBlocks.MAGIC_ENGINE);
+        defaultBlock(TensuraBlocks.PALM_LEAVES);
+        //defaultBlock(TensuraBlocks.PALM_PLANKS);
+        defaultBlock(TensuraBlocks.SAKURA_LEAVES);
+        defaultBlock(TensuraBlocks.SAKURA_PLANKS);
+        //defaultBlock(TensuraBlocks.SARASA_SAND);
+        defaultBlock(TensuraBlocks.SILVER_ORE);
+        //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
     }
 
     /**
