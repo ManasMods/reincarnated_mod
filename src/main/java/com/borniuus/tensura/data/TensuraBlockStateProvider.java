@@ -2,7 +2,6 @@ package com.borniuus.tensura.data;
 
 import com.borniuus.tensura.Tensura;
 import com.borniuus.tensura.block.TensuraBlocks;
-import com.borniuus.tensura.item.templates.SimpleBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
