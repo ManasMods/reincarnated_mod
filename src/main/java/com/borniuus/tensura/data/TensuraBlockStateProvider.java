@@ -40,10 +40,14 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
 
     }
 
+    /**
+     * Generates blockstate, block and item model json file.
+     * This Method can be used to for {@link Block} objects with only one texture.
+     */
     private void defaultBlock(Block block) {
         getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
         itemModels().getBuilder(block.getRegistryName().getPath())
-                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
+            .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
 
     }
 
