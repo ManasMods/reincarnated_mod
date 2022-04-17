@@ -16,47 +16,47 @@ public class TensuraItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         //weapons
-        singleTextureTool(TensuraItems.FLINT_SWORD);
-        singleTextureTool(TensuraItems.SILVER_SWORD);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_SWORD);
+        handheldSingleTexture(TensuraItems.FLINT_SWORD);
+        handheldSingleTexture(TensuraItems.SILVER_SWORD);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_SWORD);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_SWORD);
-        singleTextureTool(TensuraItems.MITHRIL_SWORD);
+        handheldSingleTexture(TensuraItems.MITHRIL_SWORD);
         //singleTextureTool(TensuraItems.ORICHALCUM_SWORD);
         //singleTextureTool(TensuraItems.PURE_MAGISTEEL_SWORD);
         //singleTextureTool(TensuraItems.ADAMANTITE_SWORD);
-        singleTextureTool(TensuraItems.HIHIIROKANE_SWORD);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_SWORD);
 
         //tools
-        singleTextureTool(TensuraItems.WOODEN_SICKLE);
-        singleTextureTool(TensuraItems.GOLDEN_SICKLE);
-        singleTextureTool(TensuraItems.FLINT_PICKAXE);
-        singleTextureTool(TensuraItems.FLINT_AXE);
-        singleTextureTool(TensuraItems.FLINT_SHOVEL);
-        singleTextureTool(TensuraItems.FLINT_HOE);
-        singleTextureTool(TensuraItems.FLINT_SICKLE);
-        singleTextureTool(TensuraItems.SILVER_PICKAXE);
-        singleTextureTool(TensuraItems.SILVER_AXE);
-        singleTextureTool(TensuraItems.SILVER_SHOVEL);
-        singleTextureTool(TensuraItems.SILVER_HOE);
-        singleTextureTool(TensuraItems.SILVER_SICKLE);
-        singleTextureTool(TensuraItems.IRON_SICKLE);
-        singleTextureTool(TensuraItems.DIAMOND_SICKLE);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_PICKAXE);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_AXE);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_SHOVEL);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_HOE);
-        singleTextureTool(TensuraItems.LOW_MAGISTEEL_SICKLE);
-        singleTextureTool(TensuraItems.NETHERITE_SICKLE);
+        handheldSingleTexture(TensuraItems.WOODEN_SICKLE);
+        handheldSingleTexture(TensuraItems.GOLDEN_SICKLE);
+        handheldSingleTexture(TensuraItems.FLINT_PICKAXE);
+        handheldSingleTexture(TensuraItems.FLINT_AXE);
+        handheldSingleTexture(TensuraItems.FLINT_SHOVEL);
+        handheldSingleTexture(TensuraItems.FLINT_HOE);
+        handheldSingleTexture(TensuraItems.FLINT_SICKLE);
+        handheldSingleTexture(TensuraItems.SILVER_PICKAXE);
+        handheldSingleTexture(TensuraItems.SILVER_AXE);
+        handheldSingleTexture(TensuraItems.SILVER_SHOVEL);
+        handheldSingleTexture(TensuraItems.SILVER_HOE);
+        handheldSingleTexture(TensuraItems.SILVER_SICKLE);
+        handheldSingleTexture(TensuraItems.IRON_SICKLE);
+        handheldSingleTexture(TensuraItems.DIAMOND_SICKLE);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_PICKAXE);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_AXE);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_SHOVEL);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_HOE);
+        handheldSingleTexture(TensuraItems.LOW_MAGISTEEL_SICKLE);
+        handheldSingleTexture(TensuraItems.NETHERITE_SICKLE);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_PICKAXE);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_AXE);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_SHOVEL);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_HOE);
         //singleTextureTool(TensuraItems.HIGH_MAGISTEEL_SICKLE);
-        singleTextureTool(TensuraItems.MITHRIL_PICKAXE);
-        singleTextureTool(TensuraItems.MITHRIL_AXE);
-        singleTextureTool(TensuraItems.MITHRIL_SHOVEL);
-        singleTextureTool(TensuraItems.MITHRIL_HOE);
-        singleTextureTool(TensuraItems.MITHRIL_SICKLE);
+        handheldSingleTexture(TensuraItems.MITHRIL_PICKAXE);
+        handheldSingleTexture(TensuraItems.MITHRIL_AXE);
+        handheldSingleTexture(TensuraItems.MITHRIL_SHOVEL);
+        handheldSingleTexture(TensuraItems.MITHRIL_HOE);
+        handheldSingleTexture(TensuraItems.MITHRIL_SICKLE);
         //singleTextureTool(TensuraItems.ORICHALCUM_PICKAXE);
         //singleTextureTool(TensuraItems.ORICHALCUM_AXE);
         //singleTextureTool(TensuraItems.ORICHALCUM_SHOVEL);
@@ -72,11 +72,11 @@ public class TensuraItemModels extends ItemModelProvider {
         //singleTextureTool(TensuraItems.ADAMANTITE_SHOVEL);
         //singleTextureTool(TensuraItems.ADAMANTITE_HOE);
         //singleTextureTool(TensuraItems.ADAMANTITE_SICKLE);
-        singleTextureTool(TensuraItems.HIHIIROKANE_PICKAXE);
-        singleTextureTool(TensuraItems.HIHIIROKANE_AXE);
-        singleTextureTool(TensuraItems.HIHIIROKANE_SHOVEL);
-        singleTextureTool(TensuraItems.HIHIIROKANE_HOE);
-        singleTextureTool(TensuraItems.HIHIIROKANE_SICKLE);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_PICKAXE);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_AXE);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_SHOVEL);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_HOE);
+        handheldSingleTexture(TensuraItems.HIHIIROKANE_SICKLE);
 
         //consumables
         //singleTexture(TensuraItems.BULLDEER_BEEF);
@@ -154,9 +154,14 @@ public class TensuraItemModels extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
                 .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
     }
-    private void singleTextureTool(Item item) {
+
+    /**
+     * Generates the item model json file.
+     * Can be used for any handheld rendered {@link Item} like Tools and Torches.
+     */
+    private void handheldSingleTexture(Item item) {
         getBuilder(item.getRegistryName().getPath())
-                .parent(new ModelFile.UncheckedModelFile(mcLoc("item/handheld")))
-                .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
+            .parent(new ModelFile.UncheckedModelFile(mcLoc("item/handheld")))
+            .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
     }
 }
