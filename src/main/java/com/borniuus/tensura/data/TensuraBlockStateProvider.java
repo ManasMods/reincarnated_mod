@@ -46,4 +46,20 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
                 .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
 
     }
+
+    /**
+     * Generates blockstate, block and item model json file.
+     * This Method can be used to for {@link Block} objects with different top and side textures.
+     *
+     * @param block has to be an instance of the {@link RotatedPillarBlock} class
+     */
+    private void log(Block block) {
+        if (!(block instanceof RotatedPillarBlock rotatedPillarBlock)) {
+            throw new IllegalArgumentException(block.getRegistryName().toString() + " is not a instance of RotatedPillarBlock.");
+        } else {
+            logBlock(rotatedPillarBlock);
+            itemModels().getBuilder(block.getRegistryName().getPath())
+                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
+        }
+    }
 }
