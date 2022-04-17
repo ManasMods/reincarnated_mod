@@ -8,8 +8,8 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class TensuraItemModels extends ItemModelProvider {
-    public TensuraItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+public class TensuraItemModelProvider extends ItemModelProvider {
+    public TensuraItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, Tensura.MOD_ID, existingFileHelper);
     }
 
