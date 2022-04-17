@@ -1,9 +1,9 @@
-package com.borniuus.tensura.item.custom;
+package com.borniuus.tensura.item.food;
 
 import net.minecraft.world.food.FoodProperties;
 
 
-public class Foods {
+public class TensuraFoodProperties {
     public static final FoodProperties BULLDEER_BEEF = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.4F).build();
     public static final FoodProperties BULLDEER_STEAK = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.9F).build();
     public static final FoodProperties BULLDEER_SHISH_KEBAB = (new FoodProperties.Builder()).nutrition(16).saturationMod(1F).build();
