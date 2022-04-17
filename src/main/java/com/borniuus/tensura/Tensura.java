@@ -1,7 +1,7 @@
 package com.borniuus.tensura;
 
 import com.borniuus.tensura.data.TensuraBlockStateProvider;
-import com.borniuus.tensura.data.TensuraItemModels;
+import com.borniuus.tensura.data.TensuraItemModelProvider;
 import lombok.Getter;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,7 +39,7 @@ public class Tensura {
     private void generateData(final GatherDataEvent event) {
         final DataGenerator generator = event.getGenerator();
         event.getGenerator().addProvider(new TensuraBlockStateProvider(generator, event.getExistingFileHelper()));
-        event.getGenerator().addProvider(new TensuraItemModels(generator, event.getExistingFileHelper()));
+        event.getGenerator().addProvider(new TensuraItemModelProvider(generator, event.getExistingFileHelper()));
     }
 
     /**
