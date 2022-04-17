@@ -126,7 +126,6 @@ public class TensuraItemModels extends ItemModelProvider {
         //singleTexture(TensuraItems.FULL_POTION);
         //singleTexture(TensuraItems.REVIVAL_ELIXER);
 
-
         //misc
         singleTexture(TensuraItems.ADAMANTITE_INGOT);
         //singleTexture(TensuraItems.BRONZE_COIN);
@@ -146,13 +145,16 @@ public class TensuraItemModels extends ItemModelProvider {
         //singleTexture(TensuraItems.SPIRIT_CORE);
         //singleTexture(TensuraItems.STELLA_GOLD_COIN);
         singleTexture(TensuraItems.THATCH);
-
-
     }
+
+    /**
+     * Generates the item model json file.
+     * Can be used for any default rendered {@link Item} object.
+     */
     private void singleTexture(Item item) {
         getBuilder(item.getRegistryName().getPath())
-                .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
-                .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
+            .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
+            .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
     }
 
     /**
