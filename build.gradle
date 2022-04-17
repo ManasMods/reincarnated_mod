@@ -85,6 +85,8 @@ minecraft {
                     source sourceSets.test
                 }
             }
+
+            forceExit false
         }
     }
 }
