@@ -46,8 +46,6 @@ public class SickleItem extends Item {
                     p.broadcastBreakEvent(pContext.getHand());
                 });
             }
-
-
         }
         return InteractionResult.SUCCESS;
     }
