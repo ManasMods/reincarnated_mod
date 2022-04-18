@@ -49,14 +49,6 @@ class BlockRegistry {
     }
 
     /**
-     * This Method allows to create {@link BlockItem} objects with non-default settings.
-     * They will be loaded before the defaulted {@link BlockItem} object will be initialized.
-     */
-    private static void registerItems(DeferredRegister<Item> registry) {
-        //Custom BlockItems here
-    }
-
-    /**
      * Method to register tree {@link Block} objects.
      * Add all wooden and tree blocks here.
      */
