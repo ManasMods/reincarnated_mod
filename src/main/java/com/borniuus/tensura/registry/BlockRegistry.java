@@ -42,7 +42,7 @@ class BlockRegistry {
      * This Method will register all custom {@link Block} object to Forge.
      * This is also the place to add new Blocks.
      */
-    static void registerBlocks(DeferredRegister<Block> registry) {
+    private static void registerBlocks(DeferredRegister<Block> registry) {
         registry.register("block_of_adamantite", () -> new SimpleBlock(Material.METAL, properties -> properties
             .strength(1F)
             .sound(SoundType.METAL)
@@ -123,11 +123,11 @@ class BlockRegistry {
             .sound(SoundType.STONE)
             .requiresCorrectToolForDrops()));
         registry.register("palm_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
-                BlockBehaviour.Properties.of(Material.WOOD)
+            BlockBehaviour.Properties.of(Material.WOOD)
                 .strength(2F)
                 .sound(SoundType.WOOD)));
         registry.register("sakura_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
-                BlockBehaviour.Properties.of(Material.WOOD)
+            BlockBehaviour.Properties.of(Material.WOOD)
                 .strength(2F)
                 .sound(SoundType.WOOD)));
         registry.register("palm_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD)
@@ -148,7 +148,7 @@ class BlockRegistry {
      * This Method allows to create {@link BlockItem} objects with non-default settings.
      * They will be loaded before the defaulted {@link BlockItem} object will be initialized.
      */
-    static void registerItems(DeferredRegister<Item> registry) {
+    private static void registerItems(DeferredRegister<Item> registry) {
         //Custom BlockItems here
     }
 }
