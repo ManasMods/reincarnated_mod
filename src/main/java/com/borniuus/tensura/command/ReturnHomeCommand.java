@@ -17,11 +17,12 @@ public class ReturnHomeCommand {
         })));
     }
 
+    //TODO please use a Capability to store custom information in a Player Object!
     private int returnHome(CommandSourceStack source) throws CommandSyntaxException {
         ServerPlayer player = source.getPlayerOrException();
         boolean hasHomepos = player.getPersistentData().getIntArray(Tensura.MOD_ID + "homepos").length != 0;
 
-        if(hasHomepos) {
+        if (hasHomepos) {
             int[] playerPos = player.getPersistentData().getIntArray(Tensura.MOD_ID + "homepos");
             player.teleportTo(playerPos[0], playerPos[1], playerPos[2]);
 

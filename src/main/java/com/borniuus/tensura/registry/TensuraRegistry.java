@@ -27,7 +27,7 @@ public class TensuraRegistry {
     public static void register(IEventBus modEventBus) {
         BlockRegistry.register(ITEMS, BLOCKS); //Register Blocks with their BlockItems
         ItemRegistry.register(ITEMS); //Register Items to our Registry
-        BlockEntityTypeRegistry.register(ITEMS, BLOCKS, BLOCK_ENTITY_TYPES);
+        BlockEntityTypeRegistry.register(ITEMS, BLOCKS, BLOCK_ENTITY_TYPES); //Registers Block Entities including their Blocks and Items
         SoundEventRegistry.register(SOUND_EVENTS); //Register Sound Events
         MotiveRegistry.register(MOTIVE); //Register Motives for custom paintings
 
