@@ -13,6 +13,6 @@ public class ThatchItem extends Item {
 
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-       return 170;
+        return 170;
     }
 }
