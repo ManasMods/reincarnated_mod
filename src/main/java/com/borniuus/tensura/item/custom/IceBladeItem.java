@@ -23,8 +23,7 @@ public class IceBladeItem extends SimpleSwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
-                                TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
             pTooltipComponents.add(new TranslatableComponent("tooltip.tensura.iceblade.tooltip.shift"));
         } else {
@@ -33,11 +32,11 @@ public class IceBladeItem extends SimpleSwordItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        attacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 30, 2));
-        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 2));
-        target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 30, 1));
-        return super.hurtEnemy(stack, target, attacker);
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        pAttacker.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 30, 2));
+        pTarget.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 2));
+        pTarget.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 30, 1));
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }
 

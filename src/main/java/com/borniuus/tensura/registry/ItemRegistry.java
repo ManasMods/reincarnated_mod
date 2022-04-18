@@ -1,6 +1,6 @@
 package com.borniuus.tensura.registry;
 
-import com.borniuus.tensura.item.ModTiers;
+import com.borniuus.tensura.item.TensuraToolTiers;
 import com.borniuus.tensura.item.TensuraCreativeTab;
 import com.borniuus.tensura.item.custom.IceBladeItem;
 import com.borniuus.tensura.item.templates.MusicDiscItem;
@@ -22,7 +22,85 @@ class ItemRegistry {
      * It is called though the {@link TensuraRegistry#register(IEventBus)} Method.
      */
     static void register(DeferredRegister<Item> registry) {
-        //misc
+        registerMisc(registry);
+        registerFood(registry);
+        registerWeapons(registry);
+        registerTools(registry);
+    }
+
+    /** Method to register tool {@link Item} objects */
+    private static void registerTools(DeferredRegister<Item> registry) {
+        registry.register("wooden_sickle", () -> new SimpleHoeItem(Tiers.WOOD, 1, 1));
+        registry.register("golden_sickle", () -> new SimpleHoeItem(Tiers.GOLD, 1, 1));
+        registry.register("flint_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("flint_axe", () -> new SimpleAxeItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("flint_shovel", () -> new SimpleShovelItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("flint_hoe", () -> new SimpleHoeItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("flint_sickle", () -> new SimpleHoeItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("silver_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("silver_axe", () -> new SimpleAxeItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("silver_shovel", () -> new SimpleShovelItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("silver_hoe", () -> new SimpleHoeItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("silver_sickle", () -> new SimpleHoeItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("iron_sickle", () -> new SimplePickaxeItem(Tiers.IRON, 1, 1));
+        registry.register("diamond_sickle", () -> new SimpleHoeItem(Tiers.DIAMOND, 1, 1));
+        registry.register("low_magisteel_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("low_magisteel_axe", () -> new SimpleAxeItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("low_magisteel_shovel", () -> new SimpleShovelItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("low_magisteel_hoe", () -> new SimpleHoeItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("low_magisteel_sickle", () -> new SimpleHoeItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("netherite_sickle", () -> new SimpleHoeItem(Tiers.NETHERITE, 1, 1));
+        registry.register("high_magisteel_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("high_magisteel_axe", () -> new SimpleAxeItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("high_magisteel_shovel", () -> new SimpleShovelItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("high_magisteel_hoe", () -> new SimpleHoeItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("high_magisteel_sickle", () -> new SimpleHoeItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("mithril_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("mithril_axe", () -> new SimpleAxeItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("mithril_shovel", () -> new SimpleShovelItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("mithril_hoe", () -> new SimpleHoeItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("mithril_sickle", () -> new SimpleHoeItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("orichalcum_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("orichalcum_axe", () -> new SimpleAxeItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("orichalcum_shovel", () -> new SimpleShovelItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("orichalcum_hoe", () -> new SimpleHoeItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("orichalcum_sickle", () -> new SimpleHoeItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("pure_magisteel_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("pure_magisteel_axe", () -> new SimpleAxeItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("pure_magisteel_shovel", () -> new SimpleShovelItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("pure_magisteel_hoe", () -> new SimpleHoeItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("pure_magisteel_sickle", () -> new SimpleHoeItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("adamantite_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("adamantite_axe", () -> new SimpleAxeItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("adamantite_shovel", () -> new SimpleShovelItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("adamantite_hoe", () -> new SimpleHoeItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("adamantite_sickle", () -> new SimpleHoeItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("hihiirokane_pickaxe", () -> new SimplePickaxeItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+        registry.register("hihiirokane_axe", () -> new SimpleAxeItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+        registry.register("hihiirokane_shovel", () -> new SimpleShovelItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+        registry.register("hihiirokane_hoe", () -> new SimpleHoeItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+        registry.register("hihiirokane_sickle", () -> new SimpleHoeItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+    }
+
+    /** Method to register weapon {@link Item} objects */
+    private static void registerWeapons(DeferredRegister<Item> registry) {
+        //unqiue weapons
+        registry.register("ice_blade", () -> new IceBladeItem(TensuraToolTiers.UNIQUE, 9, 1));
+
+        //weapons by tiers
+        registry.register("flint_sword", () -> new SimpleSwordItem(TensuraToolTiers.FLINT, 1, 1));
+        registry.register("silver_sword", () -> new SimpleSwordItem(TensuraToolTiers.SILVER, 1, 1));
+        registry.register("low_magisteel_sword", () -> new SimpleSwordItem(TensuraToolTiers.LOW_MAGISTEEL, 1, 1));
+        registry.register("high_magisteel_sword", () -> new SimpleSwordItem(TensuraToolTiers.HIGH_MAGISTEEL, 1, 1));
+        registry.register("mithril_sword", () -> new SimpleSwordItem(TensuraToolTiers.MITHRIL, 1, 1));
+        registry.register("orichalcum_sword", () -> new SimpleSwordItem(TensuraToolTiers.ORICHALCUM, 1, 1));
+        registry.register("pure_magisteel_sword", () -> new SimpleSwordItem(TensuraToolTiers.PURE_MAGISTEEL, 1, 1));
+        registry.register("adamantite_sword", () -> new SimpleSwordItem(TensuraToolTiers.ADAMANTITE, 1, 1));
+        registry.register("hihiirokane_sword", () -> new SimpleSwordItem(TensuraToolTiers.HIHIIROKANE, 1, 1));
+    }
+
+    /** Method to register misc {@link Item} objects */
+    private static void registerMisc(DeferredRegister<Item> registry) {
         registry.register("adamantite_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("armoursaurus_scale", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("bronze_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
@@ -58,8 +136,10 @@ class ItemRegistry {
         registry.register("spirit_core", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("stella_gold_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("thatch", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+    }
 
-        //food
+    /** Method to register eatable {@link Item} objects */
+    private static void registerFood(DeferredRegister<Item> registry) {
         registry.register("bulldeer_beef", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F).meat()));
         registry.register("bulldeer_steak", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(0.9F).meat()));
         registry.register("bulldeer_shish_kebab", () -> new SimpleFoodItem(builder -> builder.nutrition(16).saturationMod(1F).meat()));
@@ -108,71 +188,5 @@ class ItemRegistry {
         registry.register("high_potion", () -> new SimpleFoodItem(builder -> builder.nutrition(0).saturationMod(0)));
         registry.register("full_potion", () -> new SimpleFoodItem(builder -> builder.nutrition(0).saturationMod(0)));
         registry.register("revival_elixer", () -> new SimpleFoodItem(builder -> builder.nutrition(0).saturationMod(0)));
-
-        //unqiue weapons
-        registry.register("ice_blade", () -> new IceBladeItem(ModTiers.UNIQUE, 9, 1));
-
-        //weapons by tiers
-        registry.register("flint_sword", () -> new SimpleSwordItem(ModTiers.FLINT, 1, 1));
-        registry.register("silver_sword", () -> new SimpleSwordItem(ModTiers.SILVER, 1, 1));
-        registry.register("low_magisteel_sword", () -> new SimpleSwordItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("high_magisteel_sword", () -> new SimpleSwordItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("mithril_sword", () -> new SimpleSwordItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("orichalcum_sword", () -> new SimpleSwordItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("pure_magisteel_sword", () -> new SimpleSwordItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("adamantite_sword", () -> new SimpleSwordItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("hihiirokane_sword", () -> new SimpleSwordItem(ModTiers.HIHIIROKANE, 1, 1));
-
-        //tools by tiers
-        registry.register("wooden_sickle", () -> new SimpleHoeItem(Tiers.WOOD, 1, 1));
-        registry.register("golden_sickle", () -> new SimpleHoeItem(Tiers.GOLD, 1, 1));
-        registry.register("flint_pickaxe", () -> new SimplePickaxeItem(ModTiers.FLINT, 1, 1));
-        registry.register("flint_axe", () -> new SimpleAxeItem(ModTiers.FLINT, 1, 1));
-        registry.register("flint_shovel", () -> new SimpleShovelItem(ModTiers.FLINT, 1, 1));
-        registry.register("flint_hoe", () -> new SimpleHoeItem(ModTiers.FLINT, 1, 1));
-        registry.register("flint_sickle", () -> new SimpleHoeItem(ModTiers.FLINT, 1, 1));
-        registry.register("silver_pickaxe", () -> new SimplePickaxeItem(ModTiers.SILVER, 1, 1));
-        registry.register("silver_axe", () -> new SimpleAxeItem(ModTiers.SILVER, 1, 1));
-        registry.register("silver_shovel", () -> new SimpleShovelItem(ModTiers.SILVER, 1, 1));
-        registry.register("silver_hoe", () -> new SimpleHoeItem(ModTiers.SILVER, 1, 1));
-        registry.register("silver_sickle", () -> new SimpleHoeItem(ModTiers.SILVER, 1, 1));
-        registry.register("iron_sickle", () -> new SimplePickaxeItem(Tiers.IRON, 1, 1));
-        registry.register("diamond_sickle", () -> new SimpleHoeItem(Tiers.DIAMOND, 1, 1));
-        registry.register("low_magisteel_pickaxe", () -> new SimplePickaxeItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("low_magisteel_axe", () -> new SimpleAxeItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("low_magisteel_shovel", () -> new SimpleShovelItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("low_magisteel_hoe", () -> new SimpleHoeItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("low_magisteel_sickle", () -> new SimpleHoeItem(ModTiers.LOW_MAGISTEEL, 1, 1));
-        registry.register("netherite_sickle", () -> new SimpleHoeItem(Tiers.NETHERITE, 1, 1));
-        registry.register("high_magisteel_pickaxe", () -> new SimplePickaxeItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("high_magisteel_axe", () -> new SimpleAxeItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("high_magisteel_shovel", () -> new SimpleShovelItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("high_magisteel_hoe", () -> new SimpleHoeItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("high_magisteel_sickle", () -> new SimpleHoeItem(ModTiers.HIGH_MAGISTEEL, 1, 1));
-        registry.register("mithril_pickaxe", () -> new SimplePickaxeItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("mithril_axe", () -> new SimpleAxeItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("mithril_shovel", () -> new SimpleShovelItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("mithril_hoe", () -> new SimpleHoeItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("mithril_sickle", () -> new SimpleHoeItem(ModTiers.MITHRIL, 1, 1));
-        registry.register("orichalcum_pickaxe", () -> new SimplePickaxeItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("orichalcum_axe", () -> new SimpleAxeItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("orichalcum_shovel", () -> new SimpleShovelItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("orichalcum_hoe", () -> new SimpleHoeItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("orichalcum_sickle", () -> new SimpleHoeItem(ModTiers.ORICHALCUM, 1, 1));
-        registry.register("pure_magisteel_pickaxe", () -> new SimplePickaxeItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("pure_magisteel_axe", () -> new SimpleAxeItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("pure_magisteel_shovel", () -> new SimpleShovelItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("pure_magisteel_hoe", () -> new SimpleHoeItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("pure_magisteel_sickle", () -> new SimpleHoeItem(ModTiers.PURE_MAGISTEEL, 1, 1));
-        registry.register("adamantite_pickaxe", () -> new SimplePickaxeItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("adamantite_axe", () -> new SimpleAxeItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("adamantite_shovel", () -> new SimpleShovelItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("adamantite_hoe", () -> new SimpleHoeItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("adamantite_sickle", () -> new SimpleHoeItem(ModTiers.ADAMANTITE, 1, 1));
-        registry.register("hihiirokane_pickaxe", () -> new SimplePickaxeItem(ModTiers.HIHIIROKANE, 1, 1));
-        registry.register("hihiirokane_axe", () -> new SimpleAxeItem(ModTiers.HIHIIROKANE, 1, 1));
-        registry.register("hihiirokane_shovel", () -> new SimpleShovelItem(ModTiers.HIHIIROKANE, 1, 1));
-        registry.register("hihiirokane_hoe", () -> new SimpleHoeItem(ModTiers.HIHIIROKANE, 1, 1));
-        registry.register("hihiirokane_sickle", () -> new SimpleHoeItem(ModTiers.HIHIIROKANE, 1, 1));
     }
 }

@@ -16,13 +16,14 @@ public class SetHomeCommand {
         })));
     }
 
+    //TODO please use a Capability to store custom information in a Player Object!
     private int setHome(CommandSourceStack source) throws CommandSyntaxException {
         ServerPlayer player = source.getPlayerOrException();
         BlockPos playerPos = player.blockPosition();
+
         String pos = "(" + playerPos.getX() + ", " + playerPos.getY() + ", " + playerPos.getZ() + ")";
 
-        player.getPersistentData().putIntArray(Tensura.MOD_ID + "homepos",
-                new int[]{ playerPos.getX(), playerPos.getY(), playerPos.getZ() });
+        player.getPersistentData().putIntArray(Tensura.MOD_ID + "homepos", new int[] {playerPos.getX(), playerPos.getY(), playerPos.getZ()});
 
         source.sendSuccess(new TextComponent("Set Home at " + pos), true);
         return 1;
