@@ -1,5 +1,9 @@
 {
   "variants": {
-    "": { "model": "tensura:block/smithing_bench" }
+    "": { "model": "tensura:block/smithing_bench" },
+    "facing=north": { "model": "tensura:block/smithing_bench" },
+    "facing=east": { "model": "tensura:block/smithing_bench", "y": 90 },
+    "facing=south": { "model": "tensura:block/smithing_bench", "y": 180 },
+    "facing=west": { "model": "tensura:block/smithing_bench", "y": 270 }
   }
 }

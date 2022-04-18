@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tensura:raw_giant_ant_meat"
+  },
+  "result": "tensura:cooked_giant_ant_meat",
+  "experience": 0.35,
+  "cookingtime": 200
+}

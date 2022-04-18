@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "tensura:block/thatch_slab_top"
+    },
+    "type=bottom": {
+      "model": "tensura:block/thatch_slab"
+    },
+    "type=double": {
+      "model": "tensura:block/thatch_block"
+    }
+  }
+}

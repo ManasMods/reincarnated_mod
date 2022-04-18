@@ -1,5 +1,9 @@
 {
   "variants": {
+    "facing=north": { "model": "tensura:block/cooking_pot" },
+    "facing=east": { "model": "tensura:block/cooking_pot", "y": 90 },
+    "facing=south": { "model": "tensura:block/cooking_pot", "y": 180 },
+    "facing=west": { "model": "tensura:block/cooking_pot", "y": 270 },
     "": { "model": "tensura:block/cooking_pot" }
   }
 }

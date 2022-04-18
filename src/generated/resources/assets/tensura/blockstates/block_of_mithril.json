@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tensura:block/block_of_mithril"
+    }
+  }
+}

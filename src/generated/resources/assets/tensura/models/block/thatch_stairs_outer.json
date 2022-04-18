@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "tensura:block/thatch_block",
+    "bottom": "tensura:block/thatch_block",
+    "top": "tensura:block/thatch_block"
+  }
+}

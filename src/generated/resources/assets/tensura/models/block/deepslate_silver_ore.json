@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "side": "tensura:block/deepslate_silver_ore",
-    "end": "tensura:block/deepslate_silver_ore_top"
+    "all": "tensura:block/deepslate_silver_ore"
   }
 }
