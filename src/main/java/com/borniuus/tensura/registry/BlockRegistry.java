@@ -1,5 +1,6 @@
 package com.borniuus.tensura.registry;
 
+import com.borniuus.tensura.block.CookingPotBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
@@ -167,27 +168,27 @@ class BlockRegistry {
      * If no other register method matches the {@link Block} category, add it here.
      */
     private static void registerMiscBlocks(DeferredRegister<Block> registry) {
-        registry.register("cooking_pot", () -> new SimpleBlock(Material.STONE, properties -> properties
+        registry.register("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of(Material.STONE)
             .strength(1F)
             .sound(SoundType.STONE)
-                .noOcclusion()
+            .noOcclusion()
             .requiresCorrectToolForDrops()));
-      
-        registry.register("loom", () -> new SimpleBlock(Material.WOOD, properties -> properties
+
+        registry.register("loom", () -> new LoomBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(1F)
             .sound(SoundType.WOOD)
-                .noOcclusion()
+            .noOcclusion()
             .requiresCorrectToolForDrops()));
 
         registry.register("magic_engine", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
             .sound(SoundType.AMETHYST_CLUSTER)
             .requiresCorrectToolForDrops()));
-      
+
         registry.register("smithing_bench", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
             .sound(SoundType.ANVIL)
-                .noOcclusion()
+            .noOcclusion()
             .requiresCorrectToolForDrops()));
 
         registry.register("sarasa_sand", () -> new SimpleBlock(Material.SAND, properties -> properties
@@ -197,20 +198,20 @@ class BlockRegistry {
         registry.register("thatch_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
             .strength(2)
             .sound(SoundType.GRASS)));
-      
+
         registry.register("thatch_stairs", () -> new StairBlock(() -> TensuraBlocks.PALM_PLANKS.defaultBlockState(),
-                BlockBehaviour.Properties.of(Material.LEAVES)
-                        .strength(2F)
-                        .sound(SoundType.GRASS)));
-      
-        registry.register("thatch_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+            BlockBehaviour.Properties.of(Material.LEAVES)
                 .strength(2F)
                 .sound(SoundType.GRASS)));
-      
+
+        registry.register("thatch_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+            .strength(2F)
+            .sound(SoundType.GRASS)));
+
         registry.register("warp_pad", () -> new SimpleBlock(Material.STONE, properties -> properties
             .strength(1F)
             .sound(SoundType.STONE)
-                .noOcclusion()
+            .noOcclusion()
             .requiresCorrectToolForDrops()));
     }
 
