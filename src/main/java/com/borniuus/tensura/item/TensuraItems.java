@@ -4,6 +4,7 @@ import com.borniuus.tensura.Tensura;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
+@SuppressWarnings("unused")
 @ObjectHolder(Tensura.MOD_ID)
 public class TensuraItems {
     //mob drops (excl food)
@@ -59,8 +60,7 @@ public class TensuraItems {
     @ObjectHolder("spider_fang")
     public static final Item SPIDER_FANG = null;
 
-
-    //food
+    /** ==============================      FOOD ITEMS     ============================== */
     @ObjectHolder("bulldeer_beef")
     public static final Item BULLDEER_BEEF = null;
 
@@ -199,14 +199,11 @@ public class TensuraItems {
     @ObjectHolder("revival_elixer")
     public static final Item REVIVAL_ELIXER = null;
 
-
-
-    //unique weapons
+    /** ============================== UNIQUE WEAPON ITEMS ============================== */
     @ObjectHolder("ice_blade")
     public static final Item ICE_BLADE = null;
 
-    //weapons by tiers
-
+    /** ==============================     WEAPON ITEMS    ============================== */
     @ObjectHolder("flint_sword")
     public static final Item FLINT_SWORD = null;
 
@@ -234,9 +231,7 @@ public class TensuraItems {
     @ObjectHolder("hihiirokane_sword")
     public static final Item HIHIIROKANE_SWORD = null;
 
-
-
-    //tools by tiers
+    /** ==============================      TOOL ITEMS     ============================== */
     @ObjectHolder("wooden_sickle")
     public static final Item WOODEN_SICKLE = null;
 
@@ -387,10 +382,7 @@ public class TensuraItems {
     @ObjectHolder("hihiirokane_sickle")
     public static final Item HIHIIROKANE_SICKLE = null;
 
-
-
-
-    //misc
+    /** ==============================      MISC ITEMS     ============================== */
     @ObjectHolder("adamantite_ingot")
     public static final Item ADAMANTITE_INGOT = null;
 
@@ -444,6 +436,4 @@ public class TensuraItems {
 
     @ObjectHolder("thatch")
     public static final Item THATCH = null;
-
-
 }
