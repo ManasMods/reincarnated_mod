@@ -1,34 +1,34 @@
 {
   "variants": {
-    "facing=north,part=foot": {
+    "facing=north,part=bench": {
       "model": "tensura:block/smithing_bench",
       "y": 0
     },
-    "facing=east,part=foot": {
+    "facing=east,part=bench": {
       "model": "tensura:block/smithing_bench",
       "y": 90
     },
-    "facing=south,part=foot": {
+    "facing=south,part=bench": {
       "model": "tensura:block/smithing_bench",
       "y": 180
     },
-    "facing=west,part=foot": {
+    "facing=west,part=bench": {
       "model": "tensura:block/smithing_bench",
       "y": 270
     },
-    "facing=north,part=head": {
+    "facing=north,part=anvil": {
       "model": "tensura:block/smithing_bench_left",
       "y": 0
     },
-    "facing=east,part=head": {
+    "facing=east,part=anvil": {
       "model": "tensura:block/smithing_bench_left",
       "y": 90
     },
-    "facing=south,part=head": {
+    "facing=south,part=anvil": {
       "model": "tensura:block/smithing_bench_left",
       "y": 180
     },
-    "facing=west,part=head": {
+    "facing=west,part=anvil": {
       "model": "tensura:block/smithing_bench_left",
       "y": 270
     }
