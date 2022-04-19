@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 
 public class LoomBlock extends SimpleBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final EnumProperty<BedPart> PART = BlockStateProperties.BED_PART;
+    public static final EnumProperty<LoomPart> PART = TensuraBlockStateProperties.LOOM_PART;
 
     public LoomBlock(Properties properties) {
         super(properties);
