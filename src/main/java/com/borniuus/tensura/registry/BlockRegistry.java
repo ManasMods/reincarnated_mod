@@ -1,6 +1,7 @@
 package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.CookingPotBlock;
+import com.borniuus.tensura.block.SmithingBenchBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
@@ -187,7 +188,7 @@ class BlockRegistry {
             .sound(SoundType.AMETHYST_CLUSTER)
             .requiresCorrectToolForDrops()));
 
-        registry.register("smithing_bench", () -> new SimpleBlock(Material.WOOD, properties -> properties
+        registry.register("smithing_bench", () -> new SmithingBenchBlock(BlockBehaviour.Properties.of(Material.NETHER_WOOD, MaterialColor.WOOD)
             .strength(1F)
             .sound(SoundType.ANVIL)
             .noOcclusion()

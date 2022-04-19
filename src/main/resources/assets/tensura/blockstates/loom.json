@@ -1,19 +1,35 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,part=foot": {
       "model": "tensura:block/loom",
       "y": 0
     },
-    "facing=east": {
+    "facing=east,part=foot": {
       "model": "tensura:block/loom",
       "y": 90
     },
-    "facing=south": {
+    "facing=south,part=foot": {
       "model": "tensura:block/loom",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,part=foot": {
       "model": "tensura:block/loom",
+      "y": 270
+    },
+    "facing=north,part=head": {
+      "model": "tensura:block/loom_top",
+      "y": 0
+    },
+    "facing=east,part=head": {
+      "model": "tensura:block/loom_top",
+      "y": 90
+    },
+    "facing=south,part=head": {
+      "model": "tensura:block/loom_top",
+      "y": 180
+    },
+    "facing=west,part=head": {
+      "model": "tensura:block/loom_top",
       "y": 270
     }
   }

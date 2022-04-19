@@ -20,19 +20,21 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import javax.annotation.Nullable;
 
 
-public class LoomBlock extends Block {
+public class SmithingBenchBlock extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<BedPart> PART = BlockStateProperties.BED_PART;
 
-    public LoomBlock(Properties properties) {
+    public SmithingBenchBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(PART,BedPart.FOOT));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PART,BedPart.FOOT));
     }
-    /**Called by BlockItem after this block has been placed.**/
+
+
+    @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide) {
-            BlockPos blockpos = pPos.above();
+            BlockPos blockpos = pPos.relative(pState.getValue(FACING).getCounterClockWise());
             pLevel.setBlock(blockpos, pState.setValue(PART, BedPart.HEAD), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
@@ -41,8 +43,13 @@ public class LoomBlock extends Block {
     }
 
     @Override
+    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        Direction direction = pContext.getHorizontalDirection();
+        BlockPos blockpos = pContext.getClickedPos();
+        BlockPos blockpos1 = blockpos.relative(direction.getCounterClockWise());
+        Level level = pContext.getLevel();
+        return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? this.defaultBlockState().setValue(FACING, direction) : null;
     }
 
     @Override
