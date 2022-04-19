@@ -38,7 +38,7 @@ public class SmithingBenchBlock extends SimpleBlock {
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide) {
-            BlockPos blockpos = pPos.relative(pState.getValue(FACING).getCounterClockWise());
+            BlockPos blockpos = getOtherPartPosition(pPos,pState.getValue(FACING),pState.getValue(PART));
             pLevel.setBlock(blockpos, pState.setValue(PART, SmithingBenchPart.ANVIL), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
@@ -78,6 +78,6 @@ public class SmithingBenchBlock extends SimpleBlock {
     }
 
     private BlockPos getOtherPartPosition(BlockPos sourcePos, Direction direction, SmithingBenchPart part) {
-        return part == SmithingBenchPart.BENCH ? sourcePos.relative(direction.getCounterClockWise()) : sourcePos.relative(direction.getClockWise());
+        return part == SmithingBenchPart.BENCH ? sourcePos.relative(direction.getClockWise()) : sourcePos.relative(direction.getCounterClockWise());
     }
 }
