@@ -57,6 +57,7 @@ class BlockRegistry {
         //Palm Tree Blocks
         registry.register("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
+                .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
 
         registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
@@ -83,6 +84,7 @@ class BlockRegistry {
         //Sakura Tree Blocks
         registry.register("sakura_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
+                .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
 
         registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
