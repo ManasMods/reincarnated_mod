@@ -1,6 +1,7 @@
 package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.CookingPotBlock;
+import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.SmithingBenchBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.item.templates.SimpleBlock;
@@ -58,7 +59,7 @@ class BlockRegistry {
         //Palm Tree Blocks
         registry.register("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
-                .noOcclusion()
+            .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
 
         registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
@@ -85,7 +86,7 @@ class BlockRegistry {
         //Sakura Tree Blocks
         registry.register("sakura_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
             .strength(1F)
-                .noOcclusion()
+            .noOcclusion()
             .sound(SoundType.AZALEA_LEAVES)));
 
         registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
@@ -177,7 +178,7 @@ class BlockRegistry {
             .noOcclusion()
             .requiresCorrectToolForDrops()));
 
-        registry.register("loom", () -> new LoomBlock(BlockBehaviour.Properties.of(Material.WOOD)
+        registry.register("loom", () -> new LoomBlock(Material.WOOD, properties -> properties
             .strength(1F)
             .sound(SoundType.WOOD)
             .noOcclusion()
@@ -188,7 +189,7 @@ class BlockRegistry {
             .sound(SoundType.AMETHYST_CLUSTER)
             .requiresCorrectToolForDrops()));
 
-        registry.register("smithing_bench", () -> new SmithingBenchBlock(BlockBehaviour.Properties.of(Material.NETHER_WOOD, MaterialColor.WOOD)
+        registry.register("smithing_bench", () -> new SmithingBenchBlock(Material.NETHER_WOOD, properties -> properties
             .strength(1F)
             .sound(SoundType.ANVIL)
             .noOcclusion()
