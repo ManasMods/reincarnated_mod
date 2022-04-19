@@ -28,9 +28,9 @@ public class SmithingBenchBlock extends SimpleBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<SmithingBenchPart> PART = TensuraBlockStateProperties.SMITHING_BENCH_PART;
 
-    public SmithingBenchBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PART,BedPart.FOOT));
+    public SmithingBenchBlock(Material material, BlockProperties properties) {
+        super(material, properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PART, SmithingBenchPart.BENCH));
     }
 
 
@@ -39,7 +39,7 @@ public class SmithingBenchBlock extends SimpleBlock {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide) {
             BlockPos blockpos = pPos.relative(pState.getValue(FACING).getCounterClockWise());
-            pLevel.setBlock(blockpos, pState.setValue(PART, BedPart.HEAD), 3);
+            pLevel.setBlock(blockpos, pState.setValue(PART, SmithingBenchPart.ANVIL), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
@@ -47,13 +47,8 @@ public class SmithingBenchBlock extends SimpleBlock {
     }
 
     @Override
-    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        Direction direction = pContext.getHorizontalDirection();
-        BlockPos blockpos = pContext.getClickedPos();
-        BlockPos blockpos1 = blockpos.relative(direction.getCounterClockWise());
-        Level level = pContext.getLevel();
-        return level.getBlockState(blockpos1).canBeReplaced(pContext) && level.getWorldBorder().isWithinBounds(blockpos1) ? this.defaultBlockState().setValue(FACING, direction) : null;
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
     @Override
@@ -68,6 +63,21 @@ public class SmithingBenchBlock extends SimpleBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING);
+        pBuilder.add(FACING).add(PART);
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        if (!pLevel.isClientSide && pPlayer.isCreative()) {
+            Direction direction = pState.getValue(FACING);
+            BlockPos blockpos = getOtherPartPosition(pPos, direction, pState.getValue(PART));
+            pLevel.setBlockAndUpdate(blockpos, Blocks.AIR.defaultBlockState());
+        }
+
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+    }
+
+    private BlockPos getOtherPartPosition(BlockPos sourcePos, Direction direction, SmithingBenchPart part) {
+        return part == SmithingBenchPart.BENCH ? sourcePos.relative(direction.getCounterClockWise()) : sourcePos.relative(direction.getClockWise());
     }
 }

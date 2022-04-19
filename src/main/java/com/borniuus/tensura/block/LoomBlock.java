@@ -28,20 +28,20 @@ public class LoomBlock extends SimpleBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<LoomPart> PART = TensuraBlockStateProperties.LOOM_PART;
 
-    public LoomBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(PART,BedPart.FOOT));
+    public LoomBlock(Material material, BlockProperties properties) {
+        super(material, properties);
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(PART, LoomPart.BASE));
     }
-    /**Called by BlockItem after this block has been placed.**/
+
+    /** Called by BlockItem after this block has been placed. **/
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide) {
-            BlockPos blockpos = pPos.above();
-            pLevel.setBlock(blockpos, pState.setValue(PART, BedPart.HEAD), 3);
+            BlockPos blockpos = getOtherPartPosition(pPos, pState.getValue(PART));
+            pLevel.setBlock(blockpos, pState.setValue(PART, LoomPart.TOP), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
-
     }
 
     @Override
@@ -61,6 +61,20 @@ public class LoomBlock extends SimpleBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING);
+        pBuilder.add(FACING).add(PART);
+    }
+
+    @Override
+    public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
+        if (!pLevel.isClientSide && pPlayer.isCreative()) {
+            BlockPos blockpos = getOtherPartPosition(pPos, pState.getValue(PART));
+            pLevel.setBlockAndUpdate(blockpos, Blocks.AIR.defaultBlockState());
+        }
+
+        super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+    }
+
+    private BlockPos getOtherPartPosition(BlockPos sourcePos, LoomPart part) {
+        return part == LoomPart.BASE ? sourcePos.above() : sourcePos.below();
     }
 }
