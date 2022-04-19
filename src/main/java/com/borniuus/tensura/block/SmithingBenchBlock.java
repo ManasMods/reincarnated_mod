@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 
 public class SmithingBenchBlock extends SimpleBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final EnumProperty<BedPart> PART = BlockStateProperties.BED_PART;
+    public static final EnumProperty<SmithingBenchPart> PART = TensuraBlockStateProperties.SMITHING_BENCH_PART;
 
     public SmithingBenchBlock(Properties properties) {
         super(properties);
