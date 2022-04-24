@@ -1,4 +1,4 @@
-package com.borniuus.tensura.world.ores;
+package com.borniuus.tensura.world.ore;
 
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;

@@ -2,7 +2,7 @@ package com.borniuus.tensura;
 
 import com.borniuus.tensura.handler.PlayerLogInHandler;
 import com.borniuus.tensura.registry.TensuraRegistry;
-import com.borniuus.tensura.world.ores.TensuraOreFeatures;
+import com.borniuus.tensura.world.ore.TensuraOreFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
