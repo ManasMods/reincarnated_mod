@@ -1,6 +1,5 @@
 package com.borniuus.tensura;
 
-import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.block.WindowBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -8,8 +7,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 public class TensuraClient extends TensuraCommon {
     @Override
-    public void preInit(IEventBus modBus) {
-        super.preInit(modBus);
+    public void preInit(IEventBus modEventBus) {
+        super.preInit(modEventBus);
     }
 
     @Override
