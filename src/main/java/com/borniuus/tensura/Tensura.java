@@ -31,7 +31,9 @@ public class Tensura {
         modEventBus.addListener(this::generateData);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void setup(final FMLCommonSetupEvent event) {
+        proxy.init(event);
+    }
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(proxy::clientInit);
