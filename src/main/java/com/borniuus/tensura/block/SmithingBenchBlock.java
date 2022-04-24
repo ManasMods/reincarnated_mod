@@ -1,6 +1,6 @@
 package com.borniuus.tensura.block;
 
-import com.borniuus.tensura.block.state.properties.LoomPart;
+import com.borniuus.tensura.block.state.properties.SmithingBenchPart;
 import com.borniuus.tensura.block.state.properties.TensuraBlockStateProperties;
 import com.borniuus.tensura.item.templates.SimpleBlock;
 import net.minecraft.core.BlockPos;
@@ -24,24 +24,26 @@ import net.minecraft.world.level.material.Material;
 import javax.annotation.Nullable;
 
 
-public class LoomBlock extends SimpleBlock {
+public class SmithingBenchBlock extends SimpleBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final EnumProperty<LoomPart> PART = TensuraBlockStateProperties.LOOM_PART;
+    public static final EnumProperty<SmithingBenchPart> PART = TensuraBlockStateProperties.SMITHING_BENCH_PART;
 
-    public LoomBlock(Material material, BlockProperties properties) {
+    public SmithingBenchBlock(Material material, BlockProperties properties) {
         super(material, properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(PART, LoomPart.BASE));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PART, SmithingBenchPart.BENCH));
     }
 
-    /** Called by BlockItem after this block has been placed. **/
+
+    @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
         if (!pLevel.isClientSide) {
-            BlockPos blockpos = getOtherPartPosition(pPos, pState.getValue(PART));
-            pLevel.setBlock(blockpos, pState.setValue(PART, LoomPart.TOP), 3);
+            BlockPos blockpos = getOtherPartPosition(pPos,pState.getValue(FACING),pState.getValue(PART));
+            pLevel.setBlock(blockpos, pState.setValue(PART, SmithingBenchPart.ANVIL), 3);
             pLevel.blockUpdated(pPos, Blocks.AIR);
             pState.updateNeighbourShapes(pLevel, pPos, 3);
         }
+
     }
 
     @Override
@@ -67,14 +69,15 @@ public class LoomBlock extends SimpleBlock {
     @Override
     public void playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
         if (!pLevel.isClientSide && pPlayer.isCreative()) {
-            BlockPos blockpos = getOtherPartPosition(pPos, pState.getValue(PART));
+            Direction direction = pState.getValue(FACING);
+            BlockPos blockpos = getOtherPartPosition(pPos, direction, pState.getValue(PART));
             pLevel.setBlockAndUpdate(blockpos, Blocks.AIR.defaultBlockState());
         }
 
         super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
     }
 
-    private BlockPos getOtherPartPosition(BlockPos sourcePos, LoomPart part) {
-        return part == LoomPart.BASE ? sourcePos.above() : sourcePos.below();
+    private BlockPos getOtherPartPosition(BlockPos sourcePos, Direction direction, SmithingBenchPart part) {
+        return part == SmithingBenchPart.BENCH ? sourcePos.relative(direction.getClockWise()) : sourcePos.relative(direction.getCounterClockWise());
     }
 }

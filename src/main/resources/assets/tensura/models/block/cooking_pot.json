@@ -1,12 +1,12 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "tensura:block/campfire_log",
-		"2": "tensura:block/cauldron_side",
-		"3": "tensura:block/cauldron_top",
-		"4": "tensura:block/copper_block",
-		"5": "tensura:block/smooth_stone",
-		"6": "tensura:block/oxidized_copper",
+		"0": "minecraft:block/campfire_log",
+		"2": "minecraft:block/cauldron_side",
+		"3": "minecraft:block/cauldron_top",
+		"4": "minecraft:block/copper_block",
+		"5": "minecraft:block/smooth_stone",
+		"6": "minecraft:block/oxidized_copper",
 		"particle": "campfire_log"
 	},
 	"elements": [

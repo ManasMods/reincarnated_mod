@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "tensura:block_of_magisteel",
-    "tensura:silver_block",
+    "tensura:block_of_silver",
     "tensura:silver_ore",
     "tensura:deepslate_silver_ore"
   ]

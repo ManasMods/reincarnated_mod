@@ -1,6 +1,12 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "tensura:block/deepslate_silver_ore"
+    },
+    "axis=y": {
+      "model": "tensura:block/deepslate_silver_ore"
+    },
+    "axis=z": {
       "model": "tensura:block/deepslate_silver_ore"
     }
   }

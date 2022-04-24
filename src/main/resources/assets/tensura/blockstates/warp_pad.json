@@ -1,9 +1,21 @@
 {
   "variants": {
-    "": { "model": "tensura:block/warp_pad" },
-    "facing=north": { "model": "tensura:block/warp_pad" },
-    "facing=east": { "model": "tensura:block/warp_pad", "y": 90 },
-    "facing=south": { "model": "tensura:block/warp_pad", "y": 180 },
-    "facing=west": { "model": "tensura:block/warp_pad", "y": 270 }
+    "facing=north": {
+      "model": "tensura:block/warp_pad",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "tensura:block/warp_pad",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "tensura:block/warp_pad",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tensura:block/warp_pad",
+      "y": 270
+    },
+    "": { "model": "tensura:block/warp_pad" }
   }
 }
