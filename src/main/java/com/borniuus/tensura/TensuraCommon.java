@@ -2,6 +2,7 @@ package com.borniuus.tensura;
 
 import com.borniuus.tensura.handler.PlayerLogInHandler;
 import com.borniuus.tensura.registry.TensuraRegistry;
+import com.borniuus.tensura.world.biome.TensuraBiomeGeneration;
 import com.borniuus.tensura.world.ore.TensuraOreFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,8 @@ public class TensuraCommon {
     public void init(final FMLCommonSetupEvent e) {
         //Register our Ore generation
         e.enqueueWork(TensuraOreFeatures::register);
+        //Register our Biomes
+        e.enqueueWork(TensuraBiomeGeneration::register);
     }
 
     /**
