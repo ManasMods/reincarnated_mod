@@ -27,3 +27,9 @@ This is the third iteration of the Tensura mod or TTIGRAAS as it was previously 
     versionRange="${minecraftVersionCheck}"
     ordering="NONE"
     side="BOTH"
+[[dependencies.tensura]]
+    modId="terrablender"
+    mandatory=true
+    versionRange="${terrablenderVersionCheck}"
+    ordering="NONE"
+    side="BOTH"

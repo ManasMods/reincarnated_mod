@@ -58,6 +58,9 @@ public class TensuraBlocks {
     @ObjectHolder("sakura_planks")
     public static final Block SAKURA_PLANKS = null;
 
+    @ObjectHolder("sakura_sapling")
+    public static final Block SAKURA_SAPLING = null;
+
     @ObjectHolder("sarasa_sand")
     public static final Block SARASA_SAND = null;
 

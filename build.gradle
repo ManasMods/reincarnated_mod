@@ -113,6 +113,9 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
 
+    //TerraBlender is used to generate our Biomes
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
+
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
@@ -149,6 +152,8 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+
+
 }
 
 def replaceResources = tasks.register("replaceResources", Copy) {
@@ -158,7 +163,8 @@ def replaceResources = tasks.register("replaceResources", Copy) {
         def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
 
         include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}"
+        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck':
+                "${minecraftVersionCheck}", 'terrablenderVersionCheck': "[${terraBlenderVersionRange},)"
     }
     it.into "$buildDir/resources/main/"
 }
