@@ -3,7 +3,8 @@ package com.borniuus.tensura.world.biome;
 import com.borniuus.tensura.world.biome.helper.BiomeBuilder;
 import com.borniuus.tensura.world.biome.helper.BiomeGenerationSettingsHelper;
 import com.borniuus.tensura.world.biome.helper.MobSpawnHelper;
-import com.borniuus.tensura.world.tree.TensuraTreePlacements;
+import com.borniuus.tensura.world.gen.TensuraPlacements;
+import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
@@ -30,7 +31,7 @@ public class SakuraForestBiome {
             //Apply default surface freezing
             .apply(BiomeDefaultFeatures::addSurfaceFreezing)
             //Add Trees
-            .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TensuraTreePlacements.SAKURA_CHECKED)
+            .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Holder.direct(TensuraPlacements.SAKURA_FOREST_TREES_CHECKED.resolve().get().get()))
             //Apply mossy stones to surface
             .apply(BiomeDefaultFeatures::addMossyStoneBlock)
             //Add flowers to surface
@@ -49,7 +50,7 @@ public class SakuraForestBiome {
             .apply(BiomeDefaultFeatures::farmAnimals)
             //Add default cave entities and mobs
             .apply(BiomeDefaultFeatures::commonSpawns)
-            //Allow wolfs to spawn
+            //Allow wolves to spawn
             .addSpawn(MobCategory.CREATURE, EntityType.WOLF, 5, 4, 4);
 
         return BiomeBuilder.forest(generationSettingsHelper, mobSpawnHelper).build();
