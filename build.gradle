@@ -102,9 +102,9 @@ repositories {
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+    flatDir {
+        dir 'libs'
+    }
 }
 
 dependencies {
@@ -115,6 +115,7 @@ dependencies {
 
     //TerraBlender is used to generate our Biomes
     implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
+    implementation fg.deobf("com.github.manasmods:manascore:${minecraftVersion}-${manasCoreVersion}")
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
@@ -164,7 +165,8 @@ def replaceResources = tasks.register("replaceResources", Copy) {
 
         include "META-INF/mods.toml"
         expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck':
-                "${minecraftVersionCheck}", 'terrablenderVersionCheck': "[${terraBlenderVersionRange},)"
+                "${minecraftVersionCheck}", 'terrablenderVersionCheck': "[${terraBlenderVersionRange},)", 'manasCoreVersionCheck':
+                "[${manasCoreVersionCheck},)"
     }
     it.into "$buildDir/resources/main/"
 }
