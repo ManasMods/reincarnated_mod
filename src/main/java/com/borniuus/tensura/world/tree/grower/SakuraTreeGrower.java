@@ -1,6 +1,6 @@
 package com.borniuus.tensura.world.tree.grower;
 
-import com.borniuus.tensura.world.gen.TensuraFeatures;
+import com.borniuus.tensura.registry.TensuraConfiguredFeatureRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -14,12 +14,10 @@ public class SakuraTreeGrower extends AbstractTreeGrower {
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
         if (pRandom.nextInt(10) == 0) {
-            RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraFeatures.SAKURA_TREE_LARGE_HIVE.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry.")) :
-                TensuraFeatures.SAKURA_TREE_LARGE.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry."));
+            RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE_HIVE : TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE;
             return Holder.direct(result.get());
         } else {
-            RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraFeatures.SAKURA_TREE_HIVE.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry.")) :
-                TensuraFeatures.SAKURA_TREE.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry."));
+            RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraConfiguredFeatureRegistry.SAKURA_TREE_HIVE : TensuraConfiguredFeatureRegistry.SAKURA_TREE;
             return Holder.direct(result.get());
         }
     }

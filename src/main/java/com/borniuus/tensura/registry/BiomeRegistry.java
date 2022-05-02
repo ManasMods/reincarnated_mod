@@ -6,6 +6,6 @@ import net.minecraftforge.registries.DeferredRegister;
 
 class BiomeRegistry {
     static void register(DeferredRegister<Biome> registry) {
-        registry.register("sakura_forest", SakuraForestBiome::create).getKey();
+        registry.register("sakura_forest", SakuraForestBiome::create);
     }
 }

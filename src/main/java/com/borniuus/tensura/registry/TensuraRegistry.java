@@ -13,9 +13,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-
-import java.util.Map;
 
 /** Class with all registries which are used in this Mod */
 public class TensuraRegistry {
@@ -40,8 +37,8 @@ public class TensuraRegistry {
         BlockEntityTypeRegistry.register(ITEMS, BLOCKS, BLOCK_ENTITY_TYPES); //Registers Block Entities including their Blocks and Items
         SoundEventRegistry.register(SOUND_EVENTS); //Register Sound Events
         MotiveRegistry.register(MOTIVE); //Register Motives for custom paintings
-        FeatureRegistry.register(CONFIGURED_FEATURES);
-        PlacementRegistry.register(PLACED_FEATURE);
+        TensuraConfiguredFeatureRegistry.register(CONFIGURED_FEATURES);
+        TensuraPlacedFeatureRegistry.register(PLACED_FEATURE);
         BiomeRegistry.register(BIOMES); //Register Biomes
 
         // Add our Registries to Forge
@@ -53,13 +50,5 @@ public class TensuraRegistry {
         BIOMES.register(modEventBus);
         CONFIGURED_FEATURES.register(modEventBus);
         PLACED_FEATURE.register(modEventBus);
-    }
-
-    public static Map<String, RegistryObject<ConfiguredFeature<?, ?>>> getConfiguredFeatures() {
-        return FeatureRegistry.featureMap;
-    }
-
-    public static Map<String, RegistryObject<PlacedFeature>> getPlacedFeatures() {
-        return PlacementRegistry.placedFeatures;
     }
 }

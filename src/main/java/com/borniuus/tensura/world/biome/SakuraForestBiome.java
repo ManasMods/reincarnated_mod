@@ -1,10 +1,9 @@
 package com.borniuus.tensura.world.biome;
 
-import com.borniuus.tensura.registry.PlacementRegistry;
+import com.borniuus.tensura.registry.TensuraPlacedFeatureRegistry;
 import com.github.manasmods.manascore.world.gen.biome.BiomeBuilder;
 import com.github.manasmods.manascore.world.gen.biome.BiomeGenerationSettingsHelper;
 import com.github.manasmods.manascore.world.gen.biome.MobSpawnHelper;
-import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
@@ -31,7 +30,7 @@ public class SakuraForestBiome {
             //Apply default surface freezing
             .apply(BiomeDefaultFeatures::addSurfaceFreezing)
             //Add Trees
-            .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Holder.direct(PlacementRegistry.SAKURA_FOREST_CHECKED.get()))
+            .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TensuraPlacedFeatureRegistry.SAKURA_FOREST_CHECKED.getHolder().get())
             //Apply mossy stones to surface
             .apply(BiomeDefaultFeatures::addMossyStoneBlock)
             //Add flowers to surface

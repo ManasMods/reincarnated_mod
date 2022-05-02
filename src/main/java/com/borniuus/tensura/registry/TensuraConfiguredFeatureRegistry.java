@@ -1,8 +1,6 @@
 package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.TensuraBlocks;
-import com.borniuus.tensura.world.gen.TensuraPlacements;
-import net.minecraft.core.Holder;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -20,28 +18,22 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.OptionalInt;
-import java.util.function.Supplier;
 
-class FeatureRegistry {
+public class TensuraConfiguredFeatureRegistry {
     private static final BeehiveDecorator BEEHIVE = new BeehiveDecorator(0.05F);
-    static final Map<String, RegistryObject<ConfiguredFeature<?, ?>>> featureMap = new HashMap<>();
+    public static RegistryObject<ConfiguredFeature<?, ?>> SAKURA_TREE, SAKURA_TREE_HIVE, SAKURA_TREE_LARGE, SAKURA_TREE_LARGE_HIVE, SAKURA_FOREST;
 
     static void register(final DeferredRegister<ConfiguredFeature<?, ?>> registry) {
-        register(registry, "sakura_tree", () -> new ConfiguredFeature<>(Feature.TREE, basicTree(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
-        register(registry, "sakura_tree_hive", () -> new ConfiguredFeature<>(Feature.TREE, basicTreeWithHive(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
-        register(registry, "sakura_tree_large", () -> new ConfiguredFeature<>(Feature.TREE, largeTree(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
-        register(registry, "sakura_tree_large_hive", () -> new ConfiguredFeature<>(Feature.TREE, largeTreeWithHive(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
-        register(registry, "sakura_forest_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
-            new WeightedPlacedFeature(Holder.direct(TensuraPlacements.SAKURA_TREE_LARGE_CHECKED.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry.")).get()), 0.15F)
-        ), Holder.direct(TensuraPlacements.SAKURA_TREE_CHECKED.orElseThrow(() -> new IllegalArgumentException("Can not load Value from Registry.")).get()))));
-    }
+        SAKURA_TREE = registry.register("sakura_tree", () -> new ConfiguredFeature<>(Feature.TREE, basicTree(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
+        SAKURA_TREE_HIVE = registry.register("sakura_tree_hive", () -> new ConfiguredFeature<>(Feature.TREE, basicTreeWithHive(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
+        SAKURA_TREE_LARGE = registry.register("sakura_tree_large", () -> new ConfiguredFeature<>(Feature.TREE, largeTree(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
+        SAKURA_TREE_LARGE_HIVE = registry.register("sakura_tree_large_hive", () -> new ConfiguredFeature<>(Feature.TREE, largeTreeWithHive(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
 
-    private static void register(final DeferredRegister<ConfiguredFeature<?, ?>> registry, String registryName, final Supplier<ConfiguredFeature<?, ?>> supplier) {
-        featureMap.put(registryName, registry.register(registryName, supplier));
+        SAKURA_FOREST = registry.register("sakura_forest_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+            new WeightedPlacedFeature(TensuraPlacedFeatureRegistry.SAKURA_TREE_LARGE_CHECKED.getHolder().get(), 0.15F)
+        ), TensuraPlacedFeatureRegistry.SAKURA_TREE_CHECKED.getHolder().get())));
     }
 
     private static TreeConfiguration largeTree(Block logBlock, Block leavesBlock) {
