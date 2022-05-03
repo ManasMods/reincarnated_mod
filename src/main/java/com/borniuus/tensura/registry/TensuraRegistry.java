@@ -9,6 +9,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -24,6 +25,7 @@ public class TensuraRegistry {
     private static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, Tensura.MOD_ID);
     private static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Tensura.MOD_ID);
     private static final DeferredRegister<PlacedFeature> PLACED_FEATURE = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Tensura.MOD_ID);
+    private static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER = DeferredRegister.create(Registry.FOLIAGE_PLACER_TYPE_REGISTRY, Tensura.MOD_ID);
 
     /**
      * Registers all registries.
@@ -39,6 +41,7 @@ public class TensuraRegistry {
         MotiveRegistry.register(MOTIVE); //Register Motives for custom paintings
         TensuraConfiguredFeatureRegistry.register(CONFIGURED_FEATURES);
         TensuraPlacedFeatureRegistry.register(PLACED_FEATURE);
+        TensuraFoliagePlacerRegistry.register(FOLIAGE_PLACER);
         BiomeRegistry.register(BIOMES); //Register Biomes
 
         // Add our Registries to Forge
@@ -50,5 +53,6 @@ public class TensuraRegistry {
         BIOMES.register(modEventBus);
         CONFIGURED_FEATURES.register(modEventBus);
         PLACED_FEATURE.register(modEventBus);
+        FOLIAGE_PLACER.register(modEventBus);
     }
 }

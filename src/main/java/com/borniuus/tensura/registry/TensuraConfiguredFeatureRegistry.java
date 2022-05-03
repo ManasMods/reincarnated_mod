@@ -1,6 +1,7 @@
 package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.TensuraBlocks;
+import com.borniuus.tensura.world.tree.PalmFoliagePlacer;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -24,6 +25,7 @@ import java.util.OptionalInt;
 public class TensuraConfiguredFeatureRegistry {
     private static final BeehiveDecorator BEEHIVE = new BeehiveDecorator(0.05F);
     public static RegistryObject<ConfiguredFeature<?, ?>> SAKURA_TREE, SAKURA_TREE_HIVE, SAKURA_TREE_LARGE, SAKURA_TREE_LARGE_HIVE, SAKURA_FOREST;
+    public static RegistryObject<ConfiguredFeature<?, ?>> PALM_TREE, PALM_FOREST;
 
     static void register(final DeferredRegister<ConfiguredFeature<?, ?>> registry) {
         SAKURA_TREE = registry.register("sakura_tree", () -> new ConfiguredFeature<>(Feature.TREE, basicTree(TensuraBlocks.SAKURA_LOG, TensuraBlocks.SAKURA_LEAVES)));
@@ -34,6 +36,18 @@ public class TensuraConfiguredFeatureRegistry {
         SAKURA_FOREST = registry.register("sakura_forest_trees", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
             new WeightedPlacedFeature(TensuraPlacedFeatureRegistry.SAKURA_TREE_LARGE_CHECKED.getHolder().get(), 0.15F)
         ), TensuraPlacedFeatureRegistry.SAKURA_TREE_CHECKED.getHolder().get())));
+
+        PALM_TREE = registry.register("palm_tree", () -> new ConfiguredFeature<>(Feature.TREE,
+            new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(TensuraBlocks.PALM_LOG),
+                new StraightTrunkPlacer(5, 2, 0),
+                BlockStateProvider.simple(TensuraBlocks.PALM_LEAVES),
+                new PalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
+            ).build()));
+
+        PALM_FOREST = registry.register("palm_forest", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
+            new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(TensuraPlacedFeatureRegistry.PALM_TREE_CHECKED.getHolder().get(), 0.01F)),
+                TensuraPlacedFeatureRegistry.PALM_TREE_CHECKED.getHolder().get())));
     }
 
     private static TreeConfiguration largeTree(Block logBlock, Block leavesBlock) {
