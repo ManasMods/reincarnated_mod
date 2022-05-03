@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_giant_bat_meat"
+      "minecraft:cooked_giant_ant_meat_from_smelting"
     ]
   },
   "criteria": {
-    "has_raw_giant_bat_meat": {
+    "has_raw_giant_ant_meat": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:raw_giant_bat_meat"
+              "tensura:raw_giant_ant_meat"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_giant_bat_meat"
+        "recipe": "minecraft:cooked_giant_ant_meat_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_raw_giant_bat_meat",
+      "has_raw_giant_ant_meat",
       "has_the_recipe"
     ]
   ]

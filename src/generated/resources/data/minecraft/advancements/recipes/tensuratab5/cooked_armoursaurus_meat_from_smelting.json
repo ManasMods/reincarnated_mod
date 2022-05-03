@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_charybdis_meat"
+      "minecraft:cooked_armoursaurus_meat_from_smelting"
     ]
   },
   "criteria": {
-    "has_raw_charybdis_meat": {
+    "has_raw_armoursaurus_meat": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:raw_charybdis_meat"
+              "tensura:raw_armoursaurus_meat"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_charybdis_meat"
+        "recipe": "minecraft:cooked_armoursaurus_meat_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_raw_charybdis_meat",
+      "has_raw_armoursaurus_meat",
       "has_the_recipe"
     ]
   ]

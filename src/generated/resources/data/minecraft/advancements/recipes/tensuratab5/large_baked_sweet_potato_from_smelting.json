@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_giant_ant_meat"
+      "minecraft:large_baked_sweet_potato_from_smelting"
     ]
   },
   "criteria": {
-    "has_raw_giant_ant_meat": {
+    "has_large_sweet_potato": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:raw_giant_ant_meat"
+              "tensura:large_sweet_potato"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_giant_ant_meat"
+        "recipe": "minecraft:large_baked_sweet_potato_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_raw_giant_ant_meat",
+      "has_large_sweet_potato",
       "has_the_recipe"
     ]
   ]

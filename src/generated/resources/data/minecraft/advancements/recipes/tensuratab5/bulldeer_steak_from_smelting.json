@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:baked_sweet_potato"
+      "minecraft:bulldeer_steak_from_smelting"
     ]
   },
   "criteria": {
-    "has_sweet_potato": {
+    "has_bulldeer_beef": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:sweet_potato"
+              "tensura:bulldeer_beef"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:baked_sweet_potato"
+        "recipe": "minecraft:bulldeer_steak_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_sweet_potato",
+      "has_bulldeer_beef",
       "has_the_recipe"
     ]
   ]
