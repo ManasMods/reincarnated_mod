@@ -21,7 +21,7 @@ public class TensuraPlacedFeatureRegistry {
             List.of(PlacementUtils.filteredByBlockSurvival(TensuraBlocks.SAKURA_SAPLING))));
         SAKURA_TREE_LARGE_CHECKED = registry.register("sakura_tree_large_checked", () -> new PlacedFeature(TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE.getHolder().get(),
             List.of(PlacementUtils.filteredByBlockSurvival(TensuraBlocks.SAKURA_SAPLING))));
-        SAKURA_FOREST_CHECKED = registry.register("sakura_forest_trees_checked", () -> new PlacedFeature(TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE.getHolder().get(),
+        SAKURA_FOREST_CHECKED = registry.register("sakura_forest_trees_checked", () -> new PlacedFeature(TensuraConfiguredFeatureRegistry.SAKURA_FOREST.getHolder().get(),
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1))));
 
     }
