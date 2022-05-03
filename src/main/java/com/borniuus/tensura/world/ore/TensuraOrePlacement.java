@@ -1,4 +1,4 @@
-package com.borniuus.tensura.world.ores;
+package com.borniuus.tensura.world.ore;
 
 import com.borniuus.tensura.block.TensuraBlocks;
 import net.minecraft.core.Holder;

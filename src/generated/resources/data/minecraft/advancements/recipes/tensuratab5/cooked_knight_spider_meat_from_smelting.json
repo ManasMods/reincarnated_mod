@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_knight_spider_meat"
+      "minecraft:cooked_knight_spider_meat_from_smelting"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_knight_spider_meat"
+        "recipe": "minecraft:cooked_knight_spider_meat_from_smelting"
       }
     }
   },

@@ -2,7 +2,6 @@ package com.borniuus.tensura.block;
 
 import com.borniuus.tensura.block.state.properties.LoomPart;
 import com.borniuus.tensura.block.state.properties.TensuraBlockStateProperties;
-import com.borniuus.tensura.item.templates.SimpleBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;

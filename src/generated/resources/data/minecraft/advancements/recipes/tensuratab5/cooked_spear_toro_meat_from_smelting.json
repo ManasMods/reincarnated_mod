@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_serpent_meat"
+      "minecraft:cooked_spear_toro_meat_from_smelting"
     ]
   },
   "criteria": {
-    "has_raw_serpent_meat": {
+    "has_raw_spear_toro_meat": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:raw_serpent_meat"
+              "tensura:raw_spear_toro_meat"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_serpent_meat"
+        "recipe": "minecraft:cooked_spear_toro_meat_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_raw_serpent_meat",
+      "has_raw_spear_toro_meat",
       "has_the_recipe"
     ]
   ]

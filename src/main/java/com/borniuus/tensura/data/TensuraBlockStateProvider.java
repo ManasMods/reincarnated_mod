@@ -2,30 +2,22 @@ package com.borniuus.tensura.data;
 
 import com.borniuus.tensura.Tensura;
 import com.borniuus.tensura.block.TensuraBlocks;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import com.github.manasmods.manascore.data.gen.BlockStateProvider;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 public class TensuraBlockStateProvider extends BlockStateProvider {
-    public TensuraBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, Tensura.MOD_ID, exFileHelper);
+
+    public TensuraBlockStateProvider(GatherDataEvent gatherDataEvent) {
+        super(gatherDataEvent, Tensura.MOD_ID);
     }
 
     @Override
-    protected void registerStatesAndModels() {
-
+    protected void generate() {
         //BLOCKS WITH DIFFERENT TOP + BOTTOM TO THE SIDES
 
-        log((RotatedPillarBlock) TensuraBlocks.PALM_LOG);
-        log((RotatedPillarBlock) TensuraBlocks.SAKURA_LOG);
-        log((RotatedPillarBlock) TensuraBlocks.THATCH_BLOCK);
+        pillar(TensuraBlocks.PALM_LOG);
+        pillar(TensuraBlocks.SAKURA_LOG);
+        pillar(TensuraBlocks.THATCH_BLOCK);
 
         //BLOCKS WITH SAME TEXTURE ON ALL SIDES
 
@@ -47,59 +39,19 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
 
         //STAIRS
 
-        stairsBlock((StairBlock) TensuraBlocks.PALM_STAIRS, TensuraBlocks.PALM_PLANKS);
-        stairsBlock((StairBlock) TensuraBlocks.SAKURA_STAIRS, TensuraBlocks.SAKURA_PLANKS);
-        stairsBlock((StairBlock) TensuraBlocks.THATCH_STAIRS, TensuraBlocks.THATCH_BLOCK);
+        stairs(TensuraBlocks.PALM_STAIRS, TensuraBlocks.PALM_PLANKS);
+        stairs(TensuraBlocks.SAKURA_STAIRS, TensuraBlocks.SAKURA_PLANKS);
+        stairs(TensuraBlocks.THATCH_STAIRS, TensuraBlocks.THATCH_BLOCK);
 
         //SLABS
 
-        slabBlock((SlabBlock) TensuraBlocks.PALM_SLAB, TensuraBlocks.PALM_PLANKS);
-        slabBlock((SlabBlock) TensuraBlocks.SAKURA_SLAB, TensuraBlocks.SAKURA_PLANKS);
-        slabBlock((SlabBlock) TensuraBlocks.THATCH_SLAB, TensuraBlocks.THATCH_BLOCK);
+        slab(TensuraBlocks.PALM_SLAB, TensuraBlocks.PALM_PLANKS);
+        slab(TensuraBlocks.SAKURA_SLAB, TensuraBlocks.SAKURA_PLANKS);
+        slab(TensuraBlocks.THATCH_SLAB, TensuraBlocks.THATCH_BLOCK);
 
         //OTHER
 
         //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
-
-    }
-
-    private void defaultBlock(Block block) {
-        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
-        itemModels().getBuilder(block.getRegistryName().getPath())
-                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
-    }
-    /**
-     * Generates blockstate, block and item model json file.
-     *
-     * @param stairBlock   the {@link StairBlock} Object
-     * @param textureBlock the {@link Block} you want to use as texture
-     */
-    private void stairsBlock(Block stairBlock, Block textureBlock) {
-        if (!(stairBlock instanceof StairBlock block)) {
-            throw new IllegalArgumentException(stairBlock.getRegistryName().toString() + " is not a instance of StairBlock.");
-        } else {
-            stairsBlock(block, new ResourceLocation(Tensura.MOD_ID, "block/" + textureBlock.getRegistryName().getPath()));
-            itemModels().getBuilder(block.getRegistryName().getPath())
-                    .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
-        }
-    }
-    private void slabBlock(Block slabBlock, Block textureBlock) {
-        if (!(slabBlock instanceof SlabBlock block)) {
-            throw new IllegalArgumentException(slabBlock.getRegistryName().toString() + " is not a instance of StairBlock.");
-        } else {
-            slabBlock(block, new ResourceLocation(Tensura.MOD_ID, "block/" + textureBlock.getRegistryName().getPath()), new ResourceLocation(Tensura.MOD_ID, "block/" + textureBlock.getRegistryName().getPath()));
-            itemModels().getBuilder(block.getRegistryName().getPath())
-                    .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
-        }
-    }
-    private void log(Block block) {
-        if (!(block instanceof RotatedPillarBlock rotatedPillarBlock)) {
-            throw new IllegalArgumentException(block.getRegistryName().toString() + " is not a instance of RotatedPillarBlock.");
-        } else {
-            logBlock(rotatedPillarBlock);
-            itemModels().getBuilder(block.getRegistryName().getPath())
-                    .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Tensura.MOD_ID, "block/" + block.getRegistryName().getPath())));
-        }
     }
 }
 

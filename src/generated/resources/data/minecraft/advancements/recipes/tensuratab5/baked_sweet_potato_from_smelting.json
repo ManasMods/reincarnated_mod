@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:cooked_megalodon_meat"
+      "minecraft:baked_sweet_potato_from_smelting"
     ]
   },
   "criteria": {
-    "has_raw_megalodon_meat": {
+    "has_sweet_potato": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:raw_megalodon_meat"
+              "tensura:sweet_potato"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:cooked_megalodon_meat"
+        "recipe": "minecraft:baked_sweet_potato_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_raw_megalodon_meat",
+      "has_sweet_potato",
       "has_the_recipe"
     ]
   ]

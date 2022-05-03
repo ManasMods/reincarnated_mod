@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:large_baked_potato"
+      "minecraft:cooked_charybdis_meat_from_smelting"
     ]
   },
   "criteria": {
-    "has_large_potato": {
+    "has_raw_charybdis_meat": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:large_potato"
+              "tensura:raw_charybdis_meat"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:large_baked_potato"
+        "recipe": "minecraft:cooked_charybdis_meat_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_large_potato",
+      "has_raw_charybdis_meat",
       "has_the_recipe"
     ]
   ]

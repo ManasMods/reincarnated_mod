@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "tensura:bulldeer_steak"
+      "minecraft:cooked_megalodon_meat_from_smelting"
     ]
   },
   "criteria": {
-    "has_bulldeer_beef": {
+    "has_raw_megalodon_meat": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "tensura:bulldeer_beef"
+              "tensura:raw_megalodon_meat"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "tensura:bulldeer_steak"
+        "recipe": "minecraft:cooked_megalodon_meat_from_smelting"
       }
     }
   },
   "requirements": [
     [
-      "has_bulldeer_beef",
+      "has_raw_megalodon_meat",
       "has_the_recipe"
     ]
   ]

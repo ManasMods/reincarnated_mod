@@ -1,5 +1,6 @@
 package com.borniuus.tensura;
 
+import com.borniuus.tensura.block.SimpleLeaves;
 import com.borniuus.tensura.block.WindowBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -15,5 +16,6 @@ public class TensuraClient extends TensuraCommon {
     public void clientInit() {
         //Register all Window Blocks as cutout transparency blocks
         WindowBlock.getWindowBlocks().forEach(windowBlock -> ItemBlockRenderTypes.setRenderLayer(windowBlock, RenderType.cutout()));
+        SimpleLeaves.getLeavesBlocks().forEach(leavesBlock -> ItemBlockRenderTypes.setRenderLayer(leavesBlock, RenderType.cutoutMipped()));
     }
 }

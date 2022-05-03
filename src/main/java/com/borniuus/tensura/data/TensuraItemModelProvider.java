@@ -2,19 +2,16 @@ package com.borniuus.tensura.data;
 
 import com.borniuus.tensura.Tensura;
 import com.borniuus.tensura.item.TensuraItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import com.github.manasmods.manascore.data.gen.ItemModelProvider;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 public class TensuraItemModelProvider extends ItemModelProvider {
-    public TensuraItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Tensura.MOD_ID, existingFileHelper);
+    public TensuraItemModelProvider(GatherDataEvent gatherDataEvent) {
+        super(gatherDataEvent, Tensura.MOD_ID);
     }
 
     @Override
-    protected void registerModels() {
+    protected void generate() {
         //weapons
         handheldSingleTexture(TensuraItems.FLINT_SWORD);
         handheldSingleTexture(TensuraItems.SILVER_SWORD);
@@ -145,25 +142,5 @@ public class TensuraItemModelProvider extends ItemModelProvider {
         //singleTexture(TensuraItems.SPIRIT_CORE);
         //singleTexture(TensuraItems.STELLA_GOLD_COIN);
         singleTexture(TensuraItems.THATCH);
-    }
-
-    /**
-     * Generates the item model json file.
-     * Can be used for any default rendered {@link Item} object.
-     */
-    private void singleTexture(Item item) {
-        getBuilder(item.getRegistryName().getPath())
-            .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
-            .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
-    }
-
-    /**
-     * Generates the item model json file.
-     * Can be used for any handheld rendered {@link Item} like Tools and Torches.
-     */
-    private void handheldSingleTexture(Item item) {
-        getBuilder(item.getRegistryName().getPath())
-            .parent(new ModelFile.UncheckedModelFile(mcLoc("item/handheld")))
-            .texture("layer0", modLoc("item/" + item.getRegistryName().getPath()));
     }
 }

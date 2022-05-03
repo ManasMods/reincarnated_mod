@@ -1,10 +1,11 @@
 package com.borniuus.tensura;
 
+import com.borniuus.tensura.data.TensuraBlockTagProvider;
+import com.borniuus.tensura.data.TensuraItemTagProvider;
 import com.borniuus.tensura.data.TensuraBlockStateProvider;
 import com.borniuus.tensura.data.TensuraItemModelProvider;
 import com.borniuus.tensura.data.TensuraRecipeProvider;
 import lombok.Getter;
-import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -40,10 +41,12 @@ public class Tensura {
     }
 
     private void generateData(final GatherDataEvent event) {
-        final DataGenerator generator = event.getGenerator();
-        event.getGenerator().addProvider(new TensuraBlockStateProvider(generator, event.getExistingFileHelper()));
-        event.getGenerator().addProvider(new TensuraItemModelProvider(generator, event.getExistingFileHelper()));
-        event.getGenerator().addProvider(new TensuraRecipeProvider(generator));
+        event.getGenerator().addProvider(new TensuraBlockStateProvider(event));
+        event.getGenerator().addProvider(new TensuraItemModelProvider(event));
+        event.getGenerator().addProvider(new TensuraRecipeProvider(event));
+        TensuraBlockTagProvider blockTagProvider = new TensuraBlockTagProvider(event);
+        event.getGenerator().addProvider(blockTagProvider);
+        event.getGenerator().addProvider(new TensuraItemTagProvider(event, blockTagProvider));
     }
 
     /**
