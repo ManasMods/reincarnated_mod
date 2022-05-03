@@ -5,7 +5,7 @@ import com.borniuus.tensura.block.LoomBlock;
 import com.borniuus.tensura.block.SmithingBenchBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.block.TensuraSapling;
-import com.borniuus.tensura.item.templates.SimpleBlock;
+import com.borniuus.tensura.block.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
 import com.borniuus.tensura.world.tree.grower.SakuraTreeGrower;
 import net.minecraft.resources.ResourceLocation;

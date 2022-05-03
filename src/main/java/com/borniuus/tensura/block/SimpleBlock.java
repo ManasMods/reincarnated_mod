@@ -1,4 +1,4 @@
-package com.borniuus.tensura.item.templates;
+package com.borniuus.tensura.block;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
