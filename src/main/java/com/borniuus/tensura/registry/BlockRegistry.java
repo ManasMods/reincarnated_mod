@@ -2,6 +2,8 @@ package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.CookingPotBlock;
 import com.borniuus.tensura.block.LoomBlock;
+import com.borniuus.tensura.block.SimpleLeaves;
+import com.borniuus.tensura.block.SimpleLog;
 import com.borniuus.tensura.block.SmithingBenchBlock;
 import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.block.TensuraSapling;
@@ -59,14 +61,9 @@ class BlockRegistry {
      */
     private static void registerTreeBlocks(DeferredRegister<Block> registry) {
         //Palm Tree Blocks
-        registry.register("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
-            .strength(1F)
-            .noOcclusion()
-            .sound(SoundType.AZALEA_LEAVES)));
+        registry.register("palm_leaves", SimpleLeaves::new);
 
-        registry.register("palm_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-            .strength(2)
-            .sound(SoundType.WOOD)));
+        registry.register("palm_log", () -> new SimpleLog(MaterialColor.TERRACOTTA_WHITE, MaterialColor.COLOR_BROWN));
 
         registry.register("palm_planks", () -> new SimpleBlock(Material.WOOD, properties -> properties
             .strength(1F)
@@ -86,14 +83,9 @@ class BlockRegistry {
             .sound(SoundType.WOOD)));
 
         //Sakura Tree Blocks
-        registry.register("sakura_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES)
-            .strength(1F)
-            .noOcclusion()
-            .sound(SoundType.AZALEA_LEAVES)));
+        registry.register("sakura_leaves", SimpleLeaves::new);
 
-        registry.register("sakura_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-            .strength(2)
-            .sound(SoundType.WOOD)));
+        registry.register("sakura_log", () -> new SimpleLog(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.COLOR_LIGHT_GRAY));
 
         registry.register("sakura_sapling", () -> new TensuraSapling(new SakuraTreeGrower()));
 
