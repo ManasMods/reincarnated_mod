@@ -12,6 +12,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
+import java.awt.Color;
+
 public class SakuraForestBiome {
     public static Biome create() {
         BiomeGenerationSettingsHelper generationSettingsHelper = new BiomeGenerationSettingsHelper()
@@ -52,6 +54,8 @@ public class SakuraForestBiome {
             //Allow wolves to spawn
             .addSpawn(MobCategory.CREATURE, EntityType.WOLF, 5, 4, 4);
 
-        return BiomeBuilder.forest(generationSettingsHelper, mobSpawnHelper).build();
+        return BiomeBuilder.forest(generationSettingsHelper, mobSpawnHelper)
+            .grassColor(new Color(45, 144, 20))
+            .build();
     }
 }
