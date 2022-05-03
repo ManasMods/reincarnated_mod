@@ -1,7 +1,8 @@
 package com.borniuus.tensura.registry;
 
 import com.borniuus.tensura.block.TensuraBlocks;
-import com.borniuus.tensura.world.tree.PalmFoliagePlacer;
+import com.borniuus.tensura.world.tree.leaves.PalmFoliagePlacer;
+import com.borniuus.tensura.world.tree.trunk.PalmTrunkPlacer;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -39,7 +40,7 @@ public class TensuraConfiguredFeatureRegistry {
 
         PALM_TREE = registry.register("palm_tree", () -> new ConfiguredFeature<>(Feature.TREE,
             new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(TensuraBlocks.PALM_LOG),
-                new StraightTrunkPlacer(5, 2, 0),
+                new PalmTrunkPlacer(11, 2, 0),
                 BlockStateProvider.simple(TensuraBlocks.PALM_LEAVES),
                 new PalmFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
