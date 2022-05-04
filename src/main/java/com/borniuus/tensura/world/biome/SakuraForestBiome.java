@@ -56,7 +56,7 @@ public class SakuraForestBiome {
             .addSpawn(MobCategory.CREATURE, EntityType.WOLF, 5, 4, 4);
 
         return BiomeBuilder.forest(generationSettingsHelper, mobSpawnHelper)
-            .grassColor(new Color(45, 144, 20))
+            .grassColor(new Color(154, 188, 66))
             .build();
     }
 }
