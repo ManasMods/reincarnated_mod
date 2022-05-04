@@ -15,10 +15,10 @@ public class SakuraTreeGrower extends AbstractTreeGrower {
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
         if (pRandom.nextInt(10) == 0) {
             RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE_HIVE : TensuraConfiguredFeatureRegistry.SAKURA_TREE_LARGE;
-            return Holder.direct(result.get());
+            return result.getHolder().get();
         } else {
             RegistryObject<ConfiguredFeature<?, ?>> result = pLargeHive ? TensuraConfiguredFeatureRegistry.SAKURA_TREE_HIVE : TensuraConfiguredFeatureRegistry.SAKURA_TREE;
-            return Holder.direct(result.get());
+            return result.getHolder().get();
         }
     }
 }

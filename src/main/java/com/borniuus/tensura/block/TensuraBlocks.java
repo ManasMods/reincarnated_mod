@@ -49,6 +49,9 @@ public class TensuraBlocks {
     @ObjectHolder("palm_planks")
     public static final Block PALM_PLANKS = null;
 
+    @ObjectHolder("palm_sapling")
+    public static final Block PALM_SAPLING = null;
+
     @ObjectHolder("sakura_leaves")
     public static final Block SAKURA_LEAVES = null;
 

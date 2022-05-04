@@ -9,6 +9,7 @@ import com.borniuus.tensura.block.TensuraBlocks;
 import com.borniuus.tensura.block.TensuraSapling;
 import com.borniuus.tensura.block.SimpleBlock;
 import com.borniuus.tensura.item.templates.SimpleBlockItem;
+import com.borniuus.tensura.world.tree.grower.PalmTreeGrower;
 import com.borniuus.tensura.world.tree.grower.SakuraTreeGrower;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -81,6 +82,8 @@ class BlockRegistry {
         registry.register("palm_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
             .strength(2F)
             .sound(SoundType.WOOD)));
+
+        registry.register("palm_sapling", () -> new TensuraSapling(new PalmTreeGrower()));
 
         //Sakura Tree Blocks
         registry.register("sakura_leaves", SimpleLeaves::new);
