@@ -39,6 +39,7 @@ public class SakuraForestBiome {
             .apply(BiomeDefaultFeatures::addForestFlowers)
             //Add grass to surface
             .apply(BiomeDefaultFeatures::addForestGrass)
+            .apply(BiomeDefaultFeatures::addPlainGrass)
             //Add Mushrooms to surface
             .apply(BiomeDefaultFeatures::addDefaultMushrooms)
             //Add decoration plants to surface
@@ -55,7 +56,7 @@ public class SakuraForestBiome {
             .addSpawn(MobCategory.CREATURE, EntityType.WOLF, 5, 4, 4);
 
         return BiomeBuilder.forest(generationSettingsHelper, mobSpawnHelper)
-            .grassColor(new Color(45, 144, 20))
+            .grassColor(new Color(154, 188, 66))
             .build();
     }
 }
