@@ -39,6 +39,7 @@ public class SakuraForestBiome {
             .apply(BiomeDefaultFeatures::addForestFlowers)
             //Add grass to surface
             .apply(BiomeDefaultFeatures::addForestGrass)
+            .apply(BiomeDefaultFeatures::addPlainGrass)
             //Add Mushrooms to surface
             .apply(BiomeDefaultFeatures::addDefaultMushrooms)
             //Add decoration plants to surface
