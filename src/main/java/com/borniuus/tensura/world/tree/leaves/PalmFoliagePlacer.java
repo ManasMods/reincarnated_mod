@@ -1,6 +1,5 @@
 package com.borniuus.tensura.world.tree.leaves;
 
-import com.borniuus.tensura.Tensura;
 import com.mojang.datafixers.Products;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -37,8 +36,6 @@ public class PalmFoliagePlacer extends FoliagePlacer {
     @Override
     protected void createFoliage(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, Random pRandom, TreeConfiguration pConfig,
                                  int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
-        Tensura.getLogger().info("Trying to generate Palm leaves at: {}", pAttachment.pos());
-
         BlockPos lastPos;
         tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos());
         tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos().north());
