@@ -20,7 +20,7 @@ apply plugin: 'org.spongepowered.mixin'
 //As described in https://mcforge.readthedocs.io/en/1.18.x/gettingstarted/versioning/#examples
 version = "${minecraftVersion}-${modVersion}"
 group = 'com.github.manasmods' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = '${modId}'
+archivesBaseName = "${modId}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
