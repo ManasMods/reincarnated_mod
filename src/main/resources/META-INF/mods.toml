@@ -36,6 +36,6 @@ This is the third iteration of the Tensura mod or TTIGRAAS as it was previously 
 [[dependencies.tensura]]
     modId="manascore"
     mandatory=true
-    versionRange="${manasCoreVersionCheck}"
+    versionRange="${manasVersionCheck}"
     ordering="NONE"
     side="BOTH"

@@ -195,9 +195,10 @@ def replaceResources = tasks.register("replaceResources", Copy) {
     it.from(sourceSets.main.resources) {
         def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
         def manasVersionCheck = "[${manasCoreVersion},)"
+        def terrablenderMajorVersion = terraBlenderVersion.substring(0, terraBlenderVersion.indexOf('.', terraBlenderVersion.indexOf('.') + 1))
 
         include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}", 'manasVersionCheck': "${manasVersionCheck}"
+        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}", 'manasVersionCheck': "${manasVersionCheck}", 'terrablenderVersionCheck': "[${terrablenderMajorVersion},)"
     }
     it.into "$buildDir/resources/main/"
 }
