@@ -7,8 +7,8 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
         classpath 'org.parchmentmc:librarian:1.+'
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -19,11 +19,24 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 //As described in https://mcforge.readthedocs.io/en/1.18.x/gettingstarted/versioning/#examples
 version = "${minecraftVersion}-${modVersion}"
-group = 'com.borniuus.tensura' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'tensura'
-
+group = 'com.github.manasmods' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "${modId}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+ext {
+    if (!project.hasProperty('manasmodsUsername')) {
+        System.out.println("No ManasMods Repo User found.")
+        //DO NOT WRITE ANYTHING INTO THIS FIELD! ANYONE CEN SEE THIS FIELD!!
+        manasmodsUsername = ""
+    }
+
+    if (!project.hasProperty('manasmodsPassword')) {
+        System.out.println("No ManasMods Repo User password found.")
+        //DO NOT WRITE ANYTHING INTO THIS FIELD! ANYONE CEN SEE THIS FIELD!!
+        manasmodsPassword = ""
+    }
+}
 
 minecraft {
     mappings channel: 'parchment', version: "${parchmentVersion}-${minecraftVersion}"
@@ -98,14 +111,24 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    flatDir {
-        dir 'libs'
+    maven {
+        url = "https://manasmods.bytesafe.dev/maven/manasmods"
+        name = "manasmods"
+        credentials {
+            username System.getenv().getOrDefault("MANAS_REPO_USER", manasmodsUsername)
+            password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", manasmodsPassword)
+        }
     }
-
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
     maven {
         url "https://cursemaven.com"
         content {
@@ -122,8 +145,7 @@ dependencies {
 
     //TerraBlender is used to generate our Biomes
     implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraftVersion}-${terraBlenderVersion}")
-    implementation fg.deobf("curse.maven:manascore-619025:${manasCoreFileId}")
-
+    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}")
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
@@ -157,11 +179,14 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+            name = "manasmods"
+            credentials {
+                username System.getenv().getOrDefault("MANAS_REPO_USER", manasmodsUsername)
+                password System.getenv().getOrDefault("MANAS_REPO_USER_PASSWORD", manasmodsPassword)
+            }
+            url "https://manasmods.bytesafe.dev/maven/manasmods"
         }
     }
-
-
 }
 
 def replaceResources = tasks.register("replaceResources", Copy) {
@@ -169,11 +194,11 @@ def replaceResources = tasks.register("replaceResources", Copy) {
     //Copy it into the build dir
     it.from(sourceSets.main.resources) {
         def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
+        def manasVersionCheck = "[${manasCoreVersion},)"
+        def terrablenderMajorVersion = terraBlenderVersion.substring(0, terraBlenderVersion.indexOf('.', terraBlenderVersion.indexOf('.') + 1))
 
         include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck':
-                "${minecraftVersionCheck}", 'terrablenderVersionCheck': "[${terraBlenderVersionRange},)", 'manasCoreVersionCheck':
-                "[${manasCoreVersionCheck},)"
+        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}", 'manasVersionCheck': "${manasVersionCheck}", 'terrablenderVersionCheck': "[${terrablenderMajorVersion},)"
     }
     it.into "$buildDir/resources/main/"
 }
