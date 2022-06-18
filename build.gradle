@@ -20,7 +20,7 @@ apply plugin: 'org.spongepowered.mixin'
 //As described in https://mcforge.readthedocs.io/en/1.18.x/gettingstarted/versioning/#examples
 version = "${minecraftVersion}-${modVersion}"
 group = 'com.github.manasmods' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = '${modId}'
+archivesBaseName = "${modId}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -148,9 +148,6 @@ dependencies {
     implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}")
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
-    //JEI
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -198,14 +195,10 @@ def replaceResources = tasks.register("replaceResources", Copy) {
     it.from(sourceSets.main.resources) {
         def forgeLoaderVersion = forgeVersion.substring(0, forgeVersion.indexOf('.'))
         def manasVersionCheck = "[${manasCoreVersion},)"
+        def terrablenderMajorVersion = terraBlenderVersion.substring(0, terraBlenderVersion.indexOf('.', terraBlenderVersion.indexOf('.') + 1))
 
         include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}",
-                'forgeLoaderVersion': "[${forgeLoaderVersion},)",
-                'minecraftVersionCheck': "${minecraftVersionCheck}",
-                'manasVersionCheck': "${manasVersionCheck}",
-                'terrablenderVersionCheck': "${terraBlenderVersion}"
-
+        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}", 'manasVersionCheck': "${manasVersionCheck}", 'terrablenderVersionCheck': "[${terrablenderMajorVersion},)"
     }
     it.into "$buildDir/resources/main/"
 }

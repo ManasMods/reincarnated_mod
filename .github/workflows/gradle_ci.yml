@@ -20,6 +20,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      MANAS_REPO_USER: ${{ secrets.MANAS_REPO_USER }}
+      MANAS_REPO_USER_PASSWORD: ${{ secrets.MANAS_REPO_USER_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v3
@@ -39,6 +42,9 @@ jobs:
   gameTest:
     needs: [build]
     runs-on: ${{ matrix.os}}
+    env:
+      MANAS_REPO_USER: ${{ secrets.MANAS_REPO_USER }}
+      MANAS_REPO_USER_PASSWORD: ${{ secrets.MANAS_REPO_USER_PASSWORD }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]

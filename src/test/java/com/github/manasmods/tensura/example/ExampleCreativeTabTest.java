@@ -1,7 +1,7 @@
-package com.manasmods.tensura.example;
+package com.github.manasmods.tensura.example;
 
 import com.github.manasmods.tensura.Tensura;
-import com.manasmods.tensura.TestBatches;
+import com.github.manasmods.tensura.TestBatches;
 import com.github.manasmods.tensura.item.TensuraCreativeTab;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
