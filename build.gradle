@@ -148,6 +148,9 @@ dependencies {
     implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}")
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    //JEI
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -197,7 +200,12 @@ def replaceResources = tasks.register("replaceResources", Copy) {
         def manasVersionCheck = "[${manasCoreVersion},)"
 
         include "META-INF/mods.toml"
-        expand 'modVersion': "${modVersion}", 'forgeLoaderVersion': "[${forgeLoaderVersion},)", 'minecraftVersionCheck': "${minecraftVersionCheck}", 'manasVersionCheck': "${manasVersionCheck}"
+        expand 'modVersion': "${modVersion}",
+                'forgeLoaderVersion': "[${forgeLoaderVersion},)",
+                'minecraftVersionCheck': "${minecraftVersionCheck}",
+                'manasVersionCheck': "${manasVersionCheck}",
+                'terrablenderVersionCheck': "${terraBlenderVersion}"
+
     }
     it.into "$buildDir/resources/main/"
 }
