@@ -148,6 +148,13 @@ dependencies {
     implementation fg.deobf("com.github.manasmods:ManasCore:${minecraftVersion}-${manasCoreVersion}")
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // compile against the JEI API but do not include it at runtime
+    compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}:api")
+
+    // at runtime, use the full JEI jar
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}")
+
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
