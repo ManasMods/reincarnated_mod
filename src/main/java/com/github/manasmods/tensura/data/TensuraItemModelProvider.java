@@ -76,9 +76,9 @@ public class TensuraItemModelProvider extends ItemModelProvider {
         handheldSingleTexture(TensuraItems.HIHIIROKANE_SICKLE);
 
         //consumables
-        //singleTexture(TensuraItems.BULLDEER_BEEF);
-        //singleTexture(TensuraItems.BULLDEER_STEAK);
-        //singleTexture(TensuraItems.BULLDEER_SHISH_KEBAB);
+        singleTexture(TensuraItems.BULLDEER_BEEF);
+        singleTexture(TensuraItems.BULLDEER_STEAK);
+        singleTexture(TensuraItems.BULLDEER_SHISH_KEBAB);
         //singleTexture(TensuraItems.RAW_GIANT_ANT_MEAT);
         //singleTexture(TensuraItems.COOKED_GIANT_ANT_MEAT);
         //singleTexture(TensuraItems.RAW_GIANT_BAT_MEAT);
