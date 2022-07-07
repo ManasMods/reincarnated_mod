@@ -173,10 +173,10 @@
   "item.tensura.hihiirokane_shovel": "究極の金属のシャベル",
   "item.tensura.hihiirokane_hoe": "究極の金属のくれ",
   "item.tensura.hihiirokane_sickle": "究極の金属の鎌",
-  "itemGroup.tensuratab": "転スラタブ",
-  "itemGroup.tensuratab2": "転スラタブ二",
-  "itemGroup.tensuratab3": "転スラタブ三",
-  "itemGroup.tensuratab4": "転スラタブ四",
-  "itemGroup.tensuratab5": "転スラタブ五",
-  "itemGroup.tensuratab6": "転スラタブ六"
+  "itemGroup.tensuratab": "武器_タブ",
+  "itemGroup.tensuratab2": "工具_タブ",
+  "itemGroup.tensuratab3": "鎧_タブ",
+  "itemGroup.tensuratab4": "ブロック_タブ",
+  "itemGroup.tensuratab5": "アイテム_タブ五",
+  "itemGroup.tensuratab6": "そ他_タブ"
 }
