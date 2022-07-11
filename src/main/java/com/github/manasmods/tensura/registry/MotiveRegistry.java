@@ -4,6 +4,7 @@ import com.github.manasmods.tensura.motive.TensuraMotive;
 import net.minecraft.world.entity.decoration.Motive;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 class MotiveRegistry {
     /**
@@ -11,6 +12,9 @@ class MotiveRegistry {
      * It is called though the {@link TensuraRegistry#register(IEventBus)} Method.
      */
     static void register(DeferredRegister<Motive> registry) {
-        registry.register("example", () -> new TensuraMotive(80, 64));
+        //        registry.register("name", () -> new Motive(width,height));
+        registry.register("sunflower", () -> new Motive(80, 48));
+        registry.register("fulbrosia", () -> new Motive(48, 32));
+        registry.register("ten_great_demon_lords", () -> new Motive(128, 64));
     }
 }
