@@ -3,12 +3,14 @@ package com.github.manasmods.tensura.data;
 import com.github.manasmods.tensura.block.TensuraBlocks;
 import com.github.manasmods.tensura.item.TensuraItems;
 import com.github.manasmods.manascore.data.gen.RecipeProvider;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
@@ -22,6 +24,7 @@ public class TensuraRecipeProvider extends RecipeProvider {
 
     @Override
     protected void generate(Consumer<FinishedRecipe> consumer) {
+        final ImmutableList<ItemLike> SILVER_SMELTABLES = ImmutableList.of(TensuraBlocks.SILVER_ORE, TensuraBlocks.DEEPSLATE_SILVER_ORE, TensuraItems.RAW_SILVER);
 
         //**********SMELTING CHANGES
 
@@ -37,6 +40,9 @@ public class TensuraRecipeProvider extends RecipeProvider {
         allSmeltingRecipes(consumer, Ingredient.of(TensuraItems.SWEET_POTATO), TensuraItems.BAKED_SWEET_POTATO, 0.35F, 200, 600, 100);
         allSmeltingRecipes(consumer, Ingredient.of(TensuraItems.LARGE_SWEET_POTATO), TensuraItems.LARGE_BAKED_SWEET_POTATO, 0.35F, 200, 600, 100);
         allSmeltingRecipes(consumer, Ingredient.of(TensuraItems.LARGE_POTATO), TensuraItems.LARGE_BAKED_POTATO, 0.35F, 200, 600, 100);
+
+        oreSmelting(consumer, SILVER_SMELTABLES, TensuraItems.SILVER_INGOT, 0.7F, 200, "silver_ingot");
+        oreBlasting(consumer, SILVER_SMELTABLES, TensuraItems.SILVER_INGOT, 0.7F, 100, "silver_ingot");
 
         //**********BLOCK RECIPES
         //WOOD
