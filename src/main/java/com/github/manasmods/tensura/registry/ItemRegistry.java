@@ -136,6 +136,7 @@ class ItemRegistry {
         registry.register("spirit_core", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("stella_gold_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("thatch", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("chapter_1", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
     }
 
     /** Method to register eatable {@link Item} objects */
