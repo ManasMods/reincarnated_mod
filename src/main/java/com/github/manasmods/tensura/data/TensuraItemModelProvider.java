@@ -142,5 +142,6 @@ public class TensuraItemModelProvider extends ItemModelProvider {
         //singleTexture(TensuraItems.SPIRIT_CORE);
         //singleTexture(TensuraItems.STELLA_GOLD_COIN);
         singleTexture(TensuraItems.THATCH);
+        singleTexture(TensuraItems.CHAPTER_1);
     }
 }

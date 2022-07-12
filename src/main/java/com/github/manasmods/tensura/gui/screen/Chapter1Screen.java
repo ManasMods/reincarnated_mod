@@ -60,26 +60,27 @@ public class Chapter1Screen extends Screen {
     private static final ResourceLocation PAGE_50 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-050.png");
     private static final ResourceLocation PAGE_51 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-051.png");
 
-    /* Better Method for pages?
-
-    int page = 0;
-    int maxPage = 51;
-    ResourceLocation currentPageRL;
-
-    private ResourceLocation getPrevRL(){
-      return page-1 >= 0 ? new ResourceLocation("<path to pref img>") : null;
-      }
-
-    private ResourceLocation getNextRL(){
-      return page+1 < maxPage ? new ResourceLocation("<path to next img>") : null;
-      }
-
-    */
-
     private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
     private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
     private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
+
+    int page = 0; //Store the current page in the screen
+    final int maxPage = 51; //store the max amount of pages in the screen
+    ResourceLocation currentPageRL; //cache the current resource location
+
+//other screen stuff...
+
+    private ResourceLocation getPrevRL(){
+        return page-1 >= 0 ? new ResourceLocation("<path to pref img>") : null; //calculate the resourcelocation of the prev page
+    }
+
+    private ResourceLocation getNextRL(){
+        return page+1 < maxPage ? new ResourceLocation("<path to next img>") : null; //calculate the resourcelocation of the next page
+    }
+
+//other screen stuff...
+
 
     public Chapter1Screen(TextComponent chapter1ItemGui) {
         super(chapter1ItemGui);
