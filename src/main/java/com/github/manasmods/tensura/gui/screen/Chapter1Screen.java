@@ -1,10 +1,18 @@
 package com.github.manasmods.tensura.gui.screen;
 
 import com.github.manasmods.tensura.Tensura;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BookItem;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
-public class Chapter1Screen extends BookItem {
+public class Chapter1Screen extends Screen {
 
     private static final ResourceLocation PAGE_1 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-001.png");
     private static final ResourceLocation PAGE_2 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-002.png");
@@ -58,31 +66,36 @@ public class Chapter1Screen extends BookItem {
     private static final ResourceLocation PAGE_50 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-050.png");
     private static final ResourceLocation PAGE_51 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-051.png");
 
-/* Better Method for pages?
-    int page = 0;
-    int maxPage = 51;
-    ResourceLocation currentPageRL;
+    /* Better Method for pages?
+        int page = 0;
+        int maxPage = 51;
+        ResourceLocation currentPageRL;
 
-    private ResourceLocation getPrevRL(){
-        return page-1 >= 0 ? new ResourceLocation("textures/gui/Manga/0001-001.png") : null;
-    }
+        private ResourceLocation getPrevRL(){
+            return page-1 >= 0 ? new ResourceLocation("textures/gui/Manga/0001-001.png") : null;
+        }
 
-    private ResourceLocation getNextRL(){
-        return page+1 < maxPage ? new ResourceLocation("textures/gui/Manga/0001-002.png") : null;
-    }
-*/
+        private ResourceLocation getNextRL(){
+            return page+1 < maxPage ? new ResourceLocation("textures/gui/Manga/0001-002.png") : null;
+        }
+    */
     private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
     private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
     private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
 
-    public Chapter1Screen(Properties p_40643_) {
-        super(p_40643_);
-
-
-
+    public Chapter1Screen(TextComponent chapter1ItemGui, Player pPlayer) {
+        super(chapter1ItemGui, pPlayer);
     }
 
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        pPlayer.openItemGui(itemstack, pHand);
+        pPlayer.awardStat(Stats.ITEM_USED.get(this));
+        return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
+        if (pLevel.isClientSide) {
+            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui"), pPlayer));
 
-
+        }
+    }
 }
