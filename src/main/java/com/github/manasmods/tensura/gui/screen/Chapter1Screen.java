@@ -1,4 +1,4 @@
-package com.github.manasmods.tensura.gui;
+package com.github.manasmods.tensura.gui.screen;
 
 import com.github.manasmods.tensura.Tensura;
 import net.minecraft.resources.ResourceLocation;
@@ -58,11 +58,7 @@ public class Chapter1Screen extends BookItem {
     private static final ResourceLocation PAGE_50 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-050.png");
     private static final ResourceLocation PAGE_51 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-051.png");
 
-    private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
-    private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
-    private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
-    private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
-
+/* Better Method for pages?
     int page = 0;
     int maxPage = 51;
     ResourceLocation currentPageRL;
@@ -74,5 +70,21 @@ public class Chapter1Screen extends BookItem {
     private ResourceLocation getNextRL(){
         return page+1 < maxPage ? new ResourceLocation("textures/gui/Manga/0001-002.png") : null;
     }
+*/
+    private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
+    private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
+    private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
+    private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
+
+
+
+    public Chapter1Screen(Properties p_40643_) {
+        super(p_40643_);
+
+
+
+    }
+
+
 
 }
