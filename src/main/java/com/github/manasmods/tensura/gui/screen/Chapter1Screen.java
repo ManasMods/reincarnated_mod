@@ -61,18 +61,21 @@ public class Chapter1Screen extends Screen {
     private static final ResourceLocation PAGE_51 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-051.png");
 
     /* Better Method for pages?
-        int page = 0;
-        int maxPage = 51;
-        ResourceLocation currentPageRL;
 
-        private ResourceLocation getPrevRL(){
-            return page-1 >= 0 ? new ResourceLocation("textures/gui/Manga/0001-001.png") : null;
-        }
+    int page = 0;
+    int maxPage = 51;
+    ResourceLocation currentPageRL;
 
-        private ResourceLocation getNextRL(){
-            return page+1 < maxPage ? new ResourceLocation("textures/gui/Manga/0001-002.png") : null;
-        }
+    private ResourceLocation getPrevRL(){
+      return page-1 >= 0 ? new ResourceLocation("<path to pref img>") : null;
+      }
+
+    private ResourceLocation getNextRL(){
+      return page+1 < maxPage ? new ResourceLocation("<path to next img>") : null;
+      }
+
     */
+
     private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
     private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
