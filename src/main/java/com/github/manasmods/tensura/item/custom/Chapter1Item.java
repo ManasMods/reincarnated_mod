@@ -4,6 +4,7 @@ import com.github.manasmods.tensura.gui.screen.Chapter1Screen;
 import lombok.NonNull;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -20,8 +21,11 @@ public class Chapter1Item extends Item {
     @NonNull
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+            ItemStack itemstack = pPlayer.getItemInHand(pHand);
+            pPlayer.openItemGui(itemstack, pHand);
+            pPlayer.awardStat(Stats.ITEM_USED.get(this));
         if (pLevel.isClientSide) {
-            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui")));
+            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui"), arrow_left));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pHand));
     }

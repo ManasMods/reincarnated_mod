@@ -1,10 +1,12 @@
 package com.github.manasmods.tensura.gui.screen;
 
+import com.github.manasmods.manascore.client.gui.widget.ImagePredicateButton;
 import com.github.manasmods.tensura.Tensura;
+import com.github.manasmods.unordinary_basics.utils.Translation;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Player;
 
 public class Chapter1Screen extends Screen {
 
@@ -61,9 +63,7 @@ public class Chapter1Screen extends Screen {
     private static final ResourceLocation PAGE_51 = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/0001-051.png");
 
     private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left.png");
-    private static final ResourceLocation ARROW_LEFT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_left_hover.png");
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
-    private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
 
     int page = 0; //Store the current page in the screen
     final int maxPage = 51; //store the max amount of pages in the screen
@@ -81,8 +81,7 @@ public class Chapter1Screen extends Screen {
 
 //other screen stuff...
 
+/** I KNOW THE SUPER IS MISSING, IDK WHY **/
 
-    public Chapter1Screen(TextComponent chapter1ItemGui) {
-        super(chapter1ItemGui);
     }
 }
