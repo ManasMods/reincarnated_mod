@@ -21,7 +21,7 @@ public class Chapter1Item extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         if (pLevel.isClientSide) {
-            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui"), pPlayer));
+            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui")));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pHand));
     }

@@ -81,7 +81,7 @@ public class Chapter1Screen extends Screen {
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
     private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
 
-    public Chapter1Screen(TextComponent chapter1ItemGui, Player pPlayer) {
-        super(chapter1ItemGui, pPlayer);
+    public Chapter1Screen(TextComponent chapter1ItemGui) {
+        super(chapter1ItemGui);
     }
 }
