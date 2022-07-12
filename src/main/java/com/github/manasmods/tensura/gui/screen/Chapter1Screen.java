@@ -76,8 +76,6 @@ public class Chapter1Screen extends BookItem {
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right.png");
     private static final ResourceLocation ARROW_RIGHT_HOVER = new ResourceLocation(Tensura.MOD_ID, "textures/gui/Manga/arrow_right_hover.png");
 
-
-
     public Chapter1Screen(Properties p_40643_) {
         super(p_40643_);
 
