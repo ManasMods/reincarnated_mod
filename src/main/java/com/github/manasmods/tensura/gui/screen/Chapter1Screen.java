@@ -87,20 +87,18 @@ public class Chapter1Screen extends Screen {
 
         this.backButton.x = (this.width) / 2 - 35;
         this.backButton.y = (this.height + 196) / 2 + 2;
+        this.backButton.visible = this.page > 1;
 
         this.forwardButton.x = (this.width) / 2 + 5;
         this.forwardButton.y = (this.height + 196) / 2 + 2;
+        this.forwardButton.visible = this.page < this.maxPage;
+
 
         this.blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
 
         for(Widget widget : this.renderables) {
             widget.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
         }
-    }
-
-    @Override
-    public boolean mouseClicked(double pMouseX, double pMouseY, int pButton) {
-        return false;
     }
 
     @Override
