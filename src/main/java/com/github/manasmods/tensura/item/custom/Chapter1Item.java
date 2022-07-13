@@ -2,7 +2,6 @@ package com.github.manasmods.tensura.item.custom;
 
 import com.github.manasmods.tensura.gui.screen.Chapter1Screen;
 import lombok.NonNull;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.stats.Stats;
@@ -12,8 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 
 public class Chapter1Item extends Item {
 

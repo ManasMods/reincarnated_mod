@@ -70,10 +70,10 @@ public class Chapter1Screen extends Screen {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
         this.backButton.x = (this.width) / 2 - 45;
-        this.backButton.y = (this.height + 196) / 2 - 20;
+        this.backButton.y = (this.height + 196) / 2 + 10;
 
         this.forwardButton.x = (this.width) / 2 + 40;
-        this.forwardButton.y = (this.height + 196) / 2 - 20;
+        this.forwardButton.y = (this.height + 196) / 2 + 10;
 
         this.blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
 
