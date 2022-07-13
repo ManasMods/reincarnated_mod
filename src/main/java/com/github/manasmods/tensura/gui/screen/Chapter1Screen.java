@@ -44,19 +44,35 @@ public class Chapter1Screen extends Screen {
     protected void init() {
         super.init();
 
-        this.backButton = new ImagePredicateButton(0, 0, 9, 9, ARROW_LEFT, this::OnPressBack, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
-        this.forwardButton = new ImagePredicateButton(0, 0, 9, 9, ARROW_RIGHT, this::OnPressForward, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
+        this.backButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_LEFT, this::OnPressBack, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
+        this.forwardButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_RIGHT, this::OnPressForward, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
 
         this.addRenderableWidget(this.backButton);
         this.addRenderableWidget(this.forwardButton);
     }
 
-    public void OnPressBack(Button button) {
+    private ResourceLocation getPrevPageRL() {
+        return new ResourceLocation(Tensura.MOD_ID, String.format("textures/gui/manga/0001-%03d.png", page));
+    }
 
+    public void OnPressBack(Button button) {
+        if(this.page > 1) {
+            this.page--;
+
+            this.currentPageRL = this.getCurrentPageRL();
+        }
+    }
+
+    private ResourceLocation getNextPageRL() {
+        return new ResourceLocation(Tensura.MOD_ID, String.format("textures/gui/manga/0001-%03d.png", page));
     }
 
     public void OnPressForward(Button button) {
+        if(this.page < this.maxPage) {
+            this.page++;
 
+            this.currentPageRL = this.getCurrentPageRL();
+        }
     }
 
     private ResourceLocation getCurrentPageRL(){
@@ -69,11 +85,11 @@ public class Chapter1Screen extends Screen {
         RenderSystem.setShaderTexture(0, this.currentPageRL);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        this.backButton.x = (this.width) / 2 - 45;
-        this.backButton.y = (this.height + 196) / 2 + 10;
+        this.backButton.x = (this.width) / 2 - 35;
+        this.backButton.y = (this.height + 196) / 2 + 2;
 
-        this.forwardButton.x = (this.width) / 2 + 40;
-        this.forwardButton.y = (this.height + 196) / 2 + 10;
+        this.forwardButton.x = (this.width) / 2 + 5;
+        this.forwardButton.y = (this.height + 196) / 2 + 2;
 
         this.blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
 
