@@ -93,7 +93,7 @@ public class Chapter1Screen extends Screen {
         this.backButton.y = (this.height + 196) / 2 + 2;
         this.backButton.visible = this.page > 1;
 
-        blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
+        blit(pPoseStack, (this.width - 196) / 2, (this.height - 196) / 2, 0, 0, 196, 196, 196, 196);
 
         for(Widget widget : this.renderables) {
             widget.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
