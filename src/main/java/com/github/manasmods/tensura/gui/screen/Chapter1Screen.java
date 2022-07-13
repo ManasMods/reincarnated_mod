@@ -85,15 +85,15 @@ public class Chapter1Screen extends Screen {
         RenderSystem.setShaderTexture(0, this.currentPageRL);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        this.forwardButton.x = (this.width) / 2 ;
+        this.forwardButton.x = (this.width) / 2 + 33;
         this.forwardButton.y = (this.height + 196) / 2 + 2;
         this.forwardButton.visible = this.page < this.maxPage;
 
-        this.backButton.x = (this.width) / 2 - 40;
+        this.backButton.x = (this.width) / 2 - 65;
         this.backButton.y = (this.height + 196) / 2 + 2;
         this.backButton.visible = this.page > 1;
 
-        this.blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
+        blit(pPoseStack, (this.width - 135) / 2, (this.height - 196) / 2, 0, 0, 135, 196, 135, 196);
 
         for(Widget widget : this.renderables) {
             widget.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
