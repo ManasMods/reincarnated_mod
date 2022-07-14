@@ -34,6 +34,18 @@ public class TensuraBlocks {
     @ObjectHolder("deepslate_silver_ore")
     public static final Block DEEPSLATE_SILVER_ORE = null;
 
+    @ObjectHolder("labyrinth_brick_tl")
+    public static final Block LABYRINTH_BRICK_TL = null;
+
+    @ObjectHolder("labyrinth_brick_tr")
+    public static final Block LABYRINTH_BRICK_TR = null;
+
+    @ObjectHolder("labyrinth_brick_bl")
+    public static final Block LABYRINTH_BRICK_BL = null;
+
+    @ObjectHolder("labyrinth_brick_br")
+    public static final Block LABYRINTH_BRICK_BR = null;
+
     @ObjectHolder("loom")
     public static final Block LOOM = null;
 
