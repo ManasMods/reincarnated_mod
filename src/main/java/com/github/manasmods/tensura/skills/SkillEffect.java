@@ -60,4 +60,12 @@ public class SkillEffect {
 
         return this;
     }
+
+    /**
+     * Whether the skill is a main effect and therefore should not be rendered to tooltips
+     * @return skill is a main effect
+     */
+    public boolean isMainEffect() {
+        return this.name.equalsIgnoreCase("main");
+    }
 }
