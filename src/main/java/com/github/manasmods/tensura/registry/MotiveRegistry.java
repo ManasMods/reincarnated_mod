@@ -15,8 +15,10 @@ class MotiveRegistry {
         //        registry.register("name", () -> new Motive(width,height));
         registry.register("sunflower", () -> new Motive(80, 48));
         registry.register("fulbrosia", () -> new Motive(48, 32));
-        registry.register("ten_great_demon_lords", () -> new Motive(128, 64));
-        registry.register("world_map", () -> new Motive(64, 48));
-        registry.register("ingrassia", () -> new Motive(80, 48));
+        registry.register("world_map", () -> new Motive(96, 64));
+        registry.register("ingrassia", () -> new Motive(48, 32));
+        registry.register("blumund", () -> new Motive(64, 32));
+        registry.register("filtwood", () -> new Motive(64, 32));
+        registry.register("raja", () -> new Motive(32, 48));
     }
 }
