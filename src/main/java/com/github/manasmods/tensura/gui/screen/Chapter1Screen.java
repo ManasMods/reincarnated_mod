@@ -28,7 +28,7 @@ public class Chapter1Screen extends Screen {
     private static final ResourceLocation ARROW_RIGHT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/manga/arrow_right.png");
 
     private int page = 1; //Store the current page in the screen
-    private final int maxPage = 51; //store the max amount of pages in the screen
+    private static final int maxPage = 51; //store the max amount of pages in the screen
     private ResourceLocation currentPageRL; //cache the current resource location
 
     private ImagePredicateButton backButton;
