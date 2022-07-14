@@ -5,8 +5,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 
+import java.util.function.Consumer;
+
 public class SelfEventTargetSelector<T extends Event> implements TargetSelector {
     private final TargetSelectorExecutor<T> executor;
+    private Consumer<T> event;
 
     public SelfEventTargetSelector(TargetSelectorExecutor<T> executor) {
         this.executor = executor;
@@ -27,6 +30,12 @@ public class SelfEventTargetSelector<T extends Event> implements TargetSelector 
 
     @Override
     public void register() {
-        MinecraftForge.EVENT_BUS.addListener(this::onEvent);
+        this.event = this::onEvent;
+        MinecraftForge.EVENT_BUS.addListener(this.event);
+    }
+
+    @Override
+    public void unregister() {
+        MinecraftForge.EVENT_BUS.unregister(this.event);
     }
 }

@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
 
     private final TargetSelectorExecutor<BlockPos> executor;
+    private Consumer<PlayerInteractEvent.RightClickBlock> event;
 
     public SingleBlockTargetSelector(TargetSelectorExecutor<BlockPos> executor) {
         this.executor = executor;
@@ -29,6 +30,13 @@ public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
 
     @Override
     public void register() {
-        MinecraftForge.EVENT_BUS.addListener(this::onRightClickBlock);
+        this.event = this::onRightClickBlock;
+
+        MinecraftForge.EVENT_BUS.addListener(this.event);
+    }
+
+    @Override
+    public void unregister() {
+        MinecraftForge.EVENT_BUS.unregister(this.event);
     }
 }

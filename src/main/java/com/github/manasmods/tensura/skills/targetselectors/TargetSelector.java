@@ -10,5 +10,6 @@ public interface TargetSelector<R> {
     public void apply(Level level, R entity);
 
     public void register();
+    public void unregister();
 
 }

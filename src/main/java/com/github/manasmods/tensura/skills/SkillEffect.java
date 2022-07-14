@@ -1,16 +1,22 @@
 package com.github.manasmods.tensura.skills;
 
 import com.github.manasmods.tensura.skills.targetselectors.TargetSelector;
+import lombok.Getter;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class SkillEffect {
 
     private final String name;
 
-    private TargetSelector targetSelector;
+    @Getter
+    private Supplier<TargetSelector> targetSelector;
 
-    private TargetSelector clientTargetSelector;
+    @Getter
+    private Supplier<TargetSelector> clientTargetSelector;
 
     private int activationCost;
 
@@ -26,7 +32,7 @@ public class SkillEffect {
      * @param targetSelector
      * @return the skill effect
      */
-    public SkillEffect setTargetSelector(TargetSelector targetSelector) {
+    public SkillEffect setTargetSelector(Supplier<TargetSelector> targetSelector) {
         this.targetSelector = targetSelector;
 
         return this;
@@ -37,7 +43,7 @@ public class SkillEffect {
      * @param targetSelector
      * @return the skill effect
      */
-    public SkillEffect setClientTargetSelector(TargetSelector targetSelector) {
+    public SkillEffect setClientTargetSelector(Supplier<TargetSelector> targetSelector) {
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> () -> {this.clientTargetSelector = targetSelector;});
 
         return this;
@@ -53,15 +59,5 @@ public class SkillEffect {
         this.baseStrength = baseStrength;
 
         return this;
-    }
-
-    protected void register() {
-        if(this.targetSelector != null) {
-            this.targetSelector.register();
-        }
-
-        if(this.clientTargetSelector != null) {
-            this.clientTargetSelector.register();
-        }
     }
 }

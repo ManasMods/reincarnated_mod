@@ -2,6 +2,7 @@ package com.github.manasmods.tensura;
 
 import com.github.manasmods.tensura.handler.PlayerLogInHandler;
 import com.github.manasmods.tensura.handler.WorldGenHandler;
+import com.github.manasmods.tensura.registry.SkillRegistry;
 import com.github.manasmods.tensura.registry.TensuraRegistry;
 import com.github.manasmods.tensura.world.biome.terrablender.TensuraOverworldRegion;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +16,9 @@ public class TensuraCommon {
 
         final IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
         PlayerLogInHandler.register(forgeEventBus);
+
+        //Register as early as possible
+        SkillRegistry.registerRegistry();
     }
 
     public void init(final FMLCommonSetupEvent e) {

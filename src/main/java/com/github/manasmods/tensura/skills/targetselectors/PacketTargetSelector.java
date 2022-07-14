@@ -29,4 +29,9 @@ public class PacketTargetSelector<T> implements TargetSelector {
     public void register() {
         //Register packet listener on network instance
     }
+
+    @Override
+    public void unregister() {
+
+    }
 }
