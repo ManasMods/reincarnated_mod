@@ -18,17 +18,12 @@ public class SkillEffectInstance {
     @Setter
     private boolean enabled;
 
-    //Persistent data for skill effects
-    private HashMap<String, Object> data;
-
     private TargetSelector targetSelector;
     private TargetSelector clientTargetSelector;
 
     public SkillEffectInstance(Skill skill, SkillEffect effect) {
         this.skill = skill;
         this.effect = effect;
-
-        this.data = new HashMap<>();
     }
 
     public void register() {

@@ -9,6 +9,7 @@ import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -19,6 +20,15 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Base class for all skills. A skill can be of multiple types, including {@link SkillType#COMMON}, {@link SkillType#EXTRA},
+ * {@link SkillType#INTRINSIC}, {@link SkillType#UNIQUE} and {@link SkillType#ULTIMATE}
+ *
+ * Every Unique and Ultimate Skill can have subskills. Every other Skill can be parented to a Unique or Ultimate Skill.
+ * Every Skill can have multiple named effects including one not displayed "main" effect(Set by the identifier "main" or {@link SkillEffect#setRenderToolTip(boolean)})
+ * A skill should implement at least one effect, but can have multiple effects.
+ * A skill is unique and every entity should have only one instance. Subskills of greater Skills(Ultimate < Unique) therefore override duplicate Skills.
+ */
 public class Skill implements IForgeRegistryEntry<Skill>
 {
     private final String name;
@@ -58,13 +68,25 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return this;
     }
 
-    public SkillInstance createInstance(Player player, boolean isSubSkill) {
-        return new SkillInstance(this, player, isSubSkill);
+    public SkillInstance createInstance(Player player) {
+        return new SkillInstance(this, player);
     }
 
-    public void serializeToNBT(CompoundTag tag) {
+    public SkillInstance crateSubSkillInstance(SkillInstance instance, Player player) {
+        return new SkillInstance(this, player, instance);
+    }
+
+    public void serializeToNBT(SkillInstance instance, CompoundTag tag) {
         tag.putString("name", this.location.toString());
         tag.putInt("type", this.type.getType());
+
+        CompoundTag data = new CompoundTag();
+
+        for (String key : instance.getData().keySet()) {
+            Tag value = instance.getData().get(key);
+
+            data.put(key, value);
+        }
     }
 
     public Skill deserializeFromNBT(CompoundTag tag) {
@@ -95,7 +117,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
         skill.effect("Heal").setTargetSelector(() -> SelfEventTargetSelector.create(eventHandler));
 
         //Create new instance
-        SkillInstance instance = skill.createInstance(null, false);
+        SkillInstance instance = skill.createInstance(null);
     }
 
 

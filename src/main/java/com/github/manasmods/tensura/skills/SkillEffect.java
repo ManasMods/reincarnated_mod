@@ -22,6 +22,7 @@ public class SkillEffect {
 
     //Used for later
     private double baseStrength = 1.0D;
+    private boolean renderToolTip = true;
 
     public SkillEffect(String name) {
         this.name = name;
@@ -61,11 +62,25 @@ public class SkillEffect {
         return this;
     }
 
+    public SkillEffect setRenderToolTip(boolean renderToolTip) {
+        this.renderToolTip = renderToolTip;
+
+        return this;
+    }
+
     /**
      * Whether the skill is a main effect and therefore should not be rendered to tooltips
      * @return skill is a main effect
      */
     public boolean isMainEffect() {
         return this.name.equalsIgnoreCase("main");
+    }
+
+    /**
+     * Whether a tooltip should be rendered, {@link SkillEffect#isMainEffect()}
+     * @return skill tooltip should be rendered
+     */
+    public boolean shouldRenderTooltip() {
+        return this.isMainEffect() || this.renderToolTip;
     }
 }
