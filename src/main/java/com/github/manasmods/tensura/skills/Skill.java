@@ -52,6 +52,12 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return effect;
     }
 
+    public Skill addSubskill(Skill skill) {
+        this.subSkills.add(skill);
+
+        return this;
+    }
+
     public SkillInstance createInstance(Player player, boolean isSubSkill) {
         return new SkillInstance(this, player, isSubSkill);
     }
