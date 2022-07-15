@@ -2,6 +2,7 @@ package com.github.manasmods.tensura.skills;
 
 import com.github.manasmods.tensura.skills.targetselectors.TargetSelector;
 import lombok.Getter;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,9 +26,11 @@ public class SkillInstance {
     @Getter
     private List<SkillInstance> subSkillInstances;
 
-    //Persistent data for skill effects
+    /**
+     * CompoundTag to persist data
+     */
     @Getter
-    private HashMap<String, Tag> data;
+    private CompoundTag data;
 
     @Getter
     private boolean isSubskill;
@@ -42,7 +45,7 @@ public class SkillInstance {
         this.isSubskill = false;
 
         this.instances = new ArrayList<>();
-        this.data = new HashMap<>();
+        this.data = new CompoundTag();
 
         this.skill.getEffects().forEach(e -> this.instances.add(new SkillEffectInstance(this.skill, e)));
     }
@@ -67,8 +70,19 @@ public class SkillInstance {
         return subskills;
     }
 
+    public void serializeToNBT(CompoundTag tag) {
+        if(this.skill.isPersistData()) {
+            CompoundTag data = this.getData();
+            tag.put("data", data);
+        }
+    }
+
+    public void deserializeNBT(CompoundTag tag) {
+        data = tag.getCompound("data").copy();
+    }
+
     public void register() {
-        this.instances.forEach(SkillEffectInstance::register);
+        this.instances.forEach(sk -> sk.register(this));
     }
 
     public void registerSubskills() {

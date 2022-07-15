@@ -26,15 +26,15 @@ public class SkillEffectInstance {
         this.effect = effect;
     }
 
-    public void register() {
+    public void register(SkillInstance instance) {
         if(this.effect.getTargetSelector() != null) {
             this.targetSelector = this.effect.getTargetSelector().get();
-            this.targetSelector.register();
+            this.targetSelector.register(instance);
         }
 
         if(this.effect.getClientTargetSelector() != null) {
             this.clientTargetSelector = this.effect.getClientTargetSelector().get();
-            this.clientTargetSelector.register();
+            this.clientTargetSelector.register(instance);
         }
     }
 }

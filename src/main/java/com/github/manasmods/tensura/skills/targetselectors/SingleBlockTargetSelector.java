@@ -1,5 +1,6 @@
 package com.github.manasmods.tensura.skills.targetselectors;
 
+import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -10,6 +11,11 @@ public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
 
     private final TargetSelectorExecutor<BlockPos> executor;
     private Consumer<PlayerInteractEvent.RightClickBlock> event;
+
+    /**
+     * The instance this executor is registered on
+     */
+    private SkillInstance instance;
 
     public SingleBlockTargetSelector(TargetSelectorExecutor<BlockPos> executor) {
         this.executor = executor;
@@ -25,12 +31,13 @@ public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
 
     @Override
     public void apply(Level level, Object entity) {
-        this.executor.execute(level, (BlockPos)entity);
+        this.executor.execute(level, this.instance, (BlockPos)entity);
     }
 
     @Override
-    public void register() {
+    public void register(SkillInstance instance) {
         this.event = this::onRightClickBlock;
+        this.instance = instance;
 
         MinecraftForge.EVENT_BUS.addListener(this.event);
     }

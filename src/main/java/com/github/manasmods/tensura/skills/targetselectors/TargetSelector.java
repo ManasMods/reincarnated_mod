@@ -1,5 +1,6 @@
 package com.github.manasmods.tensura.skills.targetselectors;
 
+import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.world.level.Level;
 
 import java.lang.annotation.Target;
@@ -9,7 +10,7 @@ public interface TargetSelector<R> {
 
     public void apply(Level level, R entity);
 
-    public void register();
+    public void register(SkillInstance instance);
     public void unregister();
 
 }

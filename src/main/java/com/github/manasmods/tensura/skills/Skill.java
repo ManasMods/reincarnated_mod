@@ -54,6 +54,10 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return true;
     }
 
+    public boolean isPersistData() {
+        return false;
+    }
+
     public SkillEffect effect(String name) {
         SkillEffect effect = new SkillEffect(name);
 
@@ -76,17 +80,17 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return new SkillInstance(this, player, instance);
     }
 
+    /**
+     * Sets the skill for the instance up, use this to setup variables you need later
+     * @param instance the instance
+     */
+    public void setupSkill(SkillInstance instance) {}
+
     public void serializeToNBT(SkillInstance instance, CompoundTag tag) {
         tag.putString("name", this.location.toString());
         tag.putInt("type", this.type.getType());
 
-        CompoundTag data = new CompoundTag();
-
-        for (String key : instance.getData().keySet()) {
-            Tag value = instance.getData().get(key);
-
-            data.put(key, value);
-        }
+        instance.serializeToNBT(tag);
     }
 
     public Skill deserializeFromNBT(CompoundTag tag) {
@@ -103,7 +107,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
 
 
         //Right click block
-        skill.effect("Corrupt").setActivationCost(1).setBaseStrength(1.0).setTargetSelector(() -> SingleBlockTargetSelector.create((level, pos) ->
+        skill.effect("Corrupt").setActivationCost(1).setBaseStrength(1.0).setTargetSelector(() -> SingleBlockTargetSelector.create((level, instance, pos) ->
                 {
                     if(!level.isClientSide) {
                         level.destroyBlock((BlockPos) pos, false);
@@ -112,7 +116,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
         ));
 
         //Right click anything to heal(for client events use setClientTargetSelector and set a PacketTargetSelector)
-        TargetSelectorExecutor<PlayerInteractEvent> eventHandler = (level, event) -> event.getPlayer().setHealth(20.0F);
+        TargetSelectorExecutor<PlayerInteractEvent> eventHandler = (level, instance, event) -> event.getPlayer().setHealth(20.0F);
 
         skill.effect("Heal").setTargetSelector(() -> SelfEventTargetSelector.create(eventHandler));
 

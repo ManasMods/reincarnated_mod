@@ -1,5 +1,6 @@
 package com.github.manasmods.tensura.skills.targetselectors;
 
+import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.Event;
@@ -7,6 +8,11 @@ import net.minecraftforge.eventbus.api.Event;
 public class PacketTargetSelector<T> implements TargetSelector {
 
     private final TargetSelectorExecutor<T> executor;
+
+    /**
+     * The instance this executor is registered on
+     */
+    private SkillInstance instance;
 
     public PacketTargetSelector(TargetSelectorExecutor<T> executor) {
         this.executor = executor;
@@ -22,11 +28,13 @@ public class PacketTargetSelector<T> implements TargetSelector {
 
     @Override
     public void apply(Level level, Object entity) {
-        this.executor.execute(level, (T) entity);
+        this.executor.execute(level, instance, (T) entity);
     }
 
     @Override
-    public void register() {
+    public void register(SkillInstance instance) {
+        this.instance = instance;
+
         //Register packet listener on network instance
     }
 
