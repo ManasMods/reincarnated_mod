@@ -23,7 +23,7 @@
   "item.tensura.magisteel_ingot": "Слиток магистали",
   "item.tensura.medium_quality_magic_crystal": "Магический кристал среднего качества",
   "item.tensura.mithril_ingot": "Мифриловый слиток",
-  "item.tensura.orichalcum_ingot": "Орихалковый слиток",
+  "item.tensura.orichalcum_ingot": "Медный слиток",
   "item.tensura.raw_silver": "Необработанное серебро",
   "item.tensura.scroll_of_slimes": "Свиток слизи",
   "item.tensura.serpent_scale": "Змеиная чешуя",
@@ -173,10 +173,10 @@
   "item.tensura.hihiirokane_shovel": "Лопата из Хихи'Ироканэ",
   "item.tensura.hihiirokane_hoe": "Мотыга из Хихи'Ироканэ",
   "item.tensura.hihiirokane_sickle": "Серп из Хихи'Ироканэ",
-  "itemGroup.tensuratab": "T:R Weapons",
-  "itemGroup.tensuratab2": "T:R Tools",
-  "itemGroup.tensuratab3": "T:R Gear",
-  "itemGroup.tensuratab4": "T:R Blocks",
-  "itemGroup.tensuratab5": "T:R Consumables",
-  "itemGroup.tensuratab6": "T:R Misc"
+  "itemGroup.tensuratab": "T:R Оружие",
+  "itemGroup.tensuratab2": "T:R Инструменты",
+  "itemGroup.tensuratab3": "T:R Снаряжение",
+  "itemGroup.tensuratab4": "T:R Блоки",
+  "itemGroup.tensuratab5": "T:R Расходники",
+  "itemGroup.tensuratab6": "T:R Разное"
 }
