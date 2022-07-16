@@ -12,6 +12,7 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.RegistryObject;
@@ -47,6 +48,30 @@ public class Skill implements IForgeRegistryEntry<Skill>
         this.name = name;
         this.location = new ResourceLocation(Tensura.MOD_ID, this.name);
         this.effects = new ArrayList<>();
+    }
+
+    /**
+     * Serializes a skill instance to nbt
+     * @param instance the instance
+     * @return the compound tag to save
+     */
+    public static CompoundTag serializeNBT(SkillInstance instance) {
+        return instance.serializeNBT();
+    }
+
+    /**
+     * Deserializes a Skill from an NBT Tag, call {@link Skill#createInstance(Player)} and {@link SkillInstance#deserializeNBT(CompoundTag)} to initialize it.
+     * @param tag the compound tag
+     * @return the skill descriptor
+     */
+    //Can't use INBTSerializable, because this method is supposed to load the skill instance.
+    public static Skill deserializeFromNBT(CompoundTag tag) {
+        String name = tag.getString("name");
+
+        ResourceLocation location = ResourceLocation.tryParse(name);
+
+        //Pretty dirty way
+        return (Skill) RegistryObject.create(location, SkillRegistry.SKILLS_REGISTRY_NAME, Tensura.MOD_ID).get();
     }
 
     //Whether a skill is a standalone or skill or comes only in a Unique Skill or higher
@@ -85,22 +110,6 @@ public class Skill implements IForgeRegistryEntry<Skill>
      * @param instance the instance
      */
     public void setupSkill(SkillInstance instance) {}
-
-    public void serializeToNBT(SkillInstance instance, CompoundTag tag) {
-        tag.putString("name", this.location.toString());
-        tag.putInt("type", this.type.getType());
-
-        instance.serializeToNBT(tag);
-    }
-
-    public Skill deserializeFromNBT(CompoundTag tag) {
-        String name = tag.getString("name");
-
-        ResourceLocation location = ResourceLocation.tryParse(name);
-
-        //Pretty dirty way
-        return (Skill) RegistryObject.create(location, SkillRegistry.SKILLS_REGISTRY_NAME, Tensura.MOD_ID).get();
-    }
 
     public static void testSkillCreate() {
         Skill skill = new Skill("Test");

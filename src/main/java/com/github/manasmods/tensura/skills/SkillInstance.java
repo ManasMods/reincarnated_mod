@@ -6,13 +6,14 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.fml.DistExecutor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class SkillInstance {
+public class SkillInstance implements INBTSerializable<CompoundTag> {
 
     @Getter
     private Skill skill;
@@ -70,13 +71,21 @@ public class SkillInstance {
         return subskills;
     }
 
-    public void serializeToNBT(CompoundTag tag) {
+    @Override
+    public CompoundTag serializeNBT() {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("name" , this.skill.getRegistryName().toString());
+        tag.putInt("type", this.skill.getType().getType());
+
         if(this.skill.isPersistData()) {
             CompoundTag data = this.getData();
             tag.put("data", data);
         }
+
+        return tag;
     }
 
+    @Override
     public void deserializeNBT(CompoundTag tag) {
         data = tag.getCompound("data").copy();
     }
