@@ -2,6 +2,7 @@ package com.github.manasmods.tensura.skills;
 
 import com.github.manasmods.tensura.skills.targetselectors.TargetSelector;
 import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.player.Player;
@@ -35,6 +36,7 @@ public class SkillInstance implements INBTSerializable<CompoundTag> {
 
     @Getter
     private boolean isSubskill;
+
     @Getter
     private SkillInstance parent;
 
@@ -76,6 +78,7 @@ public class SkillInstance implements INBTSerializable<CompoundTag> {
         CompoundTag tag = new CompoundTag();
         tag.putString("name" , this.skill.getRegistryName().toString());
         tag.putInt("type", this.skill.getType().getType());
+        tag.putInt("instance" , 1);
 
         if(this.skill.isPersistData()) {
             CompoundTag data = this.getData();
@@ -94,8 +97,12 @@ public class SkillInstance implements INBTSerializable<CompoundTag> {
         this.instances.forEach(sk -> sk.register(this));
     }
 
+    public void unregister() { this.instances.forEach(sk -> sk.unregister()); }
+
     public void registerSubskills() {
         this.subSkillInstances.forEach(SkillInstance::register);
     }
+
+    public void unregisterSubskills() { this.subSkillInstances.forEach(SkillInstance::unregister); }
 
 }

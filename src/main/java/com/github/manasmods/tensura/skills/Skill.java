@@ -52,11 +52,14 @@ public class Skill implements IForgeRegistryEntry<Skill>
 
     /**
      * Serializes a skill instance to nbt
-     * @param instance the instance
      * @return the compound tag to save
      */
-    public static CompoundTag serializeNBT(SkillInstance instance) {
-        return instance.serializeNBT();
+    public CompoundTag serializeNBT() {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("name" , this.getRegistryName().toString());
+        tag.putInt("type", this.getType().getType());
+
+        return tag;
     }
 
     /**

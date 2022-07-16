@@ -3,6 +3,7 @@ package com.github.manasmods.tensura.skills.capability;
 import com.github.manasmods.tensura.skills.Skill;
 import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface ISkillCapability extends INBTSerializable<CompoundTag> {
 
     /**
      * Removes a skill from, thereby also losing all its subskills.
-     * Skills that were learned as standalone will be reacquired by calling {@link ISkillCapability#calculateSkills()}
+     * Skills that were learned as standalone will be reacquired by calling {@link ISkillCapability#calculateSkills(Player)}
      * @param skill the skill to remove
      */
     public void loseSkill(Skill skill);
@@ -30,19 +31,22 @@ public interface ISkillCapability extends INBTSerializable<CompoundTag> {
      *
      * After calculation, the skills will be automatically instanced and their listeners registered
      */
-    public void calculateSkills();
+    public void calculateSkills(Player player);
 
     /**
      * Disables all skills, unregistering their listeners and making them unavailable.
-     * Use {@link ISkillCapability#calculateSkills()} to reactivate them
+     * Use {@link ISkillCapability#calculateSkills(Player)} to reactivate them
      */
     public void disableSkills();
 
     /**
      * Enables a skill and creates a skill instance, thereby registering all listeners of the skills effects
+     * @param player the player
      * @param skill the skill
+     * @param unregister whether other skill instances of this skills subskills should be unregistered
+     * @return true if the skill is enabled, false if there is another or the same skill already enabled
      */
-    public void enableSkill(Skill skill);
+    public boolean enableSkill(Player player, Skill skill, boolean unregister);
 
     /**
      * Disables the skill instance, unregistering its listeners and making it unavailable.

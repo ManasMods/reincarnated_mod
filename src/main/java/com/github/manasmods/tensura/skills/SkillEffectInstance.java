@@ -37,4 +37,14 @@ public class SkillEffectInstance {
             this.clientTargetSelector.register(instance);
         }
     }
+
+    public void unregister() {
+        if(this.targetSelector != null) {
+            this.targetSelector.unregister();
+        }
+
+        if(this.clientTargetSelector != null) {
+            this.clientTargetSelector.unregister();
+        }
+    }
 }
