@@ -41,20 +41,12 @@ public class Chapter1Screen extends Screen {
         this.addRenderableWidget(this.forwardButton);
     }
 
-    private ResourceLocation getPrevPageRL() {
-        return new ResourceLocation(Tensura.MOD_ID, String.format("textures/gui/manga/0001-%03d.png", page));
-    }
-
     public void OnPressBack(Button button) {
         if(this.page > 1) {
             this.page--;
 
             this.currentPageRL = this.getCurrentPageRL();
         }
-    }
-
-    private ResourceLocation getNextPageRL() {
-        return new ResourceLocation(Tensura.MOD_ID, String.format("textures/gui/manga/0001-%03d.png", page));
     }
 
     public void OnPressForward(Button button) {
