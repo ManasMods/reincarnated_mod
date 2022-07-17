@@ -2,25 +2,15 @@ package com.github.manasmods.tensura.gui.screen;
 
 import com.github.manasmods.manascore.client.gui.widget.ImagePredicateButton;
 import com.github.manasmods.tensura.Tensura;
-import com.github.manasmods.unordinary_basics.utils.Translation;
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Widget;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.texture.AbstractTexture;
-import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
-import net.minecraft.client.renderer.texture.SimpleTexture;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import org.lwjgl.opengl.GL11;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 
 public class Chapter1Screen extends Screen {
 
@@ -31,11 +21,13 @@ public class Chapter1Screen extends Screen {
     private static final int maxPage = 51; //store the max amount of pages in the screen
     private ResourceLocation currentPageRL; //cache the current resource location
 
-    private ImagePredicateButton backButton;
-    private ImagePredicateButton forwardButton;
+    private final ImagePredicateButton backButton;
+    private final ImagePredicateButton forwardButton;
 
-    public Chapter1Screen(Component pTitle) {
+    public Chapter1Screen(Component pTitle, ImagePredicateButton backButton, ImagePredicateButton forwardButton) {
         super(pTitle);
+        this.backButton = backButton;
+        this.forwardButton = forwardButton;
 
         this.currentPageRL = this.getCurrentPageRL();
     }

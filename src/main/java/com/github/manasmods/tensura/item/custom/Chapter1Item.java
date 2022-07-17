@@ -26,7 +26,7 @@ public class Chapter1Item extends Item {
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
         if (pLevel.isClientSide) {
-            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui")));
+            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui"), backButton, forwardButton));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pHand));
     }
