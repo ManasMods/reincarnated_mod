@@ -152,8 +152,6 @@ dependencies {
     //JEI
     compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}")
-    //Unordinary Basics
-    implementation fg.deobf("com.github.manasmods:unordinary-basics:${minecraftVersion}-${unordinarybasicsVersion}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

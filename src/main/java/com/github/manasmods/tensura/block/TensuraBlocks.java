@@ -46,6 +46,18 @@ public class TensuraBlocks {
     @ObjectHolder("labyrinth_brick_br")
     public static final Block LABYRINTH_BRICK_BR = null;
 
+    @ObjectHolder("labyrinth_stone_tl")
+    public static final Block LABYRINTH_STONE_TL = null;
+
+    @ObjectHolder("labyrinth_stone_tr")
+    public static final Block LABYRINTH_STONE_TR = null;
+
+    @ObjectHolder("labyrinth_stone_bl")
+    public static final Block LABYRINTH_STONE_BL = null;
+
+    @ObjectHolder("labyrinth_stone_br")
+    public static final Block LABYRINTH_STONE_BR = null;
+
     @ObjectHolder("loom")
     public static final Block LOOM = null;
 

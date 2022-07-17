@@ -234,6 +234,22 @@ class BlockRegistry {
         registry.register("labyrinth_brick_br", () -> new SimpleBlock(Material.STONE, properties -> properties
                 .strength(-1.0F, 3600000.0F)
                 .noDrops()));
+
+        registry.register("labyrinth_stone_tl", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(-1.0F, 3600000.0F)
+                .noDrops()));
+
+        registry.register("labyrinth_stone_tr", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(-1.0F, 3600000.0F)
+                .noDrops()));
+
+        registry.register("labyrinth_stone_bl", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(-1.0F, 3600000.0F)
+                .noDrops()));
+
+        registry.register("labyrinth_stone_br", () -> new SimpleBlock(Material.STONE, properties -> properties
+                .strength(-1.0F, 3600000.0F)
+                .noDrops()));
     }
 
     /**
