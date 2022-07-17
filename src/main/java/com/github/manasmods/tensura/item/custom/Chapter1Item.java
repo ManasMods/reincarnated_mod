@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+@Deprecated
 public class Chapter1Item extends Item {
 
     public Chapter1Item(Properties pProperties) {
@@ -26,7 +27,7 @@ public class Chapter1Item extends Item {
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
 
         if (pLevel.isClientSide) {
-            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui"), backButton, forwardButton));
+            Minecraft.getInstance().setScreen(new Chapter1Screen(new TextComponent("chapter1ItemGui")));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pHand));
     }

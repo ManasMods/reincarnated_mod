@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
+@Deprecated
 public class Chapter1Screen extends Screen {
 
     private static final ResourceLocation ARROW_LEFT = new ResourceLocation(Tensura.MOD_ID, "textures/gui/manga/arrow_left.png");
@@ -24,10 +25,10 @@ public class Chapter1Screen extends Screen {
     private final ImagePredicateButton backButton;
     private final ImagePredicateButton forwardButton;
 
-    public Chapter1Screen(Component pTitle, ImagePredicateButton backButton, ImagePredicateButton forwardButton) {
+    public Chapter1Screen(Component pTitle) {
         super(pTitle);
-        this.backButton = backButton;
-        this.forwardButton = forwardButton;
+        this.backButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_LEFT, this::OnPressBack, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
+        this.forwardButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_RIGHT, this::OnPressForward, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
 
         this.currentPageRL = this.getCurrentPageRL();
     }
@@ -35,9 +36,6 @@ public class Chapter1Screen extends Screen {
     @Override
     protected void init() {
         super.init();
-
-        this.backButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_LEFT, this::OnPressBack, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
-        this.forwardButton = new ImagePredicateButton(0, 0, 32, 16, ARROW_RIGHT, this::OnPressForward, (pButton, pPoseStack, pMouseX, pMouseY) -> {}, () -> true);
 
         this.addRenderableWidget(this.backButton);
         this.addRenderableWidget(this.forwardButton);
