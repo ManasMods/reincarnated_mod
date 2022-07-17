@@ -1,17 +1,11 @@
 package com.github.manasmods.tensura.skills;
 
-import com.github.manasmods.tensura.skills.targetselectors.TargetSelector;
 import lombok.Getter;
-import lombok.Setter;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.util.INBTSerializable;
-import net.minecraftforge.fml.DistExecutor;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class SkillInstance implements INBTSerializable<CompoundTag> {
@@ -63,7 +57,7 @@ public class SkillInstance implements INBTSerializable<CompoundTag> {
         List<SkillInstance> subskills = new ArrayList<>();
 
         for (Skill subSkill : this.skill.getSubSkills()) {
-            SkillInstance instance = subSkill.crateSubSkillInstance(this, this.player);
+            SkillInstance instance = subSkill.createSubSkillInstance(this, this.player);
 
             subskills.add(instance);
         }
@@ -79,6 +73,10 @@ public class SkillInstance implements INBTSerializable<CompoundTag> {
         tag.putString("name" , this.skill.getRegistryName().toString());
         tag.putInt("type", this.skill.getType().getType());
         tag.putInt("instance" , 1);
+
+        if(this.isSubskill) {
+            tag.putString("parent", this.parent.getSkill().getRegistryName().toString());
+        }
 
         if(this.skill.isPersistData()) {
             CompoundTag data = this.getData();

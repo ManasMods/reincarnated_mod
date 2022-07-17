@@ -3,6 +3,7 @@ package com.github.manasmods.tensura.skills.capability;
 import com.github.manasmods.tensura.skills.Skill;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
@@ -12,8 +13,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class SkillCapabilityProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
 
-    private final ISkillCapability data = new SkillCapability();
-    private final LazyOptional<ISkillCapability> lazyOptional = LazyOptional.of(() -> data);
+    private final ISkillCapability data;
+    private final LazyOptional<ISkillCapability> lazyOptional;
+
+    public SkillCapabilityProvider(Player player) {
+        this.data = new SkillCapability(player);
+        this.lazyOptional = LazyOptional.of(() -> data);
+    }
 
     @Override
     public CompoundTag serializeNBT() {

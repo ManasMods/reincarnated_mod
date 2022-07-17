@@ -5,6 +5,7 @@ import com.github.manasmods.tensura.skills.Skill;
 import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.Capability;
@@ -18,10 +19,16 @@ public class SkillCapability implements ISkillCapability {
     public static final Capability<ISkillCapability> SKILL_CAPABILITY = CapabilityManager.get(new CapabilityToken<ISkillCapability>() {});
     public static final ResourceLocation IDENTIFIER = new ResourceLocation(Tensura.MOD_ID, "skillsCap");
 
-    public HashMap<ResourceLocation, Skill> skills = new HashMap<>();
-    public HashMap<ResourceLocation, SkillInstance> skillInstances = new HashMap<>();
+    private HashMap<ResourceLocation, Skill> skills = new HashMap<>();
+    private HashMap<ResourceLocation, SkillInstance> skillInstances = new HashMap<>();
 
-    public CompoundTag savedData;
+    private CompoundTag savedData;
+
+    private Player player;
+
+    public SkillCapability(Player player) {
+        this.player = player;
+    }
 
     @Override
     public CompoundTag serializeNBT() {
@@ -55,7 +62,64 @@ public class SkillCapability implements ISkillCapability {
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
+        //Disable all skills before loading
+        this.disableSkills();
 
+        if(nbt.contains("skills")) {
+            this.skills.clear();
+
+            ListTag list = nbt.getList("skills", ListTag.TAG_COMPOUND);
+
+            for(Tag tag : list) {
+                CompoundTag compoundTag = (CompoundTag) tag;
+
+                if(compoundTag.contains("instance")) {
+                    //Load enabled skill instance
+                    Skill skill = Skill.deserializeFromNBT(compoundTag);
+
+                    if(!this.skillInstances.containsKey(skill.getRegistryName())) {
+                        SkillInstance instance = skill.createInstance(this.player);
+
+                        instance.deserializeNBT(compoundTag);
+                        //Load subskills by parent
+                        List<SkillInstance> subskills = instance.compileSubskills();
+                        for(SkillInstance subskill : subskills) {
+                            for(Tag subTag : list) {
+                                CompoundTag subCompound = (CompoundTag) subTag;
+
+                                String name = subCompound.getString("name");
+
+                                if(name.equals(subskill.getSkill().getRegistryName().toString())) {
+                                    if(subCompound.contains("instance") && subCompound.contains("parent")) {
+                                        String parentKey = subCompound.getString("parent");
+
+                                        if(parentKey.equals(skill.getRegistryName().toString())) {
+                                            subskill.deserializeNBT(subCompound);
+
+                                            //Enable subskill
+                                            subskill.register();
+
+                                            this.skillInstances.put(subskill.getSkill().getRegistryName(), subskill);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        //Enable skill
+                        instance.register();
+
+                        this.skillInstances.put(skill.getRegistryName(), instance);
+                    }
+                } else {
+                    //Load disabled skill
+
+                    Skill skill = Skill.deserializeFromNBT(compoundTag);
+
+                    this.skills.put(skill.getRegistryName(), skill);
+                }
+            }
+        }
     }
 
     @Override

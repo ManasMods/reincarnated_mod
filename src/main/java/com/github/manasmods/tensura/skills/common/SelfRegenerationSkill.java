@@ -45,7 +45,7 @@ public class SelfRegenerationSkill extends Skill implements TargetSelectorExecut
 
     //When created as a subskill
     @Override
-    public SkillInstance crateSubSkillInstance(SkillInstance instance, Player player) {
+    public SkillInstance createSubSkillInstance(SkillInstance instance, Player player) {
         return new SelfRegenerationSkill.Instance(this, player, instance);
     }
 

@@ -8,11 +8,8 @@ import com.github.manasmods.tensura.skills.targetselectors.TargetSelectorExecuto
 import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.RegistryObject;
@@ -77,6 +74,13 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return (Skill) RegistryObject.create(location, SkillRegistry.SKILLS_REGISTRY_NAME, Tensura.MOD_ID).get();
     }
 
+    public static Skill deserializeFromNBT(String name) {
+        ResourceLocation location = ResourceLocation.tryParse(name);
+
+        //Pretty dirty way
+        return (Skill) RegistryObject.create(location, SkillRegistry.SKILLS_REGISTRY_NAME, Tensura.MOD_ID).get();
+    }
+
     //Whether a skill is a standalone or skill or comes only in a Unique Skill or higher
     public boolean isStandalone() {
         return true;
@@ -104,7 +108,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
         return new SkillInstance(this, player);
     }
 
-    public SkillInstance crateSubSkillInstance(SkillInstance instance, Player player) {
+    public SkillInstance createSubSkillInstance(SkillInstance instance, Player player) {
         return new SkillInstance(this, player, instance);
     }
 
