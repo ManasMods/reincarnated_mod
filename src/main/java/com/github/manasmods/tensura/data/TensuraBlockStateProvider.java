@@ -3,9 +3,20 @@ package com.github.manasmods.tensura.data;
 import com.github.manasmods.tensura.Tensura;
 import com.github.manasmods.tensura.block.TensuraBlocks;
 import com.github.manasmods.manascore.data.gen.BlockStateProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
+import net.minecraftforge.client.model.generators.ModelBuilder;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
-public class TensuraBlockStateProvider extends BlockStateProvider {
+import java.util.Objects;
+
+import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
+
+public class TensuraBlockStateProvider extends BlockStateProvider{
 
     public TensuraBlockStateProvider(GatherDataEvent gatherDataEvent) {
         super(gatherDataEvent, Tensura.MOD_ID);
@@ -45,6 +56,12 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
         defaultBlock(TensuraBlocks.LABYRINTH_STONE_TR);
         defaultBlock(TensuraBlocks.LABYRINTH_STONE_BL);
         defaultBlock(TensuraBlocks.LABYRINTH_STONE_BR);
+        
+        // BLOCKS WITH DIFFERENT FACE
+
+        orientableVertical(TensuraBlocks.LABYRINTH_LAMP_TL,modLoc("labyrinth_lamp_tr.png"), modLoc("labyrinth_lamp_tl.png"));
+
+
 
         //STAIRS
 
@@ -62,5 +79,12 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
 
         //paneBlock(TensuraBlocks.EXAMPLE_WINDOW, new ResourceLocation("minecraft:block/glass"), new ResourceLocation("minecraft:block/glass_pane_top"));
     }
+
+    protected void orientableVertical(Block block, ResourceLocation side, ResourceLocation front) {
+        getVariantBuilder(block).forAllStates(blockState -> ConfiguredModel.builder().modelFile(models().orientableVertical(Objects.requireNonNull(block.getRegistryName()).toString(), side, front)).build());
+        itemModels().getBuilder(Objects.requireNonNull(block.getRegistryName()).getPath())
+                .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + block.getRegistryName().getPath())));
+    }
+
 }
 

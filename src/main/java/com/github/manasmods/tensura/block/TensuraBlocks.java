@@ -34,6 +34,8 @@ public class TensuraBlocks {
     @ObjectHolder("deepslate_silver_ore")
     public static final Block DEEPSLATE_SILVER_ORE = null;
 
+    /********** Labyrinth Stuff **********/
+
     @ObjectHolder("labyrinth_brick_tl")
     public static final Block LABYRINTH_BRICK_TL = null;
 
@@ -46,6 +48,30 @@ public class TensuraBlocks {
     @ObjectHolder("labyrinth_brick_br")
     public static final Block LABYRINTH_BRICK_BR = null;
 
+    @ObjectHolder("labyrinth_lamp_tl")
+    public static final Block LABYRINTH_LAMP_TL = null;
+
+    @ObjectHolder("labyrinth_lamp_tr")
+    public static final Block LABYRINTH_LAMP_TR = null;
+
+    @ObjectHolder("labyrinth_lamp_bl")
+    public static final Block LABYRINTH_LAMP_BL = null;
+
+    @ObjectHolder("labyrinth_lamp_br")
+    public static final Block LABYRINTH_LAMP_BR = null;
+
+    @ObjectHolder("labyrinth_lit_lamp_tl")
+    public static final Block LABYRINTH_LIT_LAMP_TL = null;
+
+    @ObjectHolder("labyrinth_lit_lamp_tr")
+    public static final Block LABYRINTH_LIT_LAMP_TR = null;
+
+    @ObjectHolder("labyrinth_lit_lamp_bl")
+    public static final Block LABYRINTH_LIT_LAMP_BL = null;
+
+    @ObjectHolder("labyrinth_lit_lamp_br")
+    public static final Block LABYRINTH_LIT_LAMP_BR = null;
+
     @ObjectHolder("labyrinth_stone_tl")
     public static final Block LABYRINTH_STONE_TL = null;
 
@@ -57,6 +83,8 @@ public class TensuraBlocks {
 
     @ObjectHolder("labyrinth_stone_br")
     public static final Block LABYRINTH_STONE_BR = null;
+
+    /********** End of Labyrinth Stuff **********/
 
     @ObjectHolder("loom")
     public static final Block LOOM = null;
