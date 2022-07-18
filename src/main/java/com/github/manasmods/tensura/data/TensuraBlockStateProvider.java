@@ -59,8 +59,8 @@ public class TensuraBlockStateProvider extends BlockStateProvider{
         
         // BLOCKS WITH DIFFERENT FACE
 
-        orientableVertical(TensuraBlocks.LABYRINTH_LAMP_TL,modLoc("labyrinth_lamp_tr.png"), modLoc("labyrinth_lamp_tl.png"));
-
+        //METHOD FROM KAUPEN SERVER//horizontalBlock(TensuraBlocks.LABYRINTH_LIT_LAMP_TL, models().orientableVertical(String.valueOf(TensuraBlocks.LABYRINTH_LIT_LAMP_TL), modLoc("block/labyrinth_lamp_tr"), modLoc("block/labyrinth_lit_lamp_tl")));
+        //METHOD FROM PROFESSOR//orientableVertical(TensuraBlocks.LABYRINTH_LIT_LAMP_TL,modLoc("labyrinth_lamp_tr"),modLoc("labyrinth_lit_lamp_tl"));
 
 
         //STAIRS
