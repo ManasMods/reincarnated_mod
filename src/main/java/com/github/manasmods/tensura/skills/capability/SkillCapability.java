@@ -81,6 +81,12 @@ public class SkillCapability implements ISkillCapability {
                         SkillInstance instance = skill.createInstance(this.player);
 
                         instance.deserializeNBT(compoundTag);
+
+                        //Enable skill
+                        instance.register();
+
+                        this.skillInstances.put(skill.getRegistryName(), instance);
+
                         //Load subskills by parent
                         List<SkillInstance> subskills = instance.compileSubskills();
                         for(SkillInstance subskill : subskills) {
@@ -105,11 +111,6 @@ public class SkillCapability implements ISkillCapability {
                                 }
                             }
                         }
-
-                        //Enable skill
-                        instance.register();
-
-                        this.skillInstances.put(skill.getRegistryName(), instance);
                     }
                 } else {
                     //Load disabled skill

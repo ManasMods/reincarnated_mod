@@ -1,9 +1,12 @@
 package com.github.manasmods.tensura.skills.targetselectors;
 
 import com.github.manasmods.tensura.skills.SkillInstance;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.network.NetworkEvent;
 
 public class PacketTargetSelector<T> implements TargetSelector {
 
@@ -41,5 +44,12 @@ public class PacketTargetSelector<T> implements TargetSelector {
     @Override
     public void unregister() {
 
+    }
+
+    @RequiredArgsConstructor
+    @Data
+    public class Message {
+        private T message;
+        private NetworkEvent.Context context;
     }
 }

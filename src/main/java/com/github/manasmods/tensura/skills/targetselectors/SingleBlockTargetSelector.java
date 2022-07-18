@@ -1,13 +1,14 @@
 package com.github.manasmods.tensura.skills.targetselectors;
 
 import com.github.manasmods.tensura.skills.SkillInstance;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.function.Consumer;
 
-public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
+public class SingleBlockTargetSelector implements TargetSelector<BlockPos> {
 
     private final TargetSelectorExecutor<BlockPos> executor;
     private Consumer<PlayerInteractEvent.RightClickBlock> event;
@@ -21,7 +22,7 @@ public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
         this.executor = executor;
     }
 
-    public static <BlockState> SingleBlockTargetSelector<BlockState> create(TargetSelectorExecutor<BlockState> executor) {
+    public static SingleBlockTargetSelector create(TargetSelectorExecutor<BlockPos> executor) {
         return new SingleBlockTargetSelector(executor);
     }
 
@@ -30,8 +31,8 @@ public class SingleBlockTargetSelector<BlockPos> implements TargetSelector {
     }
 
     @Override
-    public void apply(Level level, Object entity) {
-        this.executor.execute(level, this.instance, (BlockPos)entity);
+    public void apply(Level level, BlockPos entity) {
+        this.executor.execute(level, this.instance, entity);
     }
 
     @Override
