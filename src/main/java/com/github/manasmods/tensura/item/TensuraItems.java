@@ -436,4 +436,7 @@ public class TensuraItems {
 
     @ObjectHolder("thatch")
     public static final Item THATCH = null;
+
+    @ObjectHolder("chapter_1")
+    public static final Item CHAPTER_1 = null;
 }

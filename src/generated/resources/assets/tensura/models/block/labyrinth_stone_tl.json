@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tensura:block/labyrinth_stone_tl"
+  }
+}

@@ -1,5 +1,6 @@
 package com.github.manasmods.tensura.registry;
 
+import com.github.manasmods.tensura.item.custom.Chapter1Item;
 import com.github.manasmods.tensura.item.templates.SimpleAxeItem;
 import com.github.manasmods.tensura.item.templates.SimpleFoodItem;
 import com.github.manasmods.tensura.item.templates.SimplePickaxeItem;
@@ -136,6 +137,7 @@ class ItemRegistry {
         registry.register("spirit_core", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("stella_gold_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("thatch", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("chapter_1", () -> new Chapter1Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
     }
 
     /** Method to register eatable {@link Item} objects */

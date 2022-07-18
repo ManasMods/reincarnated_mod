@@ -37,6 +37,15 @@ public class TensuraBlockStateProvider extends BlockStateProvider {
         //defaultBlock(TensuraBlocks.SARASA_SAND);
         defaultBlock(TensuraBlocks.SILVER_ORE);
 
+        defaultBlock(TensuraBlocks.LABYRINTH_BRICK_TL);
+        defaultBlock(TensuraBlocks.LABYRINTH_BRICK_TR);
+        defaultBlock(TensuraBlocks.LABYRINTH_BRICK_BL);
+        defaultBlock(TensuraBlocks.LABYRINTH_BRICK_BR);
+        defaultBlock(TensuraBlocks.LABYRINTH_STONE_TL);
+        defaultBlock(TensuraBlocks.LABYRINTH_STONE_TR);
+        defaultBlock(TensuraBlocks.LABYRINTH_STONE_BL);
+        defaultBlock(TensuraBlocks.LABYRINTH_STONE_BR);
+
         //STAIRS
 
         stairs(TensuraBlocks.PALM_STAIRS, TensuraBlocks.PALM_PLANKS);
