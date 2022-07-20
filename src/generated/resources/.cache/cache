@@ -88,7 +88,9 @@ d9966745f1b0bbeee17d679e783d40a04540684c assets/tensura/models/item/flint_pickax
 b2a0959a481ba764b61cdcd4523ce8b677b52df2 assets/tensura/models/item/flint_shovel.json
 6ac182268d953a18e14dcde97e612ce40ad6ca1f assets/tensura/models/item/flint_sickle.json
 6b951b0153cdc1ecbc01978cc064e5378f34d52b assets/tensura/models/item/flint_sword.json
+86570e23478aee165b0f3462d11554d758319d7b assets/tensura/models/item/full_potion.json
 8d57a4bf0427e69c2a6870a80bab58a7f5ec0b6d assets/tensura/models/item/golden_sickle.json
+4077bbc9a5232900e1cdc23c79cf2ad40ebbec04 assets/tensura/models/item/high_potion.json
 d17561cf9d06d3164c10fee1eb1938dc36134291 assets/tensura/models/item/hihiirokane_axe.json
 10be5575345db2a4759bdf7dd2982cf488115786 assets/tensura/models/item/hihiirokane_hoe.json
 e493c44721198a310471a1dc5e52fb9622089999 assets/tensura/models/item/hihiirokane_ingot.json
@@ -105,6 +107,7 @@ f25db5a9d52bd3cd1b04ad566c384eb2af42005f assets/tensura/models/item/labyrinth_br
 4b7151fb53c930836ae88bd1ae46135e36b5f3d6 assets/tensura/models/item/labyrinth_stone_br.json
 17271e847da699de212642ce9913dac6376dd624 assets/tensura/models/item/labyrinth_stone_tl.json
 6cef75cbaa2a2aa46325cfff558583f71d642253 assets/tensura/models/item/labyrinth_stone_tr.json
+d828780829329a03592635b38846dad35bf103d3 assets/tensura/models/item/large_wooden_bowl.json
 d34d7425c94310157bcac5457a78c75b89de44f4 assets/tensura/models/item/like_flames_music_disc.json
 8c0b21464e4932efa1cf779a696aedaf26c127c7 assets/tensura/models/item/low_magisteel_axe.json
 3dc506cdba7d991aa94b6590c43a22ab42d47ea7 assets/tensura/models/item/low_magisteel_hoe.json
@@ -112,6 +115,7 @@ f7b608417c5e2c5c179e9aa0eb7e08fe07c50393 assets/tensura/models/item/low_magistee
 59f90edea1aecb15ea436c54ee5c648d15933ff8 assets/tensura/models/item/low_magisteel_shovel.json
 0ca90252d94d5d0173e6a4b2bc6965d1da19e990 assets/tensura/models/item/low_magisteel_sickle.json
 80024a6fae83e0f2cf236d78f8c34b7f03455f3d assets/tensura/models/item/low_magisteel_sword.json
+838bc3fd9e70d31a9c975fb7c80c8b21db1a9f5b assets/tensura/models/item/low_potion.json
 5f7a9b8d994674e632ee51f89371ffafbad88476 assets/tensura/models/item/magisteel_ingot.json
 f8e4351b311b59add5f35345277be1491cf57f32 assets/tensura/models/item/mithril_axe.json
 65e6c4016c33efd70d5963cd885b8d6a35a7f2f1 assets/tensura/models/item/mithril_hoe.json

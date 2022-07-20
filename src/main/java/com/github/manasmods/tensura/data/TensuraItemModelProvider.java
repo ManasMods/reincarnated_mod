@@ -118,9 +118,9 @@ public class TensuraItemModelProvider extends ItemModelProvider {
         //singleTexture(TensuraItems.TEA_WITH_MILK);
         //singleTexture(TensuraItems.GREEN_TEA);
         //singleTexture(TensuraItems.HERBAL_TEA);
-        //singleTexture(TensuraItems.LOW_POTION);
-        //singleTexture(TensuraItems.HIGH_POTION);
-        //singleTexture(TensuraItems.FULL_POTION);
+        singleTexture(TensuraItems.LOW_POTION);
+        singleTexture(TensuraItems.HIGH_POTION);
+        singleTexture(TensuraItems.FULL_POTION);
         //singleTexture(TensuraItems.REVIVAL_ELIXER);
 
         //misc
@@ -128,7 +128,7 @@ public class TensuraItemModelProvider extends ItemModelProvider {
         //singleTexture(TensuraItems.BRONZE_COIN);
         //singleTexture(TensuraItems.GOLD_COIN);
         singleTexture(TensuraItems.HIHIIROKANE_INGOT);
-        //singleTexture(TensuraItems.LARGE_WOODEN_BOWL);
+        singleTexture(TensuraItems.LARGE_WOODEN_BOWL);
         singleTexture(TensuraItems.LIKE_FLAMES_MUSIC_DISC);
         //singleTexture(TensuraItems.MAGIC_STONE);
         singleTexture(TensuraItems.MAGISTEEL_INGOT);
