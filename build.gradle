@@ -135,6 +135,8 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
 }
 
 dependencies {
@@ -152,6 +154,9 @@ dependencies {
     //JEI
     compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jei_version}")
+
+    // Geckolib
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.18:${geckolibVersion}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
