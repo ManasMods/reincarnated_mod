@@ -8,6 +8,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.network.NetworkEvent;
 
+@CommonTargetSelector
 public class PacketTargetSelector<T> implements TargetSelector {
 
     private final TargetSelectorExecutor<T> executor;
@@ -21,7 +22,7 @@ public class PacketTargetSelector<T> implements TargetSelector {
         this.executor = executor;
     }
 
-    public static <T extends Event> PacketTargetSelector<T> create(TargetSelectorExecutor<T> executor) {
+    public static <T> PacketTargetSelector<T> create(TargetSelectorExecutor<T> executor) {
         return new PacketTargetSelector(executor);
     }
 

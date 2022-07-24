@@ -16,6 +16,13 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+/**
+ * A wrapped cone entity list target selectors.
+ * Selects multiple entities in a cone in the view direction of a player entity.
+ * Should be wrapped around another TargetSelector(preferably a {@link SelfEventTargetSelector}).
+ * This wrapped target selector gets called by the other target selector on event.
+ */
+@CommonTargetSelector
 public class WrappedConeEntityTargetSelector implements TargetSelector<List<Entity>>{
 
     private final TargetSelectorExecutor<List<Entity>> executor;

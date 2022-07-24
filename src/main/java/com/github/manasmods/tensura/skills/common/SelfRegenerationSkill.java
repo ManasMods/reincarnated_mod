@@ -11,9 +11,9 @@ import net.minecraftforge.event.TickEvent;
 public class SelfRegenerationSkill extends Skill implements TargetSelectorExecutor<TickEvent.PlayerTickEvent> {
 
     public SelfRegenerationSkill(String name) {
-        super(name);
+        super(name, SkillType.COMMON);
 
-        this.effect("main").setActivationCost(0).setBaseStrength(1.0D).setTargetSelector(() -> SelfEventTargetSelector.create(this));
+        this.effect("main").setActivationCost(0).setBaseStrength(1.0D).setTargetSelector(() -> SelfEventTargetSelector.create(this, TickEvent.PlayerTickEvent.class));
     }
 
     @Override

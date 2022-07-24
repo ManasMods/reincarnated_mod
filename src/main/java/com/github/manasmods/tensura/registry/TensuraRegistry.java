@@ -46,6 +46,7 @@ public class TensuraRegistry {
         FoliagePlacerRegistry.register(FOLIAGE_PLACER);
         TensuraTrunkPlaceRegistry.register(TRUNK_PLACER);
         BiomeRegistry.register(BIOMES); //Register Biomes
+        SkillRegistry.register();
 
         // Add our Registries to Forge
         BLOCKS.register(modEventBus);

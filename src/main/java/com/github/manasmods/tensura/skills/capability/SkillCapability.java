@@ -16,8 +16,6 @@ import java.util.*;
 
 public class SkillCapability implements ISkillCapability {
 
-    public static final Capability<ISkillCapability> SKILL_CAPABILITY = CapabilityManager.get(new CapabilityToken<ISkillCapability>() {});
-    public static final ResourceLocation IDENTIFIER = new ResourceLocation(Tensura.MOD_ID, "skillsCap");
 
     private HashMap<ResourceLocation, Skill> skills = new HashMap<>();
     private HashMap<ResourceLocation, SkillInstance> skillInstances = new HashMap<>();
@@ -85,6 +83,7 @@ public class SkillCapability implements ISkillCapability {
                         //Enable skill
                         instance.register();
 
+                        this.skills.put(skill.getRegistryName(), skill);
                         this.skillInstances.put(skill.getRegistryName(), instance);
 
                         //Load subskills by parent
@@ -105,6 +104,7 @@ public class SkillCapability implements ISkillCapability {
                                             //Enable subskill
                                             subskill.register();
 
+                                            this.skills.put(subskill.getSkill().getRegistryName(), subskill.getSkill());
                                             this.skillInstances.put(subskill.getSkill().getRegistryName(), subskill);
                                         }
                                     }

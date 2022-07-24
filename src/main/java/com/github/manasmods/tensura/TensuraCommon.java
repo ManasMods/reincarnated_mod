@@ -12,13 +12,13 @@ import terrablender.api.Regions;
 
 public class TensuraCommon {
     public void preInit(final IEventBus modEventBus) {
+        //Register as early as possible
+        SkillRegistry.registerRegistry(modEventBus);
+
         TensuraRegistry.register(modEventBus);
 
         final IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
         PlayerLogInHandler.register(forgeEventBus);
-
-        //Register as early as possible
-        SkillRegistry.registerRegistry();
     }
 
     public void init(final FMLCommonSetupEvent e) {

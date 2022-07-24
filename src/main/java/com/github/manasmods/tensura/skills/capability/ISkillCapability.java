@@ -1,14 +1,22 @@
 package com.github.manasmods.tensura.skills.capability;
 
+import com.github.manasmods.tensura.Tensura;
 import com.github.manasmods.tensura.skills.Skill;
 import com.github.manasmods.tensura.skills.SkillInstance;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import java.util.List;
 
 public interface ISkillCapability extends INBTSerializable<CompoundTag> {
+
+    public static final Capability<ISkillCapability> SKILL_CAPABILITY = CapabilityManager.get(new CapabilityToken<ISkillCapability>() {});
+    public static final ResourceLocation IDENTIFIER = new ResourceLocation(Tensura.MOD_ID, "skillscap");
 
     /**
      * Acquires a new skill, thereby also acquiring all its subskills.

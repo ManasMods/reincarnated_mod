@@ -40,6 +40,6 @@ public class SkillCapabilityProvider implements ICapabilityProvider, INBTSeriali
     @NotNull
     @Override
     public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
-        return SkillCapability.SKILL_CAPABILITY.orEmpty(cap, this.lazyOptional);
+        return ISkillCapability.SKILL_CAPABILITY.orEmpty(cap, this.lazyOptional);
     }
 }

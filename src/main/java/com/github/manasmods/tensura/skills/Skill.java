@@ -33,18 +33,20 @@ public class Skill implements IForgeRegistryEntry<Skill>
     private ResourceLocation location;
 
     @Getter
-    private SkillType type;
+    private final SkillType type;
 
     @Getter
-    private List<SkillEffect> effects;
+    private final List<SkillEffect> effects;
 
     @Getter
-    private List<Skill> subSkills;
+    private final List<Skill> subSkills;
 
-    public Skill(String name) {
+    public Skill(String name, SkillType type) {
         this.name = name;
         this.location = new ResourceLocation(Tensura.MOD_ID, this.name);
         this.effects = new ArrayList<>();
+        this.subSkills = new ArrayList<>();
+        this.type = type;
     }
 
     /**
@@ -119,14 +121,14 @@ public class Skill implements IForgeRegistryEntry<Skill>
     public void setupSkill(SkillInstance instance) {}
 
     public static void testSkillCreate() {
-        Skill skill = new Skill("Test");
+        Skill skill = new Skill("Test", SkillType.COMMON);
 
 
         //Right click block
         skill.effect("Corrupt").setActivationCost(1).setBaseStrength(1.0).setTargetSelector(() -> SingleBlockTargetSelector.create((level, instance, pos) ->
                 {
                     if(!level.isClientSide) {
-                        level.destroyBlock((BlockPos) pos, false);
+                        level.destroyBlock(pos, false);
                     }
                 }
         ));
@@ -134,7 +136,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
         //Right click anything to heal(for client events use setClientTargetSelector and set a PacketTargetSelector)
         TargetSelectorExecutor<PlayerInteractEvent> eventHandler = (level, instance, event) -> event.getPlayer().setHealth(20.0F);
 
-        skill.effect("Heal").setTargetSelector(() -> SelfEventTargetSelector.create(eventHandler));
+        skill.effect("Heal").setTargetSelector(() -> SelfEventTargetSelector.create(eventHandler, PlayerInteractEvent.class));
 
         //Create new instance
         SkillInstance instance = skill.createInstance(null);
@@ -163,7 +165,7 @@ public class Skill implements IForgeRegistryEntry<Skill>
         COMMON(1), EXTRA(2), INTRINSIC(3), UNIQUE(4), ULTIMATE(5);
 
         @Getter
-        private int type;
+        private final int type;
 
         SkillType(int type) {
             this.type = type;
