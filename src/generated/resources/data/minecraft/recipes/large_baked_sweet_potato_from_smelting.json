@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "tensura:large_sweet_potato"
-  },
-  "result": "tensura:large_baked_sweet_potato",
-  "experience": 0.35,
-  "cookingtime": 200
-}
