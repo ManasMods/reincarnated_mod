@@ -111,7 +111,9 @@ class ItemRegistry {
     private static void registerMisc(DeferredRegister<Item> registry) {
         registry.register("adamantite_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("armoursaurus_scale", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("armoursaurus_shell", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("bronze_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("chapter_1", () -> new Chapter1Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("charybdis_scale", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("direwolf_pelt", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("gehenna_moth_silk", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
@@ -130,6 +132,7 @@ class ItemRegistry {
         registry.register("low_quality_magic_crystal", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("magic_stone", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("magisteel_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("magisteel_nugget", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("medium_quality_magic_crystal", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("mithril_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("orichalcum_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
@@ -142,56 +145,55 @@ class ItemRegistry {
         registry.register("sissie_fin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("spider_fang", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("spirit_core", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
-        registry.register("stella_gold_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("stellar_gold_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("thatch", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
-        registry.register("chapter_1", () -> new Chapter1Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
     }
 
     /** Method to register eatable {@link Item} objects */
     private static void registerFood(DeferredRegister<Item> registry) {
-        registry.register("bulldeer_beef", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F).meat()));
-        registry.register("bulldeer_steak", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(0.9F).meat()));
-        registry.register("bulldeer_shish_kebab", () -> new SimpleFoodItem(builder -> builder.nutrition(16).saturationMod(1F).meat()));
-        registry.register("raw_giant_ant_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(0.4F).meat()));
-        registry.register("cooked_giant_ant_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.9F).meat()));
-        registry.register("raw_giant_bat_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(0.4F).meat()));
-        registry.register("cooked_giant_bat_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.9F).meat()));
-        registry.register("raw_knight_spider_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
-        registry.register("cooked_knight_spider_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
-        registry.register("raw_armoursaurus_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
-        registry.register("cooked_armoursaurus_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
-        registry.register("raw_charybdis_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.5F).meat()));
-        registry.register("charybdis_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(16).saturationMod(1.2F).meat()));
-        registry.register("cooked_charybdis_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(18).saturationMod(1F).meat()));
-        registry.register("raw_serpent_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
-        registry.register("cooked_serpent_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
-        registry.register("raw_spear_toro_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F).meat()));
-        registry.register("spear_toro_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(1F).meat()));
-        registry.register("cooked_spear_toro_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(12).saturationMod(0.9F).meat()));
-        registry.register("raw_megalodon_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.4F).meat()));
-        registry.register("megalodon_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(1F).meat()));
-        registry.register("cooked_megalodon_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(14).saturationMod(0.9F).meat()));
-        registry.register("rice", () -> new SimpleFoodItem(builder -> builder.nutrition(2).saturationMod(0.3F)));
-        registry.register("black_rice", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F)));
-        registry.register("sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(2).saturationMod(0.3F)));
-        registry.register("large_sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.5F)));
         registry.register("baked_sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(6).saturationMod(0.5F)));
+        registry.register("black_onigiri", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(0.3F)));
+        registry.register("black_rice", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F)));
+        registry.register("bowl_of_ramen", () -> new SimpleFoodItem(builder -> builder.nutrition(15).saturationMod(0.8F)));
+        registry.register("bulldeer_beef", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F).meat()));
+        registry.register("bulldeer_shish_kebab", () -> new SimpleFoodItem(builder -> builder.nutrition(16).saturationMod(1F).meat()));
+        registry.register("bulldeer_steak", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(0.9F).meat()));
+        registry.register("charybdis_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(16).saturationMod(1.2F).meat()));
+        registry.register("cooked_armoursaurus_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
+        registry.register("cooked_charybdis_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(18).saturationMod(1F).meat()));
+        registry.register("cooked_giant_ant_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.9F).meat()));
+        registry.register("cooked_giant_bat_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.9F).meat()));
+        registry.register("cooked_knight_spider_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
+        registry.register("cooked_megalodon_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(14).saturationMod(0.9F).meat()));
+        registry.register("cooked_serpent_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.9F).meat()));
+        registry.register("cooked_spear_toro_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(12).saturationMod(0.9F).meat()));
+        registry.register("dubious_food", () -> new SimpleFoodItem(builder -> builder.nutrition(0).saturationMod(0.1F)));
+        registry.register("large_baked_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(12).saturationMod(0.7F)));
         registry.register("large_baked_sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(12).saturationMod(0.7F)));
         registry.register("large_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.5F)));
-        registry.register("large_baked_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(12).saturationMod(0.7F)));
+        registry.register("large_sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.5F)));
+        registry.register("megalodon_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(1F).meat()));
         registry.register("onigiri", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(0.3F)));
-        registry.register("black_onigiri", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(0.3F)));
-        registry.register("sushi", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.3F).meat()));
+        registry.register("raw_armoursaurus_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
+        registry.register("raw_charybdis_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(9).saturationMod(0.5F).meat()));
+        registry.register("raw_giant_ant_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(0.4F).meat()));
+        registry.register("raw_giant_bat_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(3).saturationMod(0.4F).meat()));
+        registry.register("raw_knight_spider_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
+        registry.register("raw_megalodon_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(8).saturationMod(0.4F).meat()));
+        registry.register("raw_serpent_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.4F).meat()));
+        registry.register("raw_spear_toro_meat", () -> new SimpleFoodItem(builder -> builder.nutrition(5).saturationMod(0.4F).meat()));
+        registry.register("rice", () -> new SimpleFoodItem(builder -> builder.nutrition(2).saturationMod(0.3F)));
         registry.register("sissie_fin_soup", () -> new SimpleFoodItem(builder -> builder.nutrition(15).saturationMod(0.3F).meat()));
-        registry.register("dubious_food", () -> new SimpleFoodItem(builder -> builder.nutrition(0).saturationMod(0.1F)));
-        registry.register("bowl_of_ramen", () -> new SimpleFoodItem(builder -> builder.nutrition(15).saturationMod(0.8F)));
+        registry.register("spear_toro_sashimi", () -> new SimpleFoodItem(builder -> builder.nutrition(10).saturationMod(1F).meat()));
+        registry.register("sushi", () -> new SimpleFoodItem(builder -> builder.nutrition(4).saturationMod(0.3F).meat()));
+        registry.register("sweet_potato", () -> new SimpleFoodItem(builder -> builder.nutrition(2).saturationMod(0.3F)));
 
         registry.register("black_coffee", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
         registry.register("black_tea", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
         registry.register("coffee_with_milk", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
-        registry.register("tea_with_milk", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
         registry.register("green_tea", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
         registry.register("herbal_tea", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
+        registry.register("tea_with_milk", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
 
         registry.register("low_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,1,1));
         registry.register("high_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,3,1));

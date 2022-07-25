@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "tensura:raw_charybdis_meat"
-  },
-  "result": "tensura:cooked_charybdis_meat",
-  "experience": 0.35,
-  "cookingtime": 200
-}

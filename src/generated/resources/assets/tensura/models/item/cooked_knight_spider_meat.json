@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tensura:item/cooked_knight_spider_meat"
-  }
-}
