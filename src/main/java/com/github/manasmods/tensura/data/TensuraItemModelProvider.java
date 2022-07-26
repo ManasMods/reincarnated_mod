@@ -126,8 +126,8 @@ public class TensuraItemModelProvider extends ItemModelProvider {
 
         /** ==============================      MISC ITEMS     ============================== */
         singleTexture(TensuraItems.ADAMANTITE_INGOT);
-        //singleTexture(TensuraItems.ARMOURSAURUS_SCALE);
-        //singleTexture(TensuraItems.ARMOURSAURUS_SHELL);
+        singleTexture(TensuraItems.ARMOURSAURUS_SCALE);
+        singleTexture(TensuraItems.ARMOURSAURUS_SHELL);
         singleTexture(TensuraItems.BRONZE_COIN);
         singleTexture(TensuraItems.CHAPTER_1);
         //singleTexture(TensuraItems.CHARYBDIS_SCALE);
