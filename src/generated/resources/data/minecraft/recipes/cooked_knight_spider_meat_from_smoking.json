@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "tensura:raw_knight_spider_meat"
+  },
+  "result": "tensura:cooked_knight_spider_meat",
+  "experience": 0.35,
+  "cookingtime": 100
+}

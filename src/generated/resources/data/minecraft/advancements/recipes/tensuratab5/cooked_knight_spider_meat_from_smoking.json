@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_knight_spider_meat_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_raw_knight_spider_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tensura:raw_knight_spider_meat"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:cooked_knight_spider_meat_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_knight_spider_meat",
+      "has_the_recipe"
+    ]
+  ]
+}
