@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tensura:sakura_log"
+    }
+  ],
+  "result": {
+    "item": "tensura:sakura_planks",
+    "count": 4
+  }
+}
