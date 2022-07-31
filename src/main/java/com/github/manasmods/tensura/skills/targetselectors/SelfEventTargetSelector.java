@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class SelfEventTargetSelector<T extends Event> implements TargetSelector {
     private final TargetSelectorExecutor<T> executor;
     private Consumer<T> event;
-    private Class<T> eventType;
+    private final Class<T> eventType;
 
     /**
      * The instance this executor is registered on
@@ -31,18 +31,19 @@ public class SelfEventTargetSelector<T extends Event> implements TargetSelector 
     }
 
     public void onEvent(T e) {
-        Tensura.getLogger().info("RUNNING EVENT " + e.getClass().toString());
         this.apply(null, e);
     }
 
     @Override
-    public void apply(Level level, Object entity) {
-        this.executor.execute(level, this.instance, (T) entity);
+    public void apply(Level level, Object event) {
+        this.executor.execute(level, this.instance, (T) event);
     }
 
     @Override
     public void register(SkillInstance instance) {
         this.event = this::onEvent;
+        this.instance = instance;
+
         MinecraftForge.EVENT_BUS.addListener(EventPriority.NORMAL, false, this.eventType, this.event);
     }
 

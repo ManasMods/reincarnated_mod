@@ -20,7 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class SkillCapabilityTest {
 
     @PrefixGameTestTemplate(false)
-    @GameTest(template = "empty_1x1", batch = TestBatches.SKILL_CAPS)
+    @GameTest(template = "empty_1x1", batch = TestBatches.SKILL_CAPS, timeoutTicks = 2000)
     public void testSkillCapability(final GameTestHelper helper) {
         RegistryObject<Skill> skillObject = RegistryObject.create(new ResourceLocation(Tensura.MOD_ID, "self_regeneration"), SkillRegistry.SKILLS_REGISTRY_NAME, Tensura.MOD_ID);
         Skill skill = skillObject.get();
@@ -114,7 +114,7 @@ public class SkillCapabilityTest {
 
         Tensura.getLogger().info("SkillCapsTest: deserializeNBT COMPLETED");
 
-        helper.succeed();
+        helper.startSequence().thenIdle(40).thenSucceed();
     }
 
 }
