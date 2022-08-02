@@ -14,7 +14,7 @@
     {
 
       // How likely out of all the element for this one to be chosen.
-      "weight": 1,
+      "weight": 10,
       "element": {
 
         // The Identifier of the nbt file itself of the structure piece.
