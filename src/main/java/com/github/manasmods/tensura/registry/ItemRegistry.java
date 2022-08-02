@@ -137,7 +137,7 @@ class ItemRegistry {
         registry.register("mithril_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("orichalcum_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("raw_silver", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
-        registry.register("scroll_of_slimes", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
+        registry.register("scroll_of_slimes", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS).stacksTo(1)));
         registry.register("serpent_scale", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("silver_coin", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
         registry.register("silver_ingot", () -> new Item(new Item.Properties().tab(TensuraCreativeTab.MISCELLANEOUS)));
@@ -195,9 +195,9 @@ class ItemRegistry {
         registry.register("herbal_tea", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
         registry.register("tea_with_milk", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,0,1,0));
 
-        registry.register("low_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,1,1));
-        registry.register("high_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,3,1));
-        registry.register("full_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,10,1));
-        registry.register("revival_elixer", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,5,100,1));
+        registry.register("low_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,100,1,1));
+        registry.register("high_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,100,3,1));
+        registry.register("full_potion", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,100,10,1));
+        registry.register("revival_elixer", () -> new SimplePotionFoodItem(1,1, MobEffects.REGENERATION,100,100,1));
     }
 }

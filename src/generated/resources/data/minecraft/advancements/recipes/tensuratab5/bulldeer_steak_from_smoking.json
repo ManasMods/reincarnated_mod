@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:bulldeer_steak_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_bulldeer_beef": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tensura:bulldeer_beef"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:bulldeer_steak_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bulldeer_beef",
+      "has_the_recipe"
+    ]
+  ]
+}

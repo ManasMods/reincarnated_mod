@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tensura:sakura_planks"
+    }
+  },
+  "result": {
+    "item": "tensura:sakura_stairs",
+    "count": 8
+  }
+}

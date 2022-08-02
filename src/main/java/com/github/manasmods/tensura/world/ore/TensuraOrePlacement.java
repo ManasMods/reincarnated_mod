@@ -21,8 +21,8 @@ class TensuraOrePlacement {
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_SILVER_SMALL = FeatureUtils.register("ore_silver_small", Feature.ORE,
         new OreConfiguration(ORE_SILVER_TARGET_LIST, 4, 0.5F));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_SILVER_LARGE = FeatureUtils.register("ore_silver_small", Feature.ORE,
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_SILVER_LARGE = FeatureUtils.register("ore_silver_large", Feature.ORE,
         new OreConfiguration(ORE_SILVER_TARGET_LIST, 12, 0.7F));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_SILVER_BURIED = FeatureUtils.register("ore_silver_small", Feature.ORE,
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_SILVER_BURIED = FeatureUtils.register("ore_silver_buried", Feature.ORE,
         new OreConfiguration(ORE_SILVER_TARGET_LIST, 8, 1.0F));
 }

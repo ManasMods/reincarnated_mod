@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "tensura:raw_megalodon_meat"
+  },
+  "result": "tensura:cooked_megalodon_meat",
+  "experience": 0.35,
+  "cookingtime": 100
+}
