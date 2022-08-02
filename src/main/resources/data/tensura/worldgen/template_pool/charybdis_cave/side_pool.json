@@ -9,7 +9,7 @@
       "weight": 6,
       "element": {
         "location": "tensura:charybdis_room_1",
-        "processors": "minecraft:empty",
+        "processors": "tensura:charybdis_room",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -18,7 +18,7 @@
       "weight": 4,
       "element": {
         "location": "tensura:charybdis_room_2",
-        "processors": "minecraft:empty",
+        "processors": "tensura:charybdis_room",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
