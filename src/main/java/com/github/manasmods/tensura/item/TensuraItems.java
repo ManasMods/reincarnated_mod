@@ -267,6 +267,141 @@ public class TensuraItems {
     @ObjectHolder("wooden_sickle")
     public static final Item WOODEN_SICKLE = null;
 
+    /** ==============================      ARMOUR ITEMS     ===34=32========================== */
+
+    @ObjectHolder("adamantite_helmet")
+    public static final Item ADAMANTITE_HELMET = null;
+    @ObjectHolder("adamantite_chestplate")
+    public static final Item ADAMANTITE_CHESTPLATE = null;
+    @ObjectHolder("adamantite_leggings")
+    public static final Item ADAMANTITE_LEGGINGS = null;
+    @ObjectHolder("adamantite_boots")
+    public static final Item ADAMANTITE_BOOTS = null;
+    @ObjectHolder("angry_pierrot_clown_mask")
+    public static final Item ANGRY_PIERROT_CLOWN_MASK = null;
+    @ObjectHolder("anti_magic_mask")
+    public static final Item ANTI_MAGIC_MASK = null;
+    @ObjectHolder("ant_carapace_helmet")
+    public static final Item ANT_CARAPACE_HELMET = null;
+    @ObjectHolder("ant_carapace_chestplate")
+    public static final Item ANT_CARAPACE_CHESTPLATE = null;
+    @ObjectHolder("ant_carapace_leggings")
+    public static final Item ANT_CARAPACE_LEGGINGS = null;
+    @ObjectHolder("ant_carapace_boots")
+    public static final Item ANT_CARAPACE_BOOTS = null;
+    @ObjectHolder("armoursaurus_helmet")
+    public static final Item ARMOURSAURUS_HELMET = null;
+    @ObjectHolder("armoursaurus_chestplate")
+    public static final Item ARMOURSAURUS_CHESTPLATE = null;
+    @ObjectHolder("armoursaurus_leggings")
+    public static final Item ARMOURSAURUS_LEGGINGS = null;
+    @ObjectHolder("armoursaurus_boots")
+    public static final Item ARMOURSAURUS_BOOTS = null;
+    @ObjectHolder("armoursaurus_scalemail_helmet")
+    public static final Item ARMOURSAURUS_SCALEMAIL_HELMET = null;
+    @ObjectHolder("armoursaurus_scalemail_chestplate")
+    public static final Item ARMOURSAURUS_SCALEMAIL_CHESTPLATE = null;
+    @ObjectHolder("armoursaurus_scalemail_leggings")
+    public static final Item ARMOURSAURUS_SCALEMAIL_LEGGINGS = null;
+    @ObjectHolder("armoursaurus_scalemail_boots")
+    public static final Item ARMOURSAURUS_SCALEMAIL_BOOTS = null;
+    @ObjectHolder("bulldeer_leather_helmet")
+    public static final Item BULLDEER_LEATHER_HELMET = null;
+    @ObjectHolder("bulldeer_leather_chestplate")
+    public static final Item BULLDEER_LEATHER_CHESTPLATE = null;
+    @ObjectHolder("bulldeer_leather_leggings")
+    public static final Item BULLDEER_LEATHER_LEGGINGS = null;
+    @ObjectHolder("bulldeer_leather_boots")
+    public static final Item BULLDEER_LEATHER_BOOTS = null;
+    @ObjectHolder("charybdis_scalemail_helmet")
+    public static final Item CHARYBDIS_SCALEMAIL_HELMET = null;
+    @ObjectHolder("charybdis_scalemail_chestplate")
+    public static final Item CHARYBDIS_SCALEMAIL_CHESTPLATE = null;
+    @ObjectHolder("charybdis_scalemail_leggings")
+    public static final Item CHARYBDIS_SCALEMAIL_LEGGINGS = null;
+    @ObjectHolder("charybdis_scalemail_boots")
+    public static final Item CHARYBDIS_SCALEMAIL_BOOTS = null;
+    @ObjectHolder("crazy_pierrot_clown_mask")
+    public static final Item CRAZY_PIERROT_CLOWN_MASK = null;
+    @ObjectHolder("high_magisteel_helmet")
+    public static final Item HIGH_MAGISTEEL_HELMET = null;
+    @ObjectHolder("high_magisteel_chestplate")
+    public static final Item HIGH_MAGISTEEL_CHESTPLATE = null;
+    @ObjectHolder("high_magisteel_leggings")
+    public static final Item HIGH_MAGISTEEL_LEGGINGS = null;
+    @ObjectHolder("high_magisteel_boots")
+    public static final Item HIGH_MAGISTEEL_BOOTS = null;
+    @ObjectHolder("hihiirokane_helmet")
+    public static final Item HIHIIROKANE_HELMET = null;
+    @ObjectHolder("hihiirokane_chestplate")
+    public static final Item HIHIIROKANE_CHESTPLATE = null;
+    @ObjectHolder("hihiirokane_leggings")
+    public static final Item HIHIIROKANE_LEGGINGS = null;
+    @ObjectHolder("hihiirokane_boots")
+    public static final Item HIHIIROKANE_BOOTS = null;
+    @ObjectHolder("knight_spider_carapace_helmet")
+    public static final Item KNIGHT_SPIDER_CARAPACE_HELMET = null;
+    @ObjectHolder("knight_spider_carapace_chestplate")
+    public static final Item KNIGHT_SPIDER_CARAPACE_CHESTPLATE = null;
+    @ObjectHolder("knight_spider_carapace_leggings")
+    public static final Item KNIGHT_SPIDER_CARAPACE_LEGGINGS = null;
+    @ObjectHolder("knight_spider_carapace_boots")
+    public static final Item KNIGHT_SPIDER_CARAPACE_BOOTS = null;
+    @ObjectHolder("low_magisteel_helmet")
+    public static final Item LOW_MAGISTEEL_HELMET = null;
+    @ObjectHolder("low_magisteel_chestplate")
+    public static final Item LOW_MAGISTEEL_CHESTPLATE = null;
+    @ObjectHolder("low_magisteel_leggings")
+    public static final Item LOW_MAGISTEEL_LEGGINGS = null;
+    @ObjectHolder("low_magisteel_boots")
+    public static final Item LOW_MAGISTEEL_BOOTS = null;
+    @ObjectHolder("mithril_helmet")
+    public static final Item MITHRIL_HELMET = null;
+    @ObjectHolder("mithril_chestplate")
+    public static final Item MITHRIL_CHESTPLATE = null;
+    @ObjectHolder("mithril_leggings")
+    public static final Item MITHRIL_LEGGINGS = null;
+    @ObjectHolder("mithril_boots")
+    public static final Item MITHRIL_BOOTS = null;
+    @ObjectHolder("orichalcum_helmet")
+    public static final Item ORICHALCUM_HELMET = null;
+    @ObjectHolder("orichalcum_chestplate")
+    public static final Item ORICHALCUM_CHESTPLATE = null;
+    @ObjectHolder("orichalcum_leggings")
+    public static final Item ORICHALCUM_LEGGINGS = null;
+    @ObjectHolder("orichalcum_boots")
+    public static final Item ORICHALCUM_BOOTS = null;
+    @ObjectHolder("pure_magisteel_helmet")
+    public static final Item PURE_MAGISTEEL_HELMET = null;
+    @ObjectHolder("pure_magisteel_chestplate")
+    public static final Item PURE_MAGISTEEL_CHESTPLATE = null;
+    @ObjectHolder("pure_magisteel_leggings")
+    public static final Item PURE_MAGISTEEL_LEGGINGS = null;
+    @ObjectHolder("pure_magisteel_boots")
+    public static final Item PURE_MAGISTEEL_BOOTS = null;
+    @ObjectHolder("serpent_scalemail_helmet")
+    public static final Item SERPENT_SCALEMAIL_HELMET = null;
+    @ObjectHolder("serpent_scalemail_chestplate")
+    public static final Item SERPENT_SCALEMAIL_CHESTPLATE = null;
+    @ObjectHolder("serpent_scalemail_leggings")
+    public static final Item SERPENT_SCALEMAIL_LEGGINGS = null;
+    @ObjectHolder("serpent_scalemail_boots")
+    public static final Item SERPENT_SCALEMAIL_BOOTS = null;
+    @ObjectHolder("silver_helmet")
+    public static final Item SILVER_HELMET = null;
+    @ObjectHolder("silver_chestplate")
+    public static final Item SILVER_CHESTPLATE = null;
+    @ObjectHolder("silver_leggings")
+    public static final Item SILVER_LEGGINGS = null;
+    @ObjectHolder("silver_boots")
+    public static final Item SILVER_BOOTS = null;
+    @ObjectHolder("teary_eyes_clown_mask")
+    public static final Item TEARY_EYES_CLOWN_MASK = null;
+    @ObjectHolder("winged_boots")
+    public static final Item WINGED_BOOTS = null;
+    @ObjectHolder("wonder_pierrot_clown_mask")
+    public static final Item WONDER_PIERROT_CLOWN_MASK = null;
+
 
     /** ==============================      MISC ITEMS     ============================== */
     @ObjectHolder("adamantite_ingot")
